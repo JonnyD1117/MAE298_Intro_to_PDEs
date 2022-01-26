@@ -44,6 +44,9 @@ The DFN model has long been held as the gold standard electrochemical battery mo
 
 
 
+\section{Microscale Model Derivation}
+
+Before the complete Doyle-Fuller-Newman (DFN) model can be computed, it is neccessary to compute the microscale dynamics which govern the behavior of the compute electrochemical system. Only after this microscale model has been developed can we apply them to derving the complete DFN model. In the microscale model, the principle mechanisms of operation are evaluated under the assumtion of homogeneous materials. Under this assumption, the model does not account for individual molecular interactions or impurities. For this analysis, we can assume that these molecular inconistentcies averaged out to create a homogeneous material for which we can independently derive and evaluate the governing equations for both the solid and electroyte phases of the battery.
 
 
 
@@ -59,16 +62,58 @@ Where \textbf{i} is the current density [$Am^{-2}$], $\sigma$ is the conductivit
 
 
 \subsection{Mass Conservation in Homogeneous Solid}
+
+The conservation of mass in homogeneous solid (electrodes) is used to capture the dynamics of lithium intercalation into the crystalline structure of the electrode materials. Specifically, Fick's first law is used to describe quanity of molar flux density \textbf{N} to the gradient of lithium concentration in the solid electrode material, where D is the material dependent diffusivity.
+
+\[
+\textbf{N} =  -D \nabla c
+\]
+
+This expression states that the magnitude of the lithium molar flux density will increase with an increase in the gradient of the concentration. From this expression, we can compute the net molar flux by computing the integral of the entire domain boundary.
+
+\[
+ j = -\iint_{S} \textbf{N} \cdot \hat{\textbf{n}}dS
+\]
+
+This is equivalent to the statement that ...
+
+\[
+j = \frac{dn}{dt}
+\]
+
+Where n is the number of moles. Furthermore, we can define $dn$ as a function of concentration. This expression can be computed by integrating each contribution of concentration within a differential volume over the entire volume of the domain.
+
+\[
+dn = d \iiint_V cdV
+\]
+
+By applying this substition and then and equating the net molar flux densities, we find that...
+
+\[
+\iint_S \textbf{N} \cdot \hat{n}dS = -\frac{d}{dt} \iiint_V c dV
+\]
+
+This expression if the integral form of the continuity equation. The take away from this equation is that no mass has been created or destroyed inside the domain. Also this implies that all mass transfer which does occur happens only at the boundaries of the domain.
+
+By further massaging and manipulating the previous equation, we can reduce this equation into the more familar form of Fick's second law, as shown below.
+
+\[
+\frac{\partial c_{S}}{\partial t} = \nabla \cdot \left( D_{S} \nabla c_{s} \right)
+\]
+
+The intuition behind this law is that it encapsulates the dynamic relationship between the concentration as it changes in time to the concentration as it changes in space.
+
+
 \subsection{Charge Conservation in Homogeneous Electrolyte}
 \subsection{Mass Conservation in Homogeneous Electrolyte}
 \subsection{Lithium Movement Between Solid \& Electrolyte Phases}
 
 
+\section{DFN Model Derivation}
 
 
-\section{Derivation}
 
-\section{Analysis of Governing PDEs}
+\section{Analysis of Governing Equations}
 
 \section{Numerical Solution}
 
