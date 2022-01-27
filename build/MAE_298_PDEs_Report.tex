@@ -95,7 +95,7 @@ By applying this substition and then and equating the net molar flux densities, 
 
 This expression if the integral form of the continuity equation. The take away from this equation is that no mass has been created or destroyed inside the domain. Also this implies that all mass transfer which does occur happens only at the boundaries of the domain.
 
-By further massaging and manipulating the previous equation, we can reduce this equation into the more familar form of Fick's second law, as shown below.
+By further massaging and manipulating the previous equation, we can reduce this equation into the more familiar form of Fick's second law, as shown below.
 
 \[
 \frac{\partial c_{S}}{\partial t} = \nabla \cdot \left( D_{S} \nabla c_{s} \right)
@@ -105,6 +105,141 @@ The intuition behind this law is that it encapsulates the dynamic relationship b
 
 
 \subsection{Charge Conservation in Homogeneous Electrolyte}
+
+When discussing the conservation of charge inside of the electrolyte phase of the battery, a non-trivial amount of thermodynamics and physical chemistry are required to fully contextualize the groundwork which needs to be laid, to understand the principles for deriving the governing equations. Without diving extremely deep into these areas, it is useful to have a basic explaination about how these concepts are linked.
+
+\subsubsection{Gibbs Free Energy}
+A simple definition of Gibbs Free Energy is that it is the amount required to create the system (internal energy u), plus the amount which boundary work (pV) required to make room for the system, minus the energy which is obtained from the surrounding environement (TS), which has a temperate of T. This can be written...
+
+\[
+    G = U + pV - TS
+\]
+
+ The \textbf{free energy} portion of the name, is important because it informs us of how much energy can be extracted from the system, so long as the temperature and pressure are held constant. Additionally, the sign of the Gibbs free energy dictates the direction that a chemical reaction will spontaneously take. \\
+
+ In the context of batteries, Gibbs free energy is used in the formulation of electrochemical potentials, which are discussed below.
+
+
+ \subsubsection{Molarity \& Molality}
+
+ Since an electrolyte is a solution, it can be described as an intensive property via its molarity and molality, depending on which attributes of the solution are of interest.
+
+ The molarity of a solution is defined to be the number of moles of solute per liter of solution.
+
+ \[
+    c_i = \frac{n_{solute_i}}{V_{solution}}
+ \]
+
+ Where as the molality of the solution, is defined to be the total number of moles of solute over the mass of the solvent.
+
+ \[
+    m_i = \frac{n_{solute_i}}{m_{solvent}}
+ \]
+
+
+ \subsubsection{Electrochemical Potential}
+
+ Understanding the previous sections is important because it leads to a discussion of electrochemical potentials. Especially in multispecies solutions, the conversion from extensive properties to intensive properties is subtle. In order to property define these intensive properties, it is neccessary to define partial molar quanities. This can be written using partial derivatives and describes how much the Gibbs free energy (extensive) changes with the addition of only species to the solution. This can be written...
+
+ \[
+    \bar{\mu} = \left( \frac{\partial G}{\partial n_{i}} \right)_{T,p,n_{j} (j \neq i)}
+ \]
+
+ where $n_i$ is the number of moles of species $i$, while keeping the temperature, pressure, and moles of other species constant. As can be seen by the equation, the electrochemical potential is an intensive property which has been normalized via the species mass (in moles).
+
+ By applying this operator to the Gibbs free energy we can see that there will be some amount of internal potential as well as an external potential which contributes to the total electrochemical potential of the system.
+
+\[
+    \bar{\mu_{i}} = \bar{\mu}_{i, internal} + \bar{\mu}_{i, external}
+\]
+
+ In the absense of other potentials and forces from external fields, the effect of chemical and electrochemical potentials can be written as ...
+
+ \[
+    \bar{\mu}_{i} = \mu_{i} + z_i F \phi
+ \]
+
+
+Where the $z_i$ is the charge number, $F$ is Faraday's constant, and $\phi$ is the local electrostatic potential. After applying Euler's theorem for homogeneous functions we can show
+
+\[
+    G(\textbf{n}) = \textbf{n} \cdot \nabla G (\textbf{n}) = \sum_i n_i \frac{\partial G}{\partial n_i}
+\]
+
+\[
+    G = \sum_i n_i \bar{\mu}_i
+\]
+
+This provides a very concise form for replacing Gibbs free energy with electrochemical potentials
+
+\subsubsection{Gibbs-Duhem Equation}
+
+This equation provides relationship between electrochemical potentials, which reduces the number of simultaneous equations which we must solve.
+
+\[
+    G = U + pV - TS
+\]
+
+\[
+    dG = dU = d(pV) - d(TS)
+\]
+
+\[
+        = dq + dw + pdV + VdP -TdS - SdT
+\]
+
+From thermodynamics we know $dw = -pdV$ and that under the assumption of reversibility $dq = TdS$ that we obtain...
+
+\[
+    dG = Vdp - SdT
+\]
+
+We can show from the previous relationship relating Gibbs free energy and electrochemical potential that...
+
+\[
+    \sum_{r}^{i=1} n_id\bar{\mu}_i = Vdp - SdT
+\]
+
+such that....
+
+\[
+    \sum_{i=1}^{r} n_id\bar{\mu}_i - Vdp + SdT = 0
+\]
+
+In the special case we are interested in (a binary electrolyte) containing only two species, this equation can be explicitily written as
+
+\[
+    n_1 d\bar{\mu}_1 + n_2 d\bar{\mu}_2 = 0
+\]
+
+
+It should be noted that this equation is only valid under the isothermal and isobaric process. However given that we are operating under these assumptions, then we can see the relationship between the two electrochemical potentials. If one is increased, the other must decrease to maintain the equality. In the general case...
+
+\[
+    \sum_{i=1}^{r}d\bar{\mu}_i = 0
+\]
+
+It should also be noted that we can easily convert this from molar to molarity by dividing by the volume.
+
+\subsubsection{Activity}
+
+Unlike non-ionic solutions, ionic solutions do not distribute their ions randomly, this is because the electrical charge for either a cation or anion are preferentially oriented and attracted to ions of the opposite charge. A consequence of this behavior is that movement of ions in solution are artificially slow, due to the movement of a specific ion also attempting to drag the other ions which are in its immediate neighborhood in the solution. \\
+
+Because of this phenomenon, we can use the \textbf{activity} of a species as an effective concentration, which accounts for this descrepency.
+
+\[
+    a_i = c_i f_i
+\]
+
+
+
+
+
+
+
+
+
+
 \subsection{Mass Conservation in Homogeneous Electrolyte}
 \subsection{Lithium Movement Between Solid \& Electrolyte Phases}
 
