@@ -10,6 +10,8 @@
 \usepackage{verbatim}
 \usepackage{graphicx}
 \usepackage{cite}
+\usepackage{wasysym}
+% \setmathfont{XITS Math}
 % updated with editorial comments 8/9/2021
 
 \begin{document}
@@ -41,6 +43,11 @@ The DFN model has long been held as the gold standard electrochemical battery mo
   \item
 
 \end{enumerate}
+
+\[
+  \oiint x^2 +5
+\]
+
 
 
 
@@ -216,10 +223,10 @@ In the special case we are interested in (a binary electrolyte) containing only 
 It should be noted that this equation is only valid under the isothermal and isobaric process. However given that we are operating under these assumptions, then we can see the relationship between the two electrochemical potentials. If one is increased, the other must decrease to maintain the equality. In the general case...
 
 \[
-    \sum_{i=1}^{r}d\bar{\mu}_i = 0
+    \sum_{i=1}^{r} c_{i}d\bar{\mu}_i = 0
 \]
 
-It should also be noted that we can easily convert this from molar to molarity by dividing by the volume.
+It should also be noted that we can easily convert this from molar to molarity by dividing by the volume. \\
 
 \subsubsection{Activity}
 
@@ -231,6 +238,74 @@ Because of this phenomenon, we can use the \textbf{activity} of a species as an 
     a_i = c_i f_i
 \]
 
+In the context of lithium-ion batteries, the concept of activity is important because the transport medium between each electrode is a neutral ionic solution, which has a fixed number of positive and negative charge carries, that faciliate transfer of charge inside the battery. Therefore modeling this non-intutiative behavior is an important step in capturing the complete dynamics at play.
+
+\subsubsection{ Stoichiometric Coefficient $\nu$ }
+In a balanced chemical equation, the total amount of matter (of each element/molecule) and the total amount of charge are conserved. This fact holds true for electrolytes. In the case of an electrolyte, the solution is comprised of solute dispursed throughout a solvent such that the overall solution is charge-neutral. An example is shown below.
+
+\[
+\mathrm{Na}_{2} \mathrm{SO}_{4} \rightarrow 2 \mathrm{Na}^{+}+\mathrm{SO}_{4}^{2-}
+\]
+
+In this example, the coefficents in from of each ion on the right-hand-side of the equation, are known as \textbf{stoichiometric coefficients}, and are denoted with the symbol $\nu$. In the equation shown above, the stoichiometric coefficents are $\nu_{Na^{+}} = 2$ and $\nu_{SO_{4}^{2-}} = 1$.
+
+\subsubsection{ Charge Number }
+
+Similar to the stoichiometric coefficents, the \textbf{charge number} is also displayed in the chemical equation, as the super-script for each compound on the right-hand-side of the the balanced chemical equation. The charge number tells us how many excess electrons or protons exist in each given ion compound. The charge numbers for the equation above are $z_{Na^{+} = 1}$ and $ z_{SO_{4}^{2-}} = -2 $. The sign of the charge number informs us whether each compound is a cation ($z>0$) or anion ($z < 0 $)
+
+\subsubsection{ Electroneutrality in Binary Electroytes }
+As mentioned previously electroneutrality is an important and frequently referenced concept in the developement of the equations. In particular, a binary electrolyte comprised of only species is of particular interest and has useful properties which are very relavent to lithium-ion battery models. Under the constraint of charge-neutrality, we can state that the net charge in the solution must be $q = 0$. This can be expressed via charge numbers and the stoichiometric coefficents described above as follows.
+
+\[
+\sum_{i} z_{i} v_{i}=0
+\]
+
+For the general case the subscripts indicated whether the charge is from a cation or an anion, or the contributions form the solvent.
+\[
+z_{+} v_{+}+z_{-} v_{-}+z_{0} v_{0}=0
+\]
+
+However, since the solvents in the electroyte are always charge neutral, we can ommit them from this equation, leavinging the following expression.
+
+\[
+z_{+} v_{+}+z_{-} v_{-}=0
+\]
+
+\[
+\frac{c_{+}}{v_{+}}=\frac{c_{-}}{v_{-}}
+\]
+
+
+\subsubsection{ Deriving Current Flow }
+
+\subsubsection{ Deriving Conservation of Charge }
+
+\[
+\frac{\partial c_{i}}{\partial t}=-\nabla \cdot \mathbf{N}_{i}+R_{i}
+\]
+
+
+\[
+F \frac{\partial z_{i} c_{i}}{\partial t}=-\nabla \cdot\left(z_{i} F \mathbf{N}_{i}\right)+z_{i} F R_{i}
+\]
+
+
+\[
+\frac{\partial}{\partial t} F \sum_{i} z_{i} c_{i}=-\nabla \cdot\left(F \sum_{i} z_{i} \mathbf{N}_{i}\right)+F \sum_{i} z_{i} R_{i}
+\]
+
+\[
+\frac{\partial}{\partial t} F \sum_{i} z_{i} c_{i}=-\nabla \cdot\left(F \sum_{i} z_{i} \mathbf{N}_{i}\right)
+\]
+
+\[
+\nabla \cdot \mathbf{i}=0
+\]
+
+
+
+
+
 
 
 
@@ -241,12 +316,81 @@ Because of this phenomenon, we can use the \textbf{activity} of a species as an 
 
 
 \subsection{Mass Conservation in Homogeneous Electrolyte}
+
+\[
+\mathbf{v}_{1}^{\prime}=\frac{m_{1} \mathbf{v}_{1}+m_{2} \mathbf{v}_{2}}{m_{1}+m_{2}}
+\]
+
+\[
+\begin{aligned}
+\Delta\left(m_{1} \mathbf{v}_{1}\right) &=m_{1}\left(\mathbf{v}_{1}-\mathbf{v}_{1}^{\prime}\right) \\
+&=m_{1}\left(\mathbf{v}_{1}-\frac{m_{1} \mathbf{v}_{1}+m_{2} \mathbf{v}_{2}}{m_{1}+m_{2}}\right)
+\end{aligned}
+\]
+
+\[
+=\frac{m_{1} m_{2}}{m_{1}+m_{2}}\left(\mathbf{v}_{1}-\mathbf{v}_{2}\right)
+\]
+
+\[
+\left(\frac{\mathrm{dp}}{\mathrm{d} t}\right)_{V}^{\text {species- }} \propto c_{1} c_{2}\left(\mathbf{v}_{1}-\mathbf{v}_{2}\right)
+\]
+
+\[
+C_{T}=\sum_{i} c_{i}
+\]
+
+\[
+x_{i}=\frac{n_{i}}{n}=\frac{n_{i} / V}{n / V}=\frac{c_{i}}{c_{T}}
+\]
+
+\[
+\left(\frac{\mathrm{d} \mathrm{p}}{\mathrm{d} t}\right)_{V}^{\text {species- }} \propto x_{1} x_{2}\left(\mathrm{v}_{1}-\mathrm{v}_{2}\right)
+\]
+
+\[
+\mathrm{F}_{1, \mathrm{~V}} \propto x_{1} x_{2}\left(\mathrm{v}_{1}-\mathrm{v}_{2}\right)
+\]
+
+\[
+% \mathscr{D}_{i j}=\frac{x_{i} x_{j}}{K_{i j}} p
+\]
+
+\[
+% K_{i j}=\frac{R T c_{i} c_{j}}{c_{T} \mathscr{D}_{i j}}
+\]
+
+\[
+\mathrm{F}_{1}=-\nabla G_{1}=-\frac{\partial G_{1}}{\partial \mu_{1}} \nabla \bar{\mu}_{1}=-n_{1} \nabla \bar{\mu}_{1}
+\]
+
+\[
+\mathrm{F}_{1, V}=\frac{\mathrm{F}_{1}}{V}=-\frac{n_{1}}{V} \nabla \mu_{1}=-c_{1} \nabla \beta_{1}
+\]
+
+
+
+
+
+
+\[
+\frac{\partial c}{\partial t}=\nabla \cdot\left[D\left(1-\frac{\mathrm{d} \ln c_{0}}{\mathrm{~d} \ln c}\right) \nabla c\right]-\frac{\mathbf{i} \cdot \nabla t_{+}^{0}}{z_{+} v_{+} F}-\nabla \cdot\left(c \mathbf{v}_{0}\right)
+\]
+
+
+
 \subsection{Lithium Movement Between Solid \& Electrolyte Phases}
 
 
 \section{DFN Model Derivation}
 
+The previous system of governing partial differential equations, was derived using the microscale interactions and mechanisms. While this approach to analysis is particularly informative about the how these sorts of high fidelity models are derived, solving them for an entire cell (using a system of thousands or millions of coupled PDEs) is computationally infeasible, even for modern computers. There are many different approaches to creating macroscale models that capture the first principle mechanisms of action, but are far more computationally viable. This simplification comes with a penalty on the accuracy of model; however, these models are still far and away some of the most high fidelity battery models which are routinely used today to check  \\
 
+In particular, the Doyle-Fuller-Newman (DFN) model uses a technique of volume averaging to be able to same governing equations which were derived above, over larger domains, approximating (on average) the behaviors of each electrode and the electrolyte. \\
+
+\subsection{Volume Averaging Methods}
+
+\section{Single Particle Model (SPM \& SPMe)}
 
 \section{Analysis of Governing Equations}
 

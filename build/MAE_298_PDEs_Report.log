@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.1)  27 JAN 2022 01:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.3)  31 JAN 2022 22:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -306,6 +306,12 @@ LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
+(c:/texlive/2019/texmf-dist/tex/latex/wasysym/wasysym.sty
+Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
+\symwasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
+)
 (c:/texlive/2019/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count275
@@ -318,20 +324,20 @@ LaTeX Warning: Unused global option(s):
 (./MAE_298_PDEs_Report.aux)
 \openout1 = `MAE_298_PDEs_Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 
 -- Lines per column: 58 (exact).
 Package caption Info: Begin \AtBeginDocument code.
@@ -359,89 +365,130 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 47.
 
 
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 47.
 
 
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 47
+.
+
+(c:/texlive/2019/texmf-dist/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 ) [1{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 1509) in paragraph at lines 118--119
+Underfull \hbox (badness 1509) in paragraph at lines 125--126
 \OT1/ptm/m/n/10 held con-stant. Ad-di-tion-ally, the sign of the Gibbs free
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
 
 
-Underfull \hbox (badness 4832) in paragraph at lines 265--270
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
+ []
+
+[3]
+Underfull \hbox (badness 2181) in paragraph at lines 387--388
+[]\OT1/ptm/m/n/10 The pre-vi-ous sys-tem of gov-ern-ing par-tial dif-fer-en-tia
+l
+ []
+
+
+Underfull \hbox (badness 1968) in paragraph at lines 387--388
+\OT1/ptm/m/n/10 in-for-ma-tive about the how these sorts of high fi-delity
+ []
+
+
+Underfull \hbox (badness 2980) in paragraph at lines 387--388
+\OT1/ptm/m/n/10 com-pu-ta-tion-ally in-fea-si-ble, even for mod-ern com-put-ers
+.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--390
+
+ []
+
+
+Underfull \hbox (badness 4832) in paragraph at lines 409--414
 []\OT1/ptm/m/n/10 You can use a bib-li-og-ra-phy gen-er-ated by Bib-TeX
  []
 
 
-Underfull \hbox (badness 4608) in paragraph at lines 265--270
+Underfull \hbox (badness 4608) in paragraph at lines 409--414
 \OT1/ptm/m/n/10 as a .bbl file. Bib-TeX doc-u-men-ta-tion can be eas-ily
  []
 
 
-Underfull \hbox (badness 6380) in paragraph at lines 265--270
+Underfull \hbox (badness 6380) in paragraph at lines 409--414
 \OT1/ptm/m/n/10 ob-tained at: http://mirror.ctan.org/biblio/bibtex/contrib/doc/
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--270
+Underfull \hbox (badness 10000) in paragraph at lines 409--414
 \OT1/ptm/m/n/10 The IEEE-tran Bib-TeX style sup-port page is:
  []
 
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
-75.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 4
+19.
 (c:/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [3] [4
+) [4] [5
 
 ]
 (./MAE_298_PDEs_Report.aux) ) 
 Here is how much of TeX's memory you used:
- 4032 strings out of 480994
- 63475 string characters out of 5916033
- 311921 words of memory out of 5000000
- 19489 multiletter control sequences out of 15000+600000
- 574169 words of font info for 102 fonts, out of 8000000 for 9000
+ 4257 strings out of 480994
+ 65711 string characters out of 5916048
+ 317585 words of memory out of 5000000
+ 19697 multiletter control sequences out of 15000+600000
+ 576813 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,42p,1032b,208s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,9n,42p,1032b,210s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8
-r.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:
-/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/
-2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2019/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2019/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texli
-ve/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2019/texmf-dist
-/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/
-times/utmr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-
-Output written on MAE_298_PDEs_Report.pdf (4 pages, 139581 bytes).
+r.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:
+/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/
+2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2019/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr5.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:
+/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2
+019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2019/texmf-
+dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1
+/urw/times/utmb8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a
+.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2
+019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb><c:/texlive/2019/texmf-dist/fo
+nts/type1/public/wasy-type1/wasy10.pfb>
+Output written on MAE_298_PDEs_Report.pdf (5 pages, 185689 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
+ 89 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
