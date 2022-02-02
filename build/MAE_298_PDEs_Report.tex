@@ -275,32 +275,88 @@ z_{+} v_{+}+z_{-} v_{-}=0
 \frac{c_{+}}{v_{+}}=\frac{c_{-}}{v_{-}}
 \]
 
+This can be translate from stoichiometric coefficients to the ion concentration of each species, through the fact that we know these quanties are proportional to each other where the constant of proportionality is the concentation of the solution in general.
 
-\subsubsection{ Deriving Current Flow }
+\[
+  c = \frac{c_{+}}{\nu_{+}} = \frac{c_{-}}{\nu_{-}}
+\]
+
+We can make use of this attribute and rewrite the charge neutrality equation as follows.
+
+\[
+    \sum_{i} z_i c_i = 0
+\]
+
+Where $ i=2$ for our use-case of a binary electrolyte. This expression will be useful later when deriving the conservation of charge in an electrolyte.
+
+\subsubsection{ Current Flow in Electrolyte }
+
+Current flow inside of the electrolyte is comprised of both cations and anions. Therefore the total current flow inside of the electrolyte is given by
+
+\[
+  i = i_{+} + i_{-}
+\]
+
+The next step is try write these ionic currents in terms of flux density so that they can be written in standard form later. This is accomplished by accounting for the amount of charge per second (for both cations and anions), due to the respective flux.
+
+\[
+  i_+ =  z_+ FN_+ = z_{+}Fc_{+}v_{+}
+\]
+\[
+  i_- =  z_- FN_- = z_{-}Fc_{-}v_{-}
+\]
+
+Upon reflection of the quanities used in this expression we can see that the product of charge number, Faraday's constant, and flux density, is the eletrical current produced for the given charge type (positive/negative).
+
+
+Therefore,
+
+\[
+  i = z_{+}Fc_{+}v_{+} + z_- FN_- = z_{-}Fc_{-}v_{-}
+\]
+
+\[
+  = F\sum_{i}z_{i}N_{i}
+\]
+
+
+
+
+
 
 \subsubsection{ Deriving Conservation of Charge }
 
+To begin this derivation, we can start off with the general expression for the conersation of mass at any point in a solution.
 \[
 \frac{\partial c_{i}}{\partial t}=-\nabla \cdot \mathbf{N}_{i}+R_{i}
 \]
 
+This version of Ficks Law states that the time rate of change on the concentration for species $i$ is related to the negative flux density gradient of that species as well as the rate of generation of species $i$.
 
 \[
 F \frac{\partial z_{i} c_{i}}{\partial t}=-\nabla \cdot\left(z_{i} F \mathbf{N}_{i}\right)+z_{i} F R_{i}
 \]
 
+Via algebra, we can multiply each side of the equation by $z_{i}F$ to get,
 
 \[
 \frac{\partial}{\partial t} F \sum_{i} z_{i} c_{i}=-\nabla \cdot\left(F \sum_{i} z_{i} \mathbf{N}_{i}\right)+F \sum_{i} z_{i} R_{i}
 \]
 
+Since the previous equation was written only with respect to a single species in the equation, we need to sum the same equation over each species resulting in the following...
+
 \[
 \frac{\partial}{\partial t} F \sum_{i} z_{i} c_{i}=-\nabla \cdot\left(F \sum_{i} z_{i} \mathbf{N}_{i}\right)
 \]
 
+As mentioned in the previous section about charge neutrality, we can see that our previous equation that the summation $\sum_{i}z_{i}c_{i}$ must be identically equation to zero since, the overall charge of the electrolyte is zero. We can also that the term $F\sum_{i}z_{i}N_{i}$ matches our previous definition for current shown above. By substituting these terms into the previous expression we arrive at the following equation.
+
 \[
 \nabla \cdot \mathbf{i}=0
 \]
+
+
+This equation is the differential form for the conservation of charge inside the electrolyte, stating that charge and not be created or destroyed.
 
 
 
@@ -316,6 +372,8 @@ F \frac{\partial z_{i} c_{i}}{\partial t}=-\nabla \cdot\left(z_{i} F \mathbf{N}_
 
 
 \subsection{Mass Conservation in Homogeneous Electrolyte}
+
+This next section is one of the most challenging to conceptualize as it has a great deal of nuance and complexity.
 
 \[
 \mathbf{v}_{1}^{\prime}=\frac{m_{1} \mathbf{v}_{1}+m_{2} \mathbf{v}_{2}}{m_{1}+m_{2}}
@@ -390,7 +448,15 @@ In particular, the Doyle-Fuller-Newman (DFN) model uses a technique of volume av
 
 \subsection{Volume Averaging Methods}
 
+blah blah blah 
+
 \section{Single Particle Model (SPM \& SPMe)}
+
+As mentioned previously the microscale and macroscale models described above are computationally very expensive to compute numerical solutions for. Due to this property, these models are often not used as a practical work-horse models for the daily needs of systems that incorporate battery models, and that model like the DFN formulation, are generally used as benchmarks of accuracy and performance for a reduced-order or BLANK battery models. These simplified models usually sacrifice a great deal of the accuracy which the DFN model worked so hard to preserve from first principles. As a consequence, model such as a simple lookup-table or equivalent circuit model (ECM) are dominately purposed around the use of real-time systems that need a roughly accurcate computation about the state of charge of a cell. However, there are use-cases where these simplified models are too low resolution, and require higher fidelity models, that are slightly more expensive to compute, but provide much better tracking to the DFN base-line model. \\
+
+Two such model variations are the Single Particle Model (SPM) and the Single Particle Model with Electrolyte Dyanmics (SPMe). These models are far an away the work-horse of many battery control and estimation tasks. The guiding principle of these models is to focus on the dominate dynamics of the battery. It is a well known fact presented in undergraduate control theory that the slowest pole/zero will dominate the transient dynamics for a given linear system. For lithium ion batteries, it can be shown that the diffusion of lithium into the solid-phase (electode) evolves ths slowest, and therefore dominates the dynamic behavior of the battery for the time-scales which we are mostly interested in. The SPM model takes this fact and reduces each electrode, of the battery, to an individual sphere of active material that is presumed to be representative of the average dynamics of the electrodes. It should be notes that in this model, another simplification is made whereby the electolyte concentration and dynamics are discarded. The SPMe elevates the SPM model by including these electrolyte dynamics back into the model, allowing this model to capture the nonlinearities which are present due to transport behavior of the electrolyte.
+
+
 
 \section{Analysis of Governing Equations}
 

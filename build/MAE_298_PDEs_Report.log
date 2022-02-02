@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.3)  31 JAN 2022 22:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.1)  2 FEB 2022 00:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -405,70 +405,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
-[3]
-Underfull \hbox (badness 2181) in paragraph at lines 387--388
+[3] [4]
+Underfull \hbox (badness 2181) in paragraph at lines 445--446
 []\OT1/ptm/m/n/10 The pre-vi-ous sys-tem of gov-ern-ing par-tial dif-fer-en-tia
 l
  []
 
 
-Underfull \hbox (badness 1968) in paragraph at lines 387--388
+Underfull \hbox (badness 1968) in paragraph at lines 445--446
 \OT1/ptm/m/n/10 in-for-ma-tive about the how these sorts of high fi-delity
  []
 
 
-Underfull \hbox (badness 2980) in paragraph at lines 387--388
+Underfull \hbox (badness 2980) in paragraph at lines 445--446
 \OT1/ptm/m/n/10 com-pu-ta-tion-ally in-fea-si-ble, even for mod-ern com-put-ers
 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--388
+Underfull \hbox (badness 10000) in paragraph at lines 445--446
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--390
+Underfull \hbox (badness 10000) in paragraph at lines 447--448
 
  []
 
 
-Underfull \hbox (badness 4832) in paragraph at lines 409--414
+Underfull \hbox (badness 10000) in paragraph at lines 455--456
+
+ []
+
+
+Underfull \hbox (badness 4832) in paragraph at lines 475--480
 []\OT1/ptm/m/n/10 You can use a bib-li-og-ra-phy gen-er-ated by Bib-TeX
  []
 
 
-Underfull \hbox (badness 4608) in paragraph at lines 409--414
+Underfull \hbox (badness 4608) in paragraph at lines 475--480
 \OT1/ptm/m/n/10 as a .bbl file. Bib-TeX doc-u-men-ta-tion can be eas-ily
  []
 
 
-Underfull \hbox (badness 6380) in paragraph at lines 409--414
+Underfull \hbox (badness 6380) in paragraph at lines 475--480
 \OT1/ptm/m/n/10 ob-tained at: http://mirror.ctan.org/biblio/bibtex/contrib/doc/
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--414
+Underfull \hbox (badness 10000) in paragraph at lines 475--480
 \OT1/ptm/m/n/10 The IEEE-tran Bib-TeX style sup-port page is:
  []
 
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 4
-19.
+85.
 (c:/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [4] [5
+) [5] [6
 
 ]
 (./MAE_298_PDEs_Report.aux) ) 
 Here is how much of TeX's memory you used:
  4257 strings out of 480994
- 65711 string characters out of 5916048
- 317585 words of memory out of 5000000
+ 65711 string characters out of 5916033
+ 315585 words of memory out of 5000000
  19697 multiletter control sequences out of 15000+600000
  576813 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,42p,1032b,210s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,9n,42p,1270b,210s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8
 r.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:
 /texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/
@@ -485,10 +490,10 @@ dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1
 .pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2
 019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb><c:/texlive/2019/texmf-dist/fo
 nts/type1/public/wasy-type1/wasy10.pfb>
-Output written on MAE_298_PDEs_Report.pdf (5 pages, 185689 bytes).
+Output written on MAE_298_PDEs_Report.pdf (6 pages, 191049 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 92 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
