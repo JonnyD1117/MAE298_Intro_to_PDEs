@@ -11,6 +11,7 @@
 \usepackage{graphicx}
 \usepackage{cite}
 \usepackage{wasysym}
+\usepackage{mathrsfs}
 % \setmathfont{XITS Math}
 % updated with editorial comments 8/9/2021
 
@@ -373,11 +374,33 @@ This equation is the differential form for the conservation of charge inside the
 
 \subsection{Mass Conservation in Homogeneous Electrolyte}
 
-This next section is one of the most challenging to conceptualize as it has a great deal of nuance and complexity.
+
+
+This next section is one of the most challenging to conceptualize as it has a great deal of nuance and complexity. \\
+
+\subsubsection{Maxwell-Stefan Relationship}
+This section lays the mathematical groundwork for the interaction of particles of differing species and the net force associated with these collisions. By applying the conservation of momentum, we can define the following expression for using average species velocities, for a 2 species mixture.
+
+\[
+m_{1} \mathbf{v}_{m_{1}}+m_{2} \mathbf{v}_{m_{2}}=m_{1} \mathbf{v}_{m_{1}}^{\prime}+m_{2} \mathbf{v}_{m_{2}}^{\prime}
+\]
+
+Given that the change in momentum for a single species can be written as...
+
+\[
+\Delta\left(m_{1} \mathbf{v}_{m_{1}}\right)=m_{1}\left(\mathbf{v}_{m_{1}}-\mathbf{v}_{m_{1}}^{\prime}\right)
+\]
+
+
+
+We can isolate the post-collision velocity of species 1, as follows.
+
 
 \[
 \mathbf{v}_{1}^{\prime}=\frac{m_{1} \mathbf{v}_{1}+m_{2} \mathbf{v}_{2}}{m_{1}+m_{2}}
 \]
+
+These two previous expressions can be combined to form the following equation.
 
 \[
 \begin{aligned}
@@ -385,51 +408,106 @@ This next section is one of the most challenging to conceptualize as it has a gr
 &=m_{1}\left(\mathbf{v}_{1}-\frac{m_{1} \mathbf{v}_{1}+m_{2} \mathbf{v}_{2}}{m_{1}+m_{2}}\right)
 \end{aligned}
 \]
-
+Which can be simplified to...
 \[
 =\frac{m_{1} m_{2}}{m_{1}+m_{2}}\left(\mathbf{v}_{1}-\mathbf{v}_{2}\right)
 \]
+
+
+\subsubsection{Momentum Charnge Rate}
+Now the task is to relate the change of momentum equation (on a mass basis) to the equivalent form on a species concentration basis. Generally speaking we can state that as the concentions of either species in a two species mixture increase the change in momentum should increase propotionally. Putting this intuition into math, we arrive at the following statement.
 
 \[
 \left(\frac{\mathrm{dp}}{\mathrm{d} t}\right)_{V}^{\text {species- }} \propto c_{1} c_{2}\left(\mathbf{v}_{1}-\mathbf{v}_{2}\right)
 \]
 
+
+From this statement, we can use the definition of the mole fractino $x_i = n_i /n$, where $n_i$ is the number of moles of a given species and $n$ is the total number of moles in the system. This defines the following relationship $x_1 + x_2 = 1$ for a binary species and in general form can be written as $\sum_i x_i = 1$. Furthermore, we can define a quantity called the total concentration, such that.
+
 \[
 C_{T}=\sum_{i} c_{i}
 \]
+
+Where concentration is defined as $c = n/ V$.  From this relationship we can show that.
 
 \[
 x_{i}=\frac{n_{i}}{n}=\frac{n_{i} / V}{n / V}=\frac{c_{i}}{c_{T}}
 \]
 
+Which can be substituted directly into the change of momentum equation to produce...
+
 \[
 \left(\frac{\mathrm{d} \mathrm{p}}{\mathrm{d} t}\right)_{V}^{\text {species- }} \propto x_{1} x_{2}\left(\mathrm{v}_{1}-\mathrm{v}_{2}\right)
 \]
+
+
+From undergraduate physics we know from Newton's Second law that force is equivalent to the time rate of change of momentum, leading us to the following statement.
 
 \[
 \mathrm{F}_{1, \mathrm{~V}} \propto x_{1} x_{2}\left(\mathrm{v}_{1}-\mathrm{v}_{2}\right)
 \]
 
-\[
-% \mathscr{D}_{i j}=\frac{x_{i} x_{j}}{K_{i j}} p
-\]
+In order to turn this proportionality into an equality we must define a constant of proportionality. Given the current form of this statement relating force to a type of relative velocity, we could guess that this constant would behavior very closely to a coefficient of friction, $K_{ij}$. In addition to this, we would like to break down this parameter, since it in itself is not a constant number since its value depends on that mole fraction and hence the concentration of the species in the system.
 
 \[
-% K_{i j}=\frac{R T c_{i} c_{j}}{c_{T} \mathscr{D}_{i j}}
+  K_{i j} \propto x_{1}x_{2}
 \]
+
+It turns out that the resulting equality has been defined in terms of the Maxwell-Stefan diffusivity $mathscr{D}$, and the surrounding pressure.
+
+\[
+\mathscr{D}_{i j}=\frac{x_{i} x_{j}}{K_{i j}} p
+\]
+
+By applying the ideal gas law and substituting the concentration form of the mole fraction developed earlier, we get.
+
+\[
+K_{i j}=\frac{R T c_{i} c_{j}}{c_{T} \mathscr{D}_{i j}}
+\]
+
+After developing these expressions, we can subsitute them back into the original equation for the force acting on species 1.
+
+\[
+  \mathbf{F}_{1, V}=\frac{R T c_{1} c_{2}}{c_{T} \mathscr{D}_{12}}\left(\mathbf{v}_{1}-\mathbf{v}_{2}\right)
+\]
+
+
+Now that we have an expression for the force acting on a species , we can begin to make the connections between forces and the electrochemical potential for charged species. \\
+
+
+\subsubsection{Multicomponet Diffusion Equation}
+
+We know that we can write force as the negative gradient of a potential function. In our case, this potential function is the Gibbs free energy developed previously.
 
 \[
 \mathrm{F}_{1}=-\nabla G_{1}=-\frac{\partial G_{1}}{\partial \mu_{1}} \nabla \bar{\mu}_{1}=-n_{1} \nabla \bar{\mu}_{1}
 \]
 
+
+By equating this equation with the expression for force developed above, we get the following equation.
+
 \[
-\mathrm{F}_{1, V}=\frac{\mathrm{F}_{1}}{V}=-\frac{n_{1}}{V} \nabla \mu_{1}=-c_{1} \nabla \beta_{1}
+c_{1} \nabla \mu_{1}=R T \frac{c_{1} c_{2}}{c_{T} \mathscr{D}_{12}}\left(\mathbf{v}_{2}-\mathbf{v}_{1}\right)
 \]
 
 
+This can be re-written...
+
+\[
+c_{i} \nabla \mu_{i}=R T \sum_{j} \frac{c_{i} c_{j}}{c_{T} \mathscr{D}_{i j}}\left(\mathbf{v}_{j}-\mathbf{v}_{i}\right)=\sum_{j} K_{i j}\left(\mathbf{v}_{j}-\mathbf{v}_{i}\right)
+\]
+
+After summing over all species in the mixture.
+\[
+  \sum_{i} c_{i} \nabla \mu_{i}=\sum_{i} \sum_{j} K_{i j}\left(\mathbf{v}_{j}-\mathbf{v}_{i}\right)
+\]
 
 
+\subsubsection{UGH}
 
+\[
+\mathrm{F}_{1, V}=\frac{\mathrm{F}_{1}}{V}=-\frac{n_{1}}{V} \nabla \mu_{1}=-c_{1} \nabla \beta_{1}
+\]
 
 \[
 \frac{\partial c}{\partial t}=\nabla \cdot\left[D\left(1-\frac{\mathrm{d} \ln c_{0}}{\mathrm{~d} \ln c}\right) \nabla c\right]-\frac{\mathbf{i} \cdot \nabla t_{+}^{0}}{z_{+} v_{+} F}-\nabla \cdot\left(c \mathbf{v}_{0}\right)
@@ -448,7 +526,7 @@ In particular, the Doyle-Fuller-Newman (DFN) model uses a technique of volume av
 
 \subsection{Volume Averaging Methods}
 
-blah blah blah 
+blah blah blah
 
 \section{Single Particle Model (SPM \& SPMe)}
 
