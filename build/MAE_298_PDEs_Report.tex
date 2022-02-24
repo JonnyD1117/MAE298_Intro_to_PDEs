@@ -12,6 +12,34 @@
 \usepackage{cite}
 \usepackage{wasysym}
 \usepackage{mathrsfs}
+
+
+
+%
+% \usepackage{biblatex}
+%
+% \usepackage[fleqn]{amsmath}
+% \usepackage{amssymb}
+% \usepackage{graphicx}
+% \usepackage{cancel}
+% \usepackage{tabularx}
+%
+% \usepackage{caption}
+% % \usepackage{subcaption}
+%
+% \usepackage{subfig}
+% \addbibresource{./citations.bib}
+%
+\graphicspath{ {C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/} }
+%
+% \usepackage{hyperref}
+% \hypersetup{
+% colorlinks=false,
+% linkcolor=blue,
+% filecolor=magenta,
+%     urlcolor=blue,
+% }
+% \urlstyle{same}
 % \setmathfont{XITS Math}
 % updated with editorial comments 8/9/2021
 
@@ -27,61 +55,98 @@
 
 \maketitle
 
-\begin{abstract}
-This
-\end{abstract}
+% \begin{abstract}
+% This
+% \end{abstract}
 
 \section{Introduction}
-\IEEEPARstart{P}{artial} differential equations (PDEs) provide a the mathematical basis for describing a significant number of scientific pheonimon; however, while the study of PDEs is import, it can often be more challenging to develope PDE which models these phenomina from first principles than it is to understand the structure of a given PDE. This can be more readily seen when investigating more complex systems which couple several PDEs together to describe the full dynamics of the system. To this point, electrochemical models of lithium-ion batteries fall into this category of complex systems. Even simple electrochemical models of batteries consist of anywhere upto five PDEs. The objective of this paper will be to derive the salient PDEs describing the electrochemical battery model known as Doyle-Fuller-Newman (DFN) model, with enough context and background about the first principles being applied to enlighten the reader as to how and why the given PDE model is meaningful.
+\IEEEPARstart{P}{artial} differential equations (PDEs) provide a mathematical basis for describing many significant scientific phenomena; however, while an important domain of study, in actually application it is often more challenging to understand and develop the PDE(s) that govern viable model than it is to understand the underlying mathematical formalism of PDEs. The inherent complexity of deriving and analyzing PDE models when compared to more approachable ODE models can be further exacerbated by coupled system of equations and/or nonlinear dynamics. For these systems, the derivation and interpretation of the model are often obfuscated by modeling assumptions, domain specific knowledge, and an understanding of how these mechanisms are translated into a PDE formation. In effect, these PDE models compromise higher model accuracy at the expense of ease of modeling, computational overhead, and intuition. An important modern day example can be found in the study of electrochemical battery modeling, where even simple electrochemical models of batteries consist of several coupled nonlinear partial differential equations. The objective of this paper is to derive the salient PDEs that describe a battery model known as the Doyle-Fuller-Newman (DFN) model, with enough context that the reader will be able to understand the development of the DFN model from the fundamental assumptions and mechanisms at play, and be able to understand how these concepts are translated into the language of Partial Differential Equations.
 
 \section{Doyle-Fuller-Newman Model Overview}
-The DFN model has long been held as the gold standard electrochemical battery model. This model describes at the microscale dynamics of a planar battery cell (SHOWN IN FIG) which has been volume averaged to account for usage of this model as a full battery cell, which accounts for behaviors such as mass and charge conservation, as well as the process of intercalation and deintercalation where lithium is distributing through the material of electrode material or coating during charging and discharging respectively. This model can be broken down in to the five following categories. In turn, this paper will investigate each category, and provide the context and first principles analysis which yield appropriate governing PDEs.
+The Doyle-Fuller-Newman model has long been held as the gold standard electrochemical battery model. This model describes at the first principle dynamics of a planar battery cell [Fig. \ref{DFN_schematic}]. This model encapsulates the dynamics of a lithium-ion battery at the continuum-scale. This is accomplished by derving the microscale governing equations and applying volume averages over the models' domain. The primary elements of this model consist of five governing equations for the conservation of mass in homogeneous solid phase, the conservation of charge in homogeneous solid phase, the conservation of mass in homogeneous electrolyte phase, the conservation of charge in the homogeneous electrolyte phase, and finally the transport effects of lithium movement between the solid and electrlye phases. The primary emphasis of this paper will be to investigate each category, and provide the context and first principles analysis which yield these governing PDEs. The governing equations for the microscale portion of the DFN model are shown below, the in order listed above.
 
-\begin{enumerate}
-  \item
-  \item
-  \item
-  \item
+\begin{figure}
+  \centering
+  \includegraphics[scale=.25]{DFN}
+  \caption{Planar DFN Model Schematic}
+  \label{DFN_schematic}
+\end{figure}
 
-\end{enumerate}
+\begin{equation} \label{COC_s}
+\nabla \cdot \mathbf{i}_{s}=\nabla \cdot\left(-\sigma \nabla \phi_{s}\right)=0
+\end{equation}
 
-\[
-  \oiint x^2 +5
-\]
+\begin{equation} \label{COM_s}
+\frac{\partial c_{s}}{\partial t}=\nabla \cdot\left(D_{s} \nabla c_{s}\right)
+\end{equation}
 
+\begin{equation} \label{COM_e}
+\frac{\partial c_{e}}{\partial t}=\nabla \cdot\left(D_{e} \nabla c_{e}\right)-\frac{\mathbf{i}_{e} \cdot \nabla t_{+}^{0}}{F}-\nabla \cdot\left(c_{e} \mathbf{v}_{0}\right)
+\end{equation}
 
+\begin{equation}\label{COC_e}
+\nabla \cdot \mathbf{i}_{e}=\nabla \cdot\left(-\kappa \nabla \phi_{e}-\frac{2 \kappa R T}{F}\left(1+\frac{\partial \ln f_{\pm}}{\partial \ln c_{e}}\right)\left(t_{+}^{0}-1\right) \nabla \ln c_{e}\right)=0
+\end{equation}
 
+\begin{equation} \label{lithium_movment}
+j=\frac{i_{0}}{F}\left\{\exp \left(\frac{(1-\alpha) F}{R T} \eta\right)-\exp \left(-\frac{\alpha F}{R T} \eta\right)\right\}
+\end{equation}
 
 \section{Microscale Model Derivation}
 
-Before the complete Doyle-Fuller-Newman (DFN) model can be computed, it is neccessary to compute the microscale dynamics which govern the behavior of the compute electrochemical system. Only after this microscale model has been developed can we apply them to derving the complete DFN model. In the microscale model, the principle mechanisms of operation are evaluated under the assumtion of homogeneous materials. Under this assumption, the model does not account for individual molecular interactions or impurities. For this analysis, we can assume that these molecular inconistentcies averaged out to create a homogeneous material for which we can independently derive and evaluate the governing equations for both the solid and electroyte phases of the battery.
+As mentioned previously, Doyle-Fuller-Newman (DFN) model is a continuum-scale model; however, before this can be accomplished it is neccessary to compute the microscale dynamics of the battery. In the microscale model, the principle mechanisms of operation are evaluated under the assumption of homogeneous solid and electrolyte phases. Under this assumption, the model does not account for individual molecular interactions or impurities. This assumption implies that molecular inconsistencies will averaged out to create a homogeneous material that can be independently used to derive and evaluate the governing equations in both the solid and electroyte phases of the battery.
 
-
+% The following sections will cover each of the primary governing equations for the microscale model in detail
 
 \subsection{Charge Conservation in Homogeneous Solid}
 
-The first step in this model is to use the principle of conservation of charge, in the solid phase of the battery. This means that charge is not created or destroyed within the battery. The principle used to derive this equation is the point for of \textbf{Ohms Law}. This means that we assume that through the electrode material, electron movement is caused by drifting of charge, as perscribed by Ohms Law. Namely...
+From physics, it is know that charge must be conserved in an isolated system. For the purposes of this paper, we will assume that the battery we are modeling constitutes an isolated system that does not interact electrically with its environement. If the convseration of charge must hold, then it must be true that charge is not created or destroyed inside of the solid electrodes. This can be expressed as the following integral.
 
-\[
-\textbf{i} = \sigma\textbf{E}
-\]
+\begin{equation}
+ I = - \iint_S \textbf{i} \cdot d \textbf{S}
+\end{equation}
 
-Where \textbf{i} is the current density [$Am^{-2}$], $\sigma$ is the conductivity of the electrode material, and \textbf{E} is the applied electric field. This is an alternate form of Ohms Law ($V = IR$)
+Where the net current into a volume \textbf{S} can be written in terms of the volume integral of the current density \textbf{i}. Via application of the Divergence Theorem and Conservation of Charge, it can be shown that ...
 
+\begin{equation}
+    I = - \iiint_V (\nabla \cdot \textbf{i})dV = 0
+\end{equation}
+
+Under these assumptions since the net currrent must be zero, the integrand must also be indentically equal to zero.
+
+\begin{equation} \label{con_charg_solid}
+    \nabla \cdot \textbf{i} = 0
+\end{equation}
+
+While this statement is an accurate formulation of the Conservation of Charge, we would like to formulate this same expressions as a function of electric potential, instead of current density. By applying the point form of \textbf{Ohm's Law}, namely $\textbf{i} = \sigma\textbf{E}$, where the electric field $\textbf{E} = -\nabla \phi$.
+
+\begin{equation} \label{ohms_law}
+  \textbf{i} = -\sigma \nabla \phi
+\end{equation}
+
+\noindent With this expression we can formulate the Convservation of Charge equation \#\ref{con_charg_solid}, as follows.
+
+\begin{equation} \label{final_COC_s}
+  \nabla \cdot (-\sigma \nabla \phi_s) = 0
+\end{equation}
+
+
+At anytime, equation \#\ref{final_COC_s}, must hold true in both electodes of the battery.
 
 \subsection{Mass Conservation in Homogeneous Solid}
 
-The conservation of mass in homogeneous solid (electrodes) is used to capture the dynamics of lithium intercalation into the crystalline structure of the electrode materials. Specifically, Fick's first law is used to describe quanity of molar flux density \textbf{N} to the gradient of lithium concentration in the solid electrode material, where D is the material dependent diffusivity.
+Next, the conservation of mass in homogeneous solid (electrodes) is used to capture the dynamics of lithium intercalation into the crystalline structure of the electrode materials. Specifically, this is a modeled by a diffusion process via Fick's first law, where the molar flux density \textbf{N} $[mol m^{-2} s^{-1}]$ is related to the gradient of lithium concentration in the solid electrode material, proportional to a material dependent constant of diffusivity D.
+\begin{equation}
+    \textbf{N} =  -D \nabla c
+\end{equation}
 
-\[
-\textbf{N} =  -D \nabla c
-\]
+This expression states that the magnitude of the lithium molar flux density is proprotional to the gradient of the concentration.
 
-This expression states that the magnitude of the lithium molar flux density will increase with an increase in the gradient of the concentration. From this expression, we can compute the net molar flux by computing the integral of the entire domain boundary.
+However, to make write this expression in a useful form, we would like to express it in terms of the time rate of change of the solid phase concentration. To accomplish this, we first need to compute the net molar flux by taking the integral over the entire domain boundary.
+\begin{equation}
+  j = -\iint_{S} \textbf{N} \cdot \hat{\textbf{n}}dS
+\end{equation}
 
-\[
- j = -\iint_{S} \textbf{N} \cdot \hat{\textbf{n}}dS
-\]
 
 This is equivalent to the statement that ...
 
@@ -503,7 +568,7 @@ After summing over all species in the mixture.
 \]
 
 
-\subsubsection{UGH}
+\subsubsection{Concentrated Binary Electrolyte Theory: Ion Fluxes}
 
 \[
 \mathrm{F}_{1, V}=\frac{\mathrm{F}_{1}}{V}=-\frac{n_{1}}{V} \nabla \mu_{1}=-c_{1} \nabla \beta_{1}
