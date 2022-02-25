@@ -31,6 +31,8 @@
 % \addbibresource{./citations.bib}
 %
 \graphicspath{ {C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/} }
+
+\newcommand{\volume}{{\ooalign{\hfil$V$\hfil\cr\kern0.08em--\hfil\cr}}}
 %
 % \usepackage{hyperref}
 % \hypersetup{
@@ -109,7 +111,7 @@ From physics, it is know that charge must be conserved in an isolated system. Fo
 Where the net current into a volume \textbf{S} can be written in terms of the volume integral of the current density \textbf{i}. Via application of the Divergence Theorem and Conservation of Charge, it can be shown that ...
 
 \begin{equation}
-    I = - \iiint_V (\nabla \cdot \textbf{i})dV = 0
+    I = - \iiint_{\volume} (\nabla \cdot \textbf{i})d{\volume} = 0
 \end{equation}
 
 Under these assumptions since the net currrent must be zero, the integrand must also be indentically equal to zero.
@@ -136,182 +138,185 @@ At anytime, equation \#\ref{final_COC_s}, must hold true in both electodes of th
 \subsection{Mass Conservation in Homogeneous Solid}
 
 Next, the conservation of mass in homogeneous solid (electrodes) is used to capture the dynamics of lithium intercalation into the crystalline structure of the electrode materials. Specifically, this is a modeled by a diffusion process via Fick's first law, where the molar flux density \textbf{N} $[mol m^{-2} s^{-1}]$ is related to the gradient of lithium concentration in the solid electrode material, proportional to a material dependent constant of diffusivity D.
-\begin{equation}
+\begin{equation}\label{ficks_first}
     \textbf{N} =  -D \nabla c
 \end{equation}
 
-This expression states that the magnitude of the lithium molar flux density is proprotional to the gradient of the concentration.
-
-However, to make write this expression in a useful form, we would like to express it in terms of the time rate of change of the solid phase concentration. To accomplish this, we first need to compute the net molar flux by taking the integral over the entire domain boundary.
-\begin{equation}
-  j = -\iint_{S} \textbf{N} \cdot \hat{\textbf{n}}dS
+This expression states that the magnitude of the lithium molar flux density is proprotional to the gradient of the concentration; however, we would like to express it in terms of the time rate of change of the solid phase concentration. To accomplish this, we first need to compute the net molar flux by taking the integral of the net molar flux density over the entire domain boundary.
+\begin{equation}\label{flux_divergence}
+  j = -\oiint_{S} \textbf{N} \cdot \hat{\textbf{n}}dS
 \end{equation}
 
+This gives use the net molar flux \textbf{j} $ [mols_{-1}]$, which can rewritten in terms a molar flow rate, where n is the number of moles of lithium ...
 
-This is equivalent to the statement that ...
+\begin{equation}\label{molar_flux}
+    j = \frac{dn}{dt}
+\end{equation}
 
-\[
-j = \frac{dn}{dt}
-\]
+Recalling that the definition of molar concentration is the number of moles of a material over the total volume it occupies.
 
-Where n is the number of moles. Furthermore, we can define $dn$ as a function of concentration. This expression can be computed by integrating each contribution of concentration within a differential volume over the entire volume of the domain.
+\begin{equation}
+    n = \frac{c}{\volume}
+\end{equation}
 
-\[
-dn = d \iiint_V cdV
-\]
+Given this definition, the number of moles $dn$ can be computed by integrating each contribution of concentration within a differential volume over the entire volume of the domain.
+\begin{equation}
+    n = \iiint_{\volume} cd{\volume}
+\end{equation}
 
-By applying this substition and then and equating the net molar flux densities, we find that...
+\noindent By taking the derivative with respect to time...
+\begin{equation}\label{time_rate_of_molar_flux}
+  \frac{dn}{dt} = -\frac{d}{dt} \iiint_{\volume} cd{\volume}
+\end{equation}
 
-\[
-\iint_S \textbf{N} \cdot \hat{n}dS = -\frac{d}{dt} \iiint_V c dV
-\]
+\noindent By substituting equations \ref{molar_flux} and \ref{time_rate_of_molar_flux} into equation \ref{flux_divergence} we arrive at the following expression...
+\begin{equation}\label{COM_s_int_form}
+  \oiint_S \textbf{N} \cdot \hat{n}dS = -\frac{d}{dt} \iiint_{\volume} c d{\volume}
+\end{equation}
 
-This expression if the integral form of the continuity equation. The take away from this equation is that no mass has been created or destroyed inside the domain. Also this implies that all mass transfer which does occur happens only at the boundaries of the domain.
+This is the integral form of the continuity equation. This expression relates the molar flux density, which was in the original formulation of Fick's First Law in equation \ref{ficks_first}, to the concentration of lithium in the solid phase. This formulation is important because the concentration of lithium is a key component of developing the state of charge for electrochemical battery models. Additionally, as a continuity equation, it states that no mass has been created or destroyed inside the domain, further implying that all mass transfer happens only at the boundaries of the domain. Equation \ref{COM_s_int_form} can be further simplified into the more familiar point form of Fick's second law, as shown below.
 
-By further massaging and manipulating the previous equation, we can reduce this equation into the more familiar form of Fick's second law, as shown below.
+\begin{equation}
+    \frac{\partial c_{S}}{\partial t} = \nabla \cdot \left( D_{S} \nabla c_{s} \right)
+\end{equation}
 
-\[
-\frac{\partial c_{S}}{\partial t} = \nabla \cdot \left( D_{S} \nabla c_{s} \right)
-\]
-
-The intuition behind this law is that it encapsulates the dynamic relationship between the concentration as it changes in time to the concentration as it changes in space.
+This law states that the total lithium flux density (in a given volume) must be equal to the rate of change of concentration within that volume.
 
 
 \subsection{Charge Conservation in Homogeneous Electrolyte}
 
-When discussing the conservation of charge inside of the electrolyte phase of the battery, a non-trivial amount of thermodynamics and physical chemistry are required to fully contextualize the groundwork which needs to be laid, to understand the principles for deriving the governing equations. Without diving extremely deep into these areas, it is useful to have a basic explaination about how these concepts are linked.
+When discussing the conservation of charge inside of the electrolyte phase of the battery, a non-trivial amount of thermodynamics and physical chemistry are required to fully contextualize and provide the groundwork which needs to be laid, to understand the principles for deriving the governing equations. \\
+
+This section will endeavour to lay the foundation for the elements of \textbf{Concentrated Solution Theory}, which are required to formulate the basic tenents of charge conservation in non-trivial chemical solutions, such as a batteries electrolyte.
 
 \subsubsection{Gibbs Free Energy}
-A simple definition of Gibbs Free Energy is that it is the amount required to create the system (internal energy u), plus the amount which boundary work (pV) required to make room for the system, minus the energy which is obtained from the surrounding environement (TS), which has a temperate of T. This can be written...
+A simple definition of Gibbs Free Energy is total energy required to create the system (with internal energy u), plus the amount which boundary work (pV) required to make room for the system, minus the energy which is obtained from the surrounding environement (TS), which has a temperate of T. Conceptually, the Gibbs Free Energy is the amount of useful energy which can be harnessed to do work in the system.
 
-\[
-    G = U + pV - TS
-\]
+\begin{equation} \label{gibbs_free_energy}
+  G = U + p{\volume} - TS
+\end{equation}
 
  The \textbf{free energy} portion of the name, is important because it informs us of how much energy can be extracted from the system, so long as the temperature and pressure are held constant. Additionally, the sign of the Gibbs free energy dictates the direction that a chemical reaction will spontaneously take. \\
 
- In the context of batteries, Gibbs free energy is used in the formulation of electrochemical potentials, which are discussed below.
+ In the context of batteries, Gibbs free energy is used in the formulation of electrochemical potentials, which are discussed below.\\
 
 
  \subsubsection{Molarity \& Molality}
 
- Since an electrolyte is a solution, it can be described as an intensive property via its molarity and molality, depending on which attributes of the solution are of interest.
+ Since an electrolyte is a solution, it can be described as an intensive property via its molarity and molality, depending on which attributes of the solution are of interest. The molarity of a solution is defined to be the number of moles of solute per liter of solution.
 
- The molarity of a solution is defined to be the number of moles of solute per liter of solution.
+\begin{equation}\label{molarity}
+    c_i = \frac{n_{solute_i}}{{\volume}_{solution}}
+\end{equation}
 
- \[
-    c_i = \frac{n_{solute_i}}{V_{solution}}
- \]
 
- Where as the molality of the solution, is defined to be the total number of moles of solute over the mass of the solvent.
+ \noindent Where as the molality of the solution, is defined to be the total number of moles of solute over the mass of the solvent.
 
- \[
-    m_i = \frac{n_{solute_i}}{m_{solvent}}
- \]
-
+ \begin{equation}\label{molality}
+     m_i = \frac{n_{solute_i}}{m_{solvent}}
+ \end{equation}
 
  \subsubsection{Electrochemical Potential}
 
- Understanding the previous sections is important because it leads to a discussion of electrochemical potentials. Especially in multispecies solutions, the conversion from extensive properties to intensive properties is subtle. In order to property define these intensive properties, it is neccessary to define partial molar quanities. This can be written using partial derivatives and describes how much the Gibbs free energy (extensive) changes with the addition of only species to the solution. This can be written...
+ Understanding the previous sections is important because it leads to a discussion of electrochemical potentials. Especially in multispecies solutions, the conversion from extensive properties to intensive properties is subtle. In order to properly define these intensive properties, it is neccessary to define partial molar quantities. This can be written using partial derivatives and describes how much the Gibbs free energy (extensive) changes with the addition of only species to the solution. This can be written...
 
- \[
-    \bar{\mu} = \left( \frac{\partial G}{\partial n_{i}} \right)_{T,p,n_{j} (j \neq i)}
- \]
+ \begin{equation}\label{electrochemical_potential}
+     \bar{\mu} = \left( \frac{\partial G}{\partial n_{i}} \right)_{T,p,n_{j} (j \neq i)}
+ \end{equation}
 
- where $n_i$ is the number of moles of species $i$, while keeping the temperature, pressure, and moles of other species constant. As can be seen by the equation, the electrochemical potential is an intensive property which has been normalized via the species mass (in moles).
+ \noindent where $n_i$ is the number of moles of species $i$, while keeping the temperature, pressure, and moles of other species constant.  Given this definition, note that electrochemical potential is an intensive property which has been normalized via the species mass (in moles).\\
 
- By applying this operator to the Gibbs free energy we can see that there will be some amount of internal potential as well as an external potential which contributes to the total electrochemical potential of the system.
+ As can be seen by substituting equation \ref{gibbs_free_energy} into equation \ref{electrochemical_potential}, the total potential is comprised of several components, including internal and external potentials. This distinction between internal and external potentials can be written as...
 
-\[
-    \bar{\mu_{i}} = \bar{\mu}_{i, internal} + \bar{\mu}_{i, external}
-\]
+\begin{equation}
+  \bar{\mu_{i}} = \bar{\mu}_{i, internal} + \bar{\mu}_{i, external}
+\end{equation}
 
- In the absense of other potentials and forces from external fields, the effect of chemical and electrochemical potentials can be written as ...
+ In the absence of other potentials and forces from external fields, the effect of chemical and electrochemical potentials can be written as ...
+ \begin{equation}\label{total_potential}
+   \bar{\mu}_{i} = \mu_{i} + z_i F \phi
+ \end{equation}
 
- \[
-    \bar{\mu}_{i} = \mu_{i} + z_i F \phi
- \]
+Where the $z_i$ is the charge number, $F$ is Faraday's constant, and $\phi$ is the local electrostatic potential.
+This equation neatly seperates the potential contributions from both chemical and electrical mechanisms. After applying Euler's theorem for homogeneous functions we can show that.
 
+\begin{equation}
+  G(\textbf{n}) = \textbf{n} \cdot \nabla G (\textbf{n}) = \sum_i n_i \frac{\partial G}{\partial n_i}
+\end{equation}
 
-Where the $z_i$ is the charge number, $F$ is Faraday's constant, and $\phi$ is the local electrostatic potential. After applying Euler's theorem for homogeneous functions we can show
+\begin{equation}\label{gibbs_summation}
+  G = \sum_i n_i \bar{\mu}_i
+\end{equation}
 
-\[
-    G(\textbf{n}) = \textbf{n} \cdot \nabla G (\textbf{n}) = \sum_i n_i \frac{\partial G}{\partial n_i}
-\]
-
-\[
-    G = \sum_i n_i \bar{\mu}_i
-\]
-
-This provides a very concise form for replacing Gibbs free energy with electrochemical potentials
+\noindent This provides a very concise form for relating the Gibbs free energy of our battery with the total potentials (chemical \& electrical) of the battery.  \\
 
 \subsubsection{Gibbs-Duhem Equation}
+The \textbf{Gibbs-Duhem} equation provides an important relationship between electrochemical potentials, which reduces the number of simultaneous equations which we must solve. It's derivation begins with the Gibbs Free Energy as shown below.
 
-This equation provides relationship between electrochemical potentials, which reduces the number of simultaneous equations which we must solve.
+\begin{equation}
+  G = U + pV - TS
+\end{equation}
 
-\[
-    G = U + pV - TS
-\]
+\begin{equation}
+    dG = dU + d(pV) - d(TS)
+\end{equation}
 
-\[
-    dG = dU = d(pV) - d(TS)
-\]
+\begin{equation}
+  = dq + dw + pdV + VdP -TdS - SdT
+\end{equation}
 
-\[
-        = dq + dw + pdV + VdP -TdS - SdT
-\]
+\noindent Note that so far, all that has been accomplished has been applying a derivate and expanding the expression via the product rule of differentiation. From thermodynamics we know $dw = -pdV$ and that under the assumption of reversibility $dq = TdS$. After applying these substitutions, we arrive at the simplifed expressions below.
 
-From thermodynamics we know $dw = -pdV$ and that under the assumption of reversibility $dq = TdS$ that we obtain...
+\begin{equation}
+  dG = Vdp - SdT
+\end{equation}
 
-\[
-    dG = Vdp - SdT
-\]
+We can use equations \ref{electrochemical_potential} and \ref{gibbs_summation} to write the previous equation in terms of the total potential.
+\begin{equation}
+  \sum_{r}^{i=1} n_id\bar{\mu}_i = Vdp - SdT
+\end{equation}
 
-We can show from the previous relationship relating Gibbs free energy and electrochemical potential that...
+\noindent By rearranging the equations we get ...
 
-\[
-    \sum_{r}^{i=1} n_id\bar{\mu}_i = Vdp - SdT
-\]
+\begin{equation}
+  \sum_{i=1}^{r} n_id\bar{\mu}_i - Vdp + SdT = 0
+\end{equation}
 
-such that....
+\noindent If we assume that pressure and temperature are constant, then derivatives of $p$ and $T$ are both zero. Since we expect to operate the battery in a constant temperature and pressure environment, these are meaningful simplifications which yield the following expression for a system with $i$ chemical species.
 
-\[
-    \sum_{i=1}^{r} n_id\bar{\mu}_i - Vdp + SdT = 0
-\]
+\begin{equation}
+  \sum_{i=1}^{r} n_id\bar{\mu}_i = 0
+\end{equation}
 
-In the special case we are interested in (a binary electrolyte) containing only two species, this equation can be explicitily written as
+In the special case we are interested in (e.g a binary electrolyte) containing only two species, this equation can be explicitly written as
 
-\[
-    n_1 d\bar{\mu}_1 + n_2 d\bar{\mu}_2 = 0
-\]
+\begin{equation}\label{gibbs_duhem_eqn}
+  n_1 d\bar{\mu}_1 + n_2 d\bar{\mu}_2 = 0
+\end{equation}
 
-
-It should be noted that this equation is only valid under the isothermal and isobaric process. However given that we are operating under these assumptions, then we can see the relationship between the two electrochemical potentials. If one is increased, the other must decrease to maintain the equality. In the general case...
-
-\[
-    \sum_{i=1}^{r} c_{i}d\bar{\mu}_i = 0
-\]
-
-It should also be noted that we can easily convert this from molar to molarity by dividing by the volume. \\
+This is an important equation because it directly governs the relationship between the two potentials. If one is increased, the other must decrease to maintain the equality. We can leverage this relationship to eliminate an equation, in future calculations, since we can write either quantity in terms of the other. This equation can also be written using the concentration of each species by dividing by the total volume.
+\begin{equation}
+  \sum_{i=1}^{r} c_{i}d\bar{\mu}_i = 0
+\end{equation}
 
 \subsubsection{Activity}
 
 Unlike non-ionic solutions, ionic solutions do not distribute their ions randomly, this is because the electrical charge for either a cation or anion are preferentially oriented and attracted to ions of the opposite charge. A consequence of this behavior is that movement of ions in solution are artificially slow, due to the movement of a specific ion also attempting to drag the other ions which are in its immediate neighborhood in the solution. \\
 
-Because of this phenomenon, we can use the \textbf{activity} of a species as an effective concentration, which accounts for this descrepency.
+Because of this phenomenon, we define \textbf{activity} of a species as an effective concentration, which accounts for this descrepency.
 
-\[
-    a_i = c_i f_i
-\]
+\begin{equation}\label{activity}
+  a_i = c_i f_i
+\end{equation}
 
-In the context of lithium-ion batteries, the concept of activity is important because the transport medium between each electrode is a neutral ionic solution, which has a fixed number of positive and negative charge carries, that faciliate transfer of charge inside the battery. Therefore modeling this non-intutiative behavior is an important step in capturing the complete dynamics at play.
+In the context of lithium-ion batteries, the concept of activity is important because the transport medium between each electrode is a neutral ionic solution, which has a fixed number of positive and negative charge carries, that faciliate transfer of charge inside the battery. Therefore modeling this non-intutiative behavior is an important step in capturing the complete dynamics at play. \\
 
 \subsubsection{ Stoichiometric Coefficient $\nu$ }
 In a balanced chemical equation, the total amount of matter (of each element/molecule) and the total amount of charge are conserved. This fact holds true for electrolytes. In the case of an electrolyte, the solution is comprised of solute dispursed throughout a solvent such that the overall solution is charge-neutral. An example is shown below.
 
-\[
-\mathrm{Na}_{2} \mathrm{SO}_{4} \rightarrow 2 \mathrm{Na}^{+}+\mathrm{SO}_{4}^{2-}
-\]
+\begin{equation}
+  \mathrm{Na}_{2} \mathrm{SO}_{4} \rightarrow 2 \mathrm{Na}^{+}+\mathrm{SO}_{4}^{2-}
+\end{equation}
 
 In this example, the coefficents in from of each ion on the right-hand-side of the equation, are known as \textbf{stoichiometric coefficients}, and are denoted with the symbol $\nu$. In the equation shown above, the stoichiometric coefficents are $\nu_{Na^{+}} = 2$ and $\nu_{SO_{4}^{2-}} = 1$.
 
@@ -322,36 +327,39 @@ Similar to the stoichiometric coefficents, the \textbf{charge number} is also di
 \subsubsection{ Electroneutrality in Binary Electroytes }
 As mentioned previously electroneutrality is an important and frequently referenced concept in the developement of the equations. In particular, a binary electrolyte comprised of only species is of particular interest and has useful properties which are very relavent to lithium-ion battery models. Under the constraint of charge-neutrality, we can state that the net charge in the solution must be $q = 0$. This can be expressed via charge numbers and the stoichiometric coefficents described above as follows.
 
-\[
-\sum_{i} z_{i} v_{i}=0
-\]
+\begin{equation}
+  \sum_{i} z_{i} v_{i}=0
+\end{equation}
 
 For the general case the subscripts indicated whether the charge is from a cation or an anion, or the contributions form the solvent.
-\[
-z_{+} v_{+}+z_{-} v_{-}+z_{0} v_{0}=0
-\]
+
+\begin{equation}
+  z_{+} v_{+}+z_{-} v_{-}+z_{0} v_{0}=0
+\end{equation}
 
 However, since the solvents in the electroyte are always charge neutral, we can ommit them from this equation, leavinging the following expression.
 
-\[
-z_{+} v_{+}+z_{-} v_{-}=0
-\]
 
-\[
-\frac{c_{+}}{v_{+}}=\frac{c_{-}}{v_{-}}
-\]
+\begin{equation}
+  z_{+} v_{+}+z_{-} v_{-}=0
+\end{equation}
+
+\begin{equation}
+  \frac{c_{+}}{v_{+}}=\frac{c_{-}}{v_{-}}
+\end{equation}
 
 This can be translate from stoichiometric coefficients to the ion concentration of each species, through the fact that we know these quanties are proportional to each other where the constant of proportionality is the concentation of the solution in general.
 
-\[
+\begin{equation}
   c = \frac{c_{+}}{\nu_{+}} = \frac{c_{-}}{\nu_{-}}
-\]
+\end{equation}
 
 We can make use of this attribute and rewrite the charge neutrality equation as follows.
 
-\[
-    \sum_{i} z_i c_i = 0
-\]
+
+\begin{equation}
+  \sum_{i} z_i c_i = 0
+\end{equation}
 
 Where $ i=2$ for our use-case of a binary electrolyte. This expression will be useful later when deriving the conservation of charge in an electrolyte.
 
@@ -359,68 +367,64 @@ Where $ i=2$ for our use-case of a binary electrolyte. This expression will be u
 
 Current flow inside of the electrolyte is comprised of both cations and anions. Therefore the total current flow inside of the electrolyte is given by
 
-\[
+\begin{equation}
   i = i_{+} + i_{-}
-\]
+\end{equation}
 
 The next step is try write these ionic currents in terms of flux density so that they can be written in standard form later. This is accomplished by accounting for the amount of charge per second (for both cations and anions), due to the respective flux.
 
-\[
-  i_+ =  z_+ FN_+ = z_{+}Fc_{+}v_{+}
-\]
-\[
+\begin{equation}
+    i_+ =  z_+ FN_+ = z_{+}Fc_{+}v_{+}
+\end{equation}
+
+\begin{equation}
   i_- =  z_- FN_- = z_{-}Fc_{-}v_{-}
-\]
+\end{equation}
 
 Upon reflection of the quanities used in this expression we can see that the product of charge number, Faraday's constant, and flux density, is the eletrical current produced for the given charge type (positive/negative).
 
 
 Therefore,
 
-\[
+\begin{equation}
   i = z_{+}Fc_{+}v_{+} + z_- FN_- = z_{-}Fc_{-}v_{-}
-\]
+\end{equation}
 
-\[
+\begin{equation}
   = F\sum_{i}z_{i}N_{i}
-\]
-
-
-
-
-
+\end{equation}
 
 \subsubsection{ Deriving Conservation of Charge }
 
 To begin this derivation, we can start off with the general expression for the conersation of mass at any point in a solution.
-\[
-\frac{\partial c_{i}}{\partial t}=-\nabla \cdot \mathbf{N}_{i}+R_{i}
-\]
+
+\begin{equation}
+  \frac{\partial c_{i}}{\partial t}=-\nabla \cdot \mathbf{N}_{i}+R_{i}
+\end{equation}
 
 This version of Ficks Law states that the time rate of change on the concentration for species $i$ is related to the negative flux density gradient of that species as well as the rate of generation of species $i$.
 
-\[
-F \frac{\partial z_{i} c_{i}}{\partial t}=-\nabla \cdot\left(z_{i} F \mathbf{N}_{i}\right)+z_{i} F R_{i}
-\]
+\begin{equation}
+  F \frac{\partial z_{i} c_{i}}{\partial t}=-\nabla \cdot\left(z_{i} F \mathbf{N}_{i}\right)+z_{i} F R_{i}
+\end{equation}
 
 Via algebra, we can multiply each side of the equation by $z_{i}F$ to get,
 
-\[
-\frac{\partial}{\partial t} F \sum_{i} z_{i} c_{i}=-\nabla \cdot\left(F \sum_{i} z_{i} \mathbf{N}_{i}\right)+F \sum_{i} z_{i} R_{i}
-\]
+\begin{equation}
+  \frac{\partial}{\partial t} F \sum_{i} z_{i} c_{i}=-\nabla \cdot\left(F \sum_{i} z_{i} \mathbf{N}_{i}\right)+F \sum_{i} z_{i} R_{i}
+\end{equation}
 
 Since the previous equation was written only with respect to a single species in the equation, we need to sum the same equation over each species resulting in the following...
 
-\[
-\frac{\partial}{\partial t} F \sum_{i} z_{i} c_{i}=-\nabla \cdot\left(F \sum_{i} z_{i} \mathbf{N}_{i}\right)
-\]
+\begin{equation}
+  \frac{\partial}{\partial t} F \sum_{i} z_{i} c_{i}=-\nabla \cdot\left(F \sum_{i} z_{i} \mathbf{N}_{i}\right)
+\end{equation}
 
 As mentioned in the previous section about charge neutrality, we can see that our previous equation that the summation $\sum_{i}z_{i}c_{i}$ must be identically equation to zero since, the overall charge of the electrolyte is zero. We can also that the term $F\sum_{i}z_{i}N_{i}$ matches our previous definition for current shown above. By substituting these terms into the previous expression we arrive at the following equation.
 
-\[
-\nabla \cdot \mathbf{i}=0
-\]
-
+\begin{equation}
+  \nabla \cdot \mathbf{i}=0
+\end{equation}
 
 This equation is the differential form for the conservation of charge inside the electrolyte, stating that charge and not be created or destroyed.
 
@@ -446,96 +450,91 @@ This next section is one of the most challenging to conceptualize as it has a gr
 \subsubsection{Maxwell-Stefan Relationship}
 This section lays the mathematical groundwork for the interaction of particles of differing species and the net force associated with these collisions. By applying the conservation of momentum, we can define the following expression for using average species velocities, for a 2 species mixture.
 
-\[
-m_{1} \mathbf{v}_{m_{1}}+m_{2} \mathbf{v}_{m_{2}}=m_{1} \mathbf{v}_{m_{1}}^{\prime}+m_{2} \mathbf{v}_{m_{2}}^{\prime}
-\]
+\begin{equation}
+  m_{1} \mathbf{v}_{m_{1}}+m_{2} \mathbf{v}_{m_{2}}=m_{1} \mathbf{v}_{m_{1}}^{\prime}+m_{2} \mathbf{v}_{m_{2}}^{\prime}
+\end{equation}
 
 Given that the change in momentum for a single species can be written as...
 
-\[
-\Delta\left(m_{1} \mathbf{v}_{m_{1}}\right)=m_{1}\left(\mathbf{v}_{m_{1}}-\mathbf{v}_{m_{1}}^{\prime}\right)
-\]
-
-
+\begin{equation}
+  \Delta\left(m_{1} \mathbf{v}_{m_{1}}\right)=m_{1}\left(\mathbf{v}_{m_{1}}-\mathbf{v}_{m_{1}}^{\prime}\right)
+\end{equation}
 
 We can isolate the post-collision velocity of species 1, as follows.
 
-
-\[
-\mathbf{v}_{1}^{\prime}=\frac{m_{1} \mathbf{v}_{1}+m_{2} \mathbf{v}_{2}}{m_{1}+m_{2}}
-\]
+\begin{equation}
+  \mathbf{v}_{1}^{\prime}=\frac{m_{1} \mathbf{v}_{1}+m_{2} \mathbf{v}_{2}}{m_{1}+m_{2}}
+\end{equation}
 
 These two previous expressions can be combined to form the following equation.
 
-\[
-\begin{aligned}
-\Delta\left(m_{1} \mathbf{v}_{1}\right) &=m_{1}\left(\mathbf{v}_{1}-\mathbf{v}_{1}^{\prime}\right) \\
-&=m_{1}\left(\mathbf{v}_{1}-\frac{m_{1} \mathbf{v}_{1}+m_{2} \mathbf{v}_{2}}{m_{1}+m_{2}}\right)
-\end{aligned}
-\]
-Which can be simplified to...
-\[
-=\frac{m_{1} m_{2}}{m_{1}+m_{2}}\left(\mathbf{v}_{1}-\mathbf{v}_{2}\right)
-\]
+\begin{equation}
+  \begin{aligned}
+  \Delta\left(m_{1} \mathbf{v}_{1}\right) &=m_{1}\left(\mathbf{v}_{1}-\mathbf{v}_{1}^{\prime}\right) \\
+  &=m_{1}\left(\mathbf{v}_{1}-\frac{m_{1} \mathbf{v}_{1}+m_{2} \mathbf{v}_{2}}{m_{1}+m_{2}}\right)
+  \end{aligned}
+\end{equation}
 
+Which can be simplified to...
+
+\begin{equation}
+  =\frac{m_{1} m_{2}}{m_{1}+m_{2}}\left(\mathbf{v}_{1}-\mathbf{v}_{2}\right)
+\end{equation}
 
 \subsubsection{Momentum Charnge Rate}
 Now the task is to relate the change of momentum equation (on a mass basis) to the equivalent form on a species concentration basis. Generally speaking we can state that as the concentions of either species in a two species mixture increase the change in momentum should increase propotionally. Putting this intuition into math, we arrive at the following statement.
 
-\[
-\left(\frac{\mathrm{dp}}{\mathrm{d} t}\right)_{V}^{\text {species- }} \propto c_{1} c_{2}\left(\mathbf{v}_{1}-\mathbf{v}_{2}\right)
-\]
-
+\begin{equation}
+  \left(\frac{\mathrm{dp}}{\mathrm{d} t}\right)_{V}^{\text {species- }} \propto c_{1} c_{2}\left(\mathbf{v}_{1}-\mathbf{v}_{2}\right)
+\end{equation}
 
 From this statement, we can use the definition of the mole fractino $x_i = n_i /n$, where $n_i$ is the number of moles of a given species and $n$ is the total number of moles in the system. This defines the following relationship $x_1 + x_2 = 1$ for a binary species and in general form can be written as $\sum_i x_i = 1$. Furthermore, we can define a quantity called the total concentration, such that.
 
-\[
-C_{T}=\sum_{i} c_{i}
-\]
+\begin{equation}
+  C_{T}=\sum_{i} c_{i}
+\end{equation}
 
 Where concentration is defined as $c = n/ V$.  From this relationship we can show that.
 
-\[
-x_{i}=\frac{n_{i}}{n}=\frac{n_{i} / V}{n / V}=\frac{c_{i}}{c_{T}}
-\]
+\begin{equation}
+  x_{i}=\frac{n_{i}}{n}=\frac{n_{i} / V}{n / V}=\frac{c_{i}}{c_{T}}
+\end{equation}
 
 Which can be substituted directly into the change of momentum equation to produce...
 
-\[
-\left(\frac{\mathrm{d} \mathrm{p}}{\mathrm{d} t}\right)_{V}^{\text {species- }} \propto x_{1} x_{2}\left(\mathrm{v}_{1}-\mathrm{v}_{2}\right)
-\]
-
+\begin{equation}
+  \left(\frac{\mathrm{d} \mathrm{p}}{\mathrm{d} t}\right)_{V}^{\text {species- }} \propto x_{1} x_{2}\left(\mathrm{v}_{1}-\mathrm{v}_{2}\right)
+\end{equation}
 
 From undergraduate physics we know from Newton's Second law that force is equivalent to the time rate of change of momentum, leading us to the following statement.
 
-\[
-\mathrm{F}_{1, \mathrm{~V}} \propto x_{1} x_{2}\left(\mathrm{v}_{1}-\mathrm{v}_{2}\right)
-\]
+\begin{equation}
+  \mathrm{F}_{1, \mathrm{~V}} \propto x_{1} x_{2}\left(\mathrm{v}_{1}-\mathrm{v}_{2}\right)
+\end{equation}
 
 In order to turn this proportionality into an equality we must define a constant of proportionality. Given the current form of this statement relating force to a type of relative velocity, we could guess that this constant would behavior very closely to a coefficient of friction, $K_{ij}$. In addition to this, we would like to break down this parameter, since it in itself is not a constant number since its value depends on that mole fraction and hence the concentration of the species in the system.
 
-\[
+\begin{equation}
   K_{i j} \propto x_{1}x_{2}
-\]
+\end{equation}
 
 It turns out that the resulting equality has been defined in terms of the Maxwell-Stefan diffusivity $mathscr{D}$, and the surrounding pressure.
 
-\[
-\mathscr{D}_{i j}=\frac{x_{i} x_{j}}{K_{i j}} p
-\]
+\begin{equation}
+  \mathscr{D}_{i j}=\frac{x_{i} x_{j}}{K_{i j}} p
+\end{equation}
 
 By applying the ideal gas law and substituting the concentration form of the mole fraction developed earlier, we get.
 
-\[
-K_{i j}=\frac{R T c_{i} c_{j}}{c_{T} \mathscr{D}_{i j}}
-\]
+\begin{equation}
+  K_{i j}=\frac{R T c_{i} c_{j}}{c_{T} \mathscr{D}_{i j}}
+\end{equation}
 
 After developing these expressions, we can subsitute them back into the original equation for the force acting on species 1.
 
-\[
+\begin{equation}
   \mathbf{F}_{1, V}=\frac{R T c_{1} c_{2}}{c_{T} \mathscr{D}_{12}}\left(\mathbf{v}_{1}-\mathbf{v}_{2}\right)
-\]
-
+\end{equation}
 
 Now that we have an expression for the force acting on a species , we can begin to make the connections between forces and the electrochemical potential for charged species. \\
 
@@ -544,40 +543,37 @@ Now that we have an expression for the force acting on a species , we can begin 
 
 We know that we can write force as the negative gradient of a potential function. In our case, this potential function is the Gibbs free energy developed previously.
 
-\[
-\mathrm{F}_{1}=-\nabla G_{1}=-\frac{\partial G_{1}}{\partial \mu_{1}} \nabla \bar{\mu}_{1}=-n_{1} \nabla \bar{\mu}_{1}
-\]
-
+\begin{equation}
+  \mathrm{F}_{1}=-\nabla G_{1}=-\frac{\partial G_{1}}{\partial \mu_{1}} \nabla \bar{\mu}_{1}=-n_{1} \nabla \bar{\mu}_{1}
+\end{equation}
 
 By equating this equation with the expression for force developed above, we get the following equation.
 
-\[
-c_{1} \nabla \mu_{1}=R T \frac{c_{1} c_{2}}{c_{T} \mathscr{D}_{12}}\left(\mathbf{v}_{2}-\mathbf{v}_{1}\right)
-\]
-
+\begin{equation}
+  c_{1} \nabla \mu_{1}=R T \frac{c_{1} c_{2}}{c_{T} \mathscr{D}_{12}}\left(\mathbf{v}_{2}-\mathbf{v}_{1}\right)
+\end{equation}
 
 This can be re-written...
 
-\[
-c_{i} \nabla \mu_{i}=R T \sum_{j} \frac{c_{i} c_{j}}{c_{T} \mathscr{D}_{i j}}\left(\mathbf{v}_{j}-\mathbf{v}_{i}\right)=\sum_{j} K_{i j}\left(\mathbf{v}_{j}-\mathbf{v}_{i}\right)
-\]
+\begin{equation}
+  c_{i} \nabla \mu_{i}=R T \sum_{j} \frac{c_{i} c_{j}}{c_{T} \mathscr{D}_{i j}}\left(\mathbf{v}_{j}-\mathbf{v}_{i}\right)=\sum_{j} K_{i j}\left(\mathbf{v}_{j}-\mathbf{v}_{i}\right)
+\end{equation}
 
 After summing over all species in the mixture.
-\[
-  \sum_{i} c_{i} \nabla \mu_{i}=\sum_{i} \sum_{j} K_{i j}\left(\mathbf{v}_{j}-\mathbf{v}_{i}\right)
-\]
 
+\begin{equation}
+  \sum_{i} c_{i} \nabla \mu_{i}=\sum_{i} \sum_{j} K_{i j}\left(\mathbf{v}_{j}-\mathbf{v}_{i}\right)
+\end{equation}
 
 \subsubsection{Concentrated Binary Electrolyte Theory: Ion Fluxes}
 
-\[
-\mathrm{F}_{1, V}=\frac{\mathrm{F}_{1}}{V}=-\frac{n_{1}}{V} \nabla \mu_{1}=-c_{1} \nabla \beta_{1}
-\]
+\begin{equation}
+  \mathrm{F}_{1, V}=\frac{\mathrm{F}_{1}}{V}=-\frac{n_{1}}{V} \nabla \mu_{1}=-c_{1} \nabla \beta_{1}
+\end{equation}
 
-\[
-\frac{\partial c}{\partial t}=\nabla \cdot\left[D\left(1-\frac{\mathrm{d} \ln c_{0}}{\mathrm{~d} \ln c}\right) \nabla c\right]-\frac{\mathbf{i} \cdot \nabla t_{+}^{0}}{z_{+} v_{+} F}-\nabla \cdot\left(c \mathbf{v}_{0}\right)
-\]
-
+\begin{equation}
+  \frac{\partial c}{\partial t}=\nabla \cdot\left[D\left(1-\frac{\mathrm{d} \ln c_{0}}{\mathrm{~d} \ln c}\right) \nabla c\right]-\frac{\mathbf{i} \cdot \nabla t_{+}^{0}}{z_{+} v_{+} F}-\nabla \cdot\left(c \mathbf{v}_{0}\right)
+\end{equation}
 
 
 \subsection{Lithium Movement Between Solid \& Electrolyte Phases}
