@@ -653,12 +653,165 @@ If we further multiple this expressions by $\frac{RTC_0}{C_T}$ over itself, we h
 \mathscr{D}=\frac{v R T c_{0} c}{c_{T}\left(K_{0+}+K_{0-}\right)}
 \end{equation}
 
+The third and final component required to define the flux-density, is the transference numbers of the electrolyte. As mentioned previously the ionic nature of the electrolyte has the consequence of incorporating several non-intuitive chemistry tid-bits which require a more subtle analysis. \\
+
+In simple terms the transference number represents the portion of the ionic current which is being carried by a specific species when there exists no gradient in the chemical potential. \\
+
+Intuitiatively, it should make sense the transference number is propotional to amount of friction the ion will encounter, as such we can define this proportionality for both positive and negative species of the electrolyte.
+
+
+\begin{equation}
+t_{+}^{0} \propto K_{0-} \quad \text { and } \quad t_{-}^{0} \propto K_{0+}
+\end{equation}
+
+In fact, for a binary electrolyte, we know that the total transference must be equal to unity, since either the positive or negative ionic current flow must be responsible for the net current. Given the previous proportionality, and the constraint, we can determine the constant of proportionality directly, which yields the following result.
+
+\begin{equation}
+t_{+}^{0}=\frac{K_{0-}}{K_{0-}+K_{0+}} \quad \text { and } \quad t_{-}^{0}=\frac{K_{0+}}{K_{0-}+K_{0+}}
+\end{equation}
+
+
+PROVING THE ION-FLUX EQUATION:
+
+Given this groundwork we can now begin to assemble the equation for flux-density. We first begin with the definition of flux-density
+
+
+\begin{equation}
+  \textbf{N}_i = c_{i} \textbf{v}_i \quad \text{    where } i = \pm
+\end{equation}
+
+The intuition behind this expression is that the flux-density will change propotionally to the average velocity of a species and as a function of the concentration of the species, both of which make intuitive sense. \\
+
+\begin{equation}
+\mathbf{N}_{+}=c_{+} \mathbf{v}_{+}=\underbrace{-\frac{v_{+} \mathscr{D}}{v R T} \frac{c_{T}}{c_{0}}}_{A} \underbrace{\nabla \mu_{e}}_{B}+\underbrace{\frac{\mathbf{i} t_{+}^{0}}{z_{+} F}}_{C}+\underbrace{c_{+} \mathbf{v}_{0}}_{D}
+\end{equation}
+
+
+However, we still need an expression for the gradient of the chemical potential of the electrolyte.
+
+Note that we can expand $\nabla \mu_e$ via the chain rule of calculus, such that.
+
+
+\begin{equation}
+  \nabla \mu_e = \frac{\partial{\mu_e}}{\partial{c}} \nabla c
+\end{equation}
+
+And furthermore, we can take this expansion via concentration and use the chain rule again to write $\nabla \mu_e$ in terms of the molality of the electrolyte, such that.
+
+\begin{equation}
+\frac{\partial \mu_{e}}{\partial c}=\frac{\partial \mu_{e}}{\partial \ln m} \frac{\partial \ln m}{\partial c}
+\end{equation}
+
+Note that the natural-log is merely a build-in substitution that will enable a clear derivation in subsequent steps. \\
+
+By using absolutely activity, we can show that...
+
+\begin{equation}
+\mu_{i}=R T \ln \left(\lambda_{i}\right)
+\end{equation}
+\begin{equation}
+\lambda_{i}=m_{i} \gamma_{i} \lambda_{i}^{\ominus}
+\end{equation}
+
+
+By substituting these terms into the expression for chemical potential of the electrolyte ($\mu_{e}=v_{+} \mu_{+}+v_{-} \mu_{-} $), and simplifying the resulting expression we get.
+
+\begin{equation}
+\begin{aligned}
+\mu_{e}= v R T\left(\ln m+\ln \gamma_{\pm}\right)+ \cdots \\
+v_{+} R T \ln \left(v_{+} \lambda_{+}^{\ominus}\right)+ \cdots \\
+v_{-} R T \ln \left(v_{-} \lambda_{-}^{\ominus}\right)
+\end{aligned}
+\end{equation}
+
+Such that we can define ...
+
+\begin{equation}
+\frac{\partial \mu_{e}}{\partial \ln m}=v R T\left(1+\frac{\partial \ln \gamma_{\pm}}{\partial \ln m}\right)
+\end{equation}
+
+
+We can also define, the second term of of $\nabla \mu_e$ as
+
+
+\begin{equation}
+m=\frac{m_{+}}{v_{+}}=\frac{c_{+}}{v_{+} c_{0} M_{0}}=\frac{c}{c_{0} M_{0}}
+\end{equation}
+
+
+\begin{equation}
+\ln m=\ln c-\ln c_{0}-\ln M_{0}
+\end{equation}
+
+\begin{equation}
+\frac{\partial \ln m}{\partial \ln c}=1-\frac{\partial \ln c_{0}}{\partial \ln c}
+\end{equation}
+
+\begin{equation}
+\frac{\partial \ln m}{\partial c}=\frac{1}{c}\left(1-\frac{\partial \ln c_{0}}{\partial \ln c}\right)
+\end{equation}
+
+\begin{equation}
+\nabla \mu_{e}=\frac{v R T}{c}\left(1+\frac{\mathrm{d} \ln \gamma_{\pm}}{\mathrm{d} \ln m}\right)\left(1-\frac{\mathrm{d} \ln c_{0}}{\mathrm{~d} \ln c}\right) \nabla c
+\end{equation}
+
+This value can then be substituted back into the expression we derived for the flux-density.
+
+\begin{equation}
+\mathbf{N}_{+}=-\frac{v_{+} \mathscr{D}}{v R T} \frac{c_{T}}{c_{0}} c \nabla \mu_{e}+\frac{\mathbf{i} t_{+}^{0}}{z_{+} F}+c_{+} \mathbf{v}_{0}
+\end{equation}
+
+
+\begin{equation}
+D=\mathscr{D} \frac{c_{T}}{c_{0}}\left(1+\frac{\mathrm{d} \ln \gamma_{\pm}}{\mathrm{d} \ln m}\right)
+\end{equation}
+
+\begin{equation}
+\mathbf{N}_{+}=-v_{+} D\left(1-\frac{\mathrm{d} \ln c_{0}}{\mathrm{~d} \ln c}\right) \nabla c+\frac{\mathbf{i} t_{+}^{0}}{z_{+} F}+c_{+} \mathbf{v}_{0}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{equation}
+\begin{aligned}
+\mathbf{N}_{+} =-v_{+} \frac{\mathscr{D} c_{T}}{c_{0}}\left(1+\frac{\mathrm{d} \ln \gamma_{\pm}}{\mathrm{d} \ln m}\right)\left(1-\frac{\mathrm{d} \ln c_{0}}{\mathrm{~d} \ln c}\right) \nabla c+\frac{\mathbf{i} t_{+}^{0}}{z_{+} F}+c_{+} \mathbf{v}_{0}
+\end{aligned}
+\end{equation}
+
+
+Now that we have a full expression for the flux-density written fully in terms which are meaningful for us and our analysis, we can apply the Continuity equation as shown below, and then substitute in our flux-density equation.
+
+\begin{equation}
+\frac{\partial c_{+}}{\partial t}=-\nabla \cdot \mathbf{N}_{+}
+\end{equation}
+
+
+
+Which results in the following partial differential equation that enforces mass conservation inside of the electrolyte. 
+
 
 
 \begin{equation}
   \frac{\partial c}{\partial t}=\nabla \cdot\left[D\left(1-\frac{\mathrm{d} \ln c_{0}}{\mathrm{~d} \ln c}\right) \nabla c\right]-\frac{\mathbf{i} \cdot \nabla t_{+}^{0}}{z_{+} v_{+} F}-\nabla \cdot\left(c \mathbf{v}_{0}\right)
 \end{equation}
-
 
 \subsection{Lithium Movement Between Solid \& Electrolyte Phases}
 
