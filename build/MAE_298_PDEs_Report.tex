@@ -30,7 +30,9 @@
 % \usepackage{subfig}
 % \addbibresource{./citations.bib}
 %
-\graphicspath{ {C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/} }
+% \graphicspath{ {C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/} }
+\graphicspath{ {C:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/} }
+
 
 \newcommand{\volume}{{\ooalign{\hfil$V$\hfil\cr\kern0.08em--\hfil\cr}}}
 %
@@ -49,7 +51,7 @@
 
 \title{MAE 298 Introduction to PDEs \\ Electrochemical Modeling of Batteries}
 
-\author{Jonathan Dorsey}
+\author{Jonathan Dorsey  FUCLK}
 
 
 % Remember, if you use this you must call \IEEEpubidadjcol in the second
@@ -532,7 +534,7 @@ By applying the ideal gas law and substituting the concentration form of the mol
 
 After developing these expressions, we can subsitute them back into the original equation for the force acting on species 1.
 
-\begin{equation}
+\begin{equation}\label{friction_force_1}
   \mathbf{F}_{1, V}=\frac{R T c_{1} c_{2}}{c_{T} \mathscr{D}_{12}}\left(\mathbf{v}_{1}-\mathbf{v}_{2}\right)
 \end{equation}
 
@@ -541,13 +543,19 @@ Now that we have an expression for the force acting on a species , we can begin 
 
 \subsubsection{Multicomponet Diffusion Equation}
 
-We know that we can write force as the negative gradient of a potential function. In our case, this potential function is the Gibbs free energy developed previously.
+We know that we can write force as the negative gradient of a potential function. In our case, this potential function is the Gibbs free energy developed previously. Furthermore, we can use the chain rule of calculus, to write the gradient of Gibbs free energy in terms of the gradient of the electrochemical potential and the rate of change of Gibbs free energy with respect to electrochemical potential. By reversing the relationship of Gibbs free energy, moles of a species, and the electrochemical potential devloped ealier, it can also be shown that this last term is simply the number of moles of a species.
 
 \begin{equation}
   \mathrm{F}_{1}=-\nabla G_{1}=-\frac{\partial G_{1}}{\partial \mu_{1}} \nabla \bar{\mu}_{1}=-n_{1} \nabla \bar{\mu}_{1}
 \end{equation}
 
-By equating this equation with the expression for force developed above, we get the following equation.
+When this expression is normalized by volume, we can write the force of the particle in terms of species concentration.
+
+\begin{equation}\label{friction_force_2}
+  \mathrm{F}_{1, V}=\frac{\mathrm{F}_{1}}{V}=-\frac{n_{1}}{V} \nabla \bar{\mu}_{1}=-c_{1} \nabla \bar{\mu}_{1}
+\end{equation}
+
+By equating Eqn (\ref{friction_force_1}) with the previous expression for force developed above, we get the following equation.
 
 \begin{equation}
   c_{1} \nabla \mu_{1}=R T \frac{c_{1} c_{2}}{c_{T} \mathscr{D}_{12}}\left(\mathbf{v}_{2}-\mathbf{v}_{1}\right)
@@ -561,15 +569,91 @@ This can be re-written...
 
 After summing over all species in the mixture.
 
-\begin{equation}
+\begin{equation}\label{mulit_component_mixture_friction}
   \sum_{i} c_{i} \nabla \mu_{i}=\sum_{i} \sum_{j} K_{i j}\left(\mathbf{v}_{j}-\mathbf{v}_{i}\right)
 \end{equation}
 
+The significance of this equation is that it produces a basis for analysis use quanitities available at the macroscopic level, and will be used later in the derivation of mass conservation in electrolyte.\\
+
 \subsubsection{Concentrated Binary Electrolyte Theory: Ion Fluxes}
 
+The objective of this next subsection, in the journey to arrive at an expression for conservation of mass in a binary electrolyte, is to define the ionic flux density, $N_{\pm}$. \\
+
+The presence of ions in the electrolyte and the physical chemistry associated with an excess of charge in the solution, proves to be significantly more challenging and complex than deriving conservation of mass in a non-ionic medium. The three primary reasons for this are the caused by the chemical potential, average diffusivity, and the transference number for the electrolyte, which will each be addressed in turn before arriving at an expressino for the flux-density.
+
+Previously, we developed expressions for the electrochemical potentials for each species; however, for this analysis we would like to define a chemical potential for the electrolyte as a whole, instead of its constituite components, individually. This is a accomplished by defining the eletrolyte chemical potential as the stoichiometry weighted sum of the positive and negative electrochemical potentials, as follows.
+
 \begin{equation}
-  \mathrm{F}_{1, V}=\frac{\mathrm{F}_{1}}{V}=-\frac{n_{1}}{V} \nabla \mu_{1}=-c_{1} \nabla \beta_{1}
+\mu_{e}=v_{+} \bar{\mu}_{+}+v_{-} \bar{\mu}_{-}
 \end{equation}
+
+This expression can then be expanded by Eqn (), which expands the electrochemical potential of the posative and negative ionic species.
+
+
+\begin{equation}
+\begin{aligned}
+\mu_{e} &=v_{+} \bar{\mu}_{+}+v_{-} \bar{\mu}_{-} \\
+&=v_{+}\left(\mu_{+}+z_{+} F \phi\right)+v_{-}\left(\mu_{-}+z_{-} F \phi\right) \\
+&=v_{+} \mu_{+}+v_{-} \mu_{-}+\left(v_{+} z_{+}+v_{-} z_{-}\right) F \phi \\
+&=v_{+} \mu_{+}+v_{-} \mu_{-}
+\end{aligned}
+\end{equation}
+
+Note that in this expansion, the electrical potential will cancel out, since our battery is a binary electrolyte, that is overall charge neutral in solution. This means that the resulting potential is not a electrochemical potential, but only a chemical potential as the net electrical effect is zero. \\
+
+Once we have the expression for the electrolyte chemical potential, it is a simple formality to find the gradient of this equation, and we can further multiple each
+
+\begin{equation}\label{eletrolyte_chem_pot_grad}
+\nabla \mu_{e}=\nu_{+} \nabla \bar{\mu}_{+}+\nu_{-} \nabla \bar{\mu}_{-}
+\end{equation}
+
+
+The reason for computing the gradient of the electrolyte chemical potential is to develope an expression which can be substituted into Eqn (\ref{mulit_component_mixture_friction}). As a reduction of notion, note that we will define $c_{\pm}$ as shown below
+
+
+\begin{equation}\label{stoich_concentration_pos}
+c v_{+} \nabla \bar{\mu}_{+}=c_{+} \nabla \bar{\mu}_{+}
+\end{equation}
+\begin{equation}\label{stoich_concentration_neg}
+   c v_{-} \nabla \bar{\mu}_{-}=c_{-} \nabla \bar{\mu}_{-}
+\end{equation}
+
+By substituting the definition of the chemical potential gradient in Eqn(\ref{eletrolyte_chem_pot_grad}), and the expressions we have for $c_{\pm}$ shown above, into Eqn(\ref{mulit_component_mixture_friction}), we arrive at the following two equations.
+
+\begin{equation}
+\begin{array}{l}
+c_{+} \nabla \bar{\mu}_{+}=K_{+0}\left(\mathbf{v}_{0}-\mathbf{v}_{+}\right)+K_{+-}\left(\mathbf{v}_{-}-\mathbf{v}_{+}\right) \\
+c_{-} \nabla \bar{\mu}_{-}=K_{-0}\left(\mathbf{v}_{0}-\mathbf{v}_{-}\right)+K_{-+}\left(\mathbf{v}_{+}-\mathbf{v}_{-}\right)
+\end{array}
+\end{equation}
+
+After collecting like terms and canceling where valid, this equation can be written as ...
+
+\begin{equation}
+c \nabla \mu_{e}= K_{0+}\left(\mathbf{v}_{0}-\mathbf{v}_{+}\right)+K_{0-}\left(\mathbf{v}_{0}-\mathbf{v}_{-}\right) .
+\end{equation}
+
+Which will be used in subsequent part of the flux-density derivation. //
+
+The second component which we would like to define for the electrolyte as a whole is the diffusion coeffient. To accomplish this, we would like to combine the effects of diffusion from both ionic species in the electrolyte. As with the chemical potential of the electrolyte, the diffusion coefficent will be defined as the stoichiometric weighted average of the diffusion coefficient for both of its constitute species. However, unlike the chemical potentials, diffusivity adds reciprocally.
+
+\begin{equation}
+\frac{v}{\mathscr{D}}=\frac{v_{+}}{\mathscr{D}_{0}+}+\frac{v_{-}}{\mathscr{D}_{0}-}
+\end{equation}
+
+By solving for the diffusivity $\mathscr{D}$ and multiplying by the concetration, as well as applying simplification from Eqns ( \ref{stoich_concentration_pos} \& \ref{stoich_concentration_neg}) we obtain...
+
+\begin{equation}
+\mathscr{D}=\frac{\nu C}{\frac{C_{+}}{\mathscr{D}_{0+}}+\frac{C_{-}}{\mathscr{D}_{0-}}}
+\end{equation}
+
+If we further multiple this expressions by $\frac{RTC_0}{C_T}$ over itself, we have only multiplied by unity and not changed the value of the expressions; however, after applying this transformation, this equation can be written in terms of the Maxwell-Stefan friction coeffiecients derived previously.
+
+\begin{equation}
+\mathscr{D}=\frac{v R T c_{0} c}{c_{T}\left(K_{0+}+K_{0-}\right)}
+\end{equation}
+
+
 
 \begin{equation}
   \frac{\partial c}{\partial t}=\nabla \cdot\left[D\left(1-\frac{\mathrm{d} \ln c_{0}}{\mathrm{~d} \ln c}\right) \nabla c\right]-\frac{\mathbf{i} \cdot \nabla t_{+}^{0}}{z_{+} v_{+} F}-\nabla \cdot\left(c \mathbf{v}_{0}\right)
