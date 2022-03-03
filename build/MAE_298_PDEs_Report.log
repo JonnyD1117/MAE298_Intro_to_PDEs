@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.1)  26 FEB 2022 23:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.1)  3 MAR 2022 00:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -511,94 +511,137 @@ Overfull \hbox (26.9549pt too wide) detected at line 797
 [][]
  []
 
+[8]
+Overfull \hbox (7.10068pt too wide) detected at line 897
+[][]
+ []
 
-Underfull \hbox (badness 2181) in paragraph at lines 821--822
+
+Overfull \hbox (67.74927pt too wide) detected at line 945
+[][]
+ []
+
+
+Overfull \hbox (46.07843pt too wide) detected at line 983
+[][]
+ []
+
+
+Overfull \hbox (23.07285pt too wide) detected at line 994
+\OT1/cmr/bx/n/10 i \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ^^T\O
+MS/cmsy/m/n/10 r\OML/cmm/m/it/10 ^^^ \OMS/cmsy/m/n/10 ^^@ [] [] [] r [] \OML/cm
+m/m/it/10 c
+ []
+
+
+Overfull \hbox (54.78583pt too wide) detected at line 998
+\OMS/cmsy/m/n/10 r ^^A [] \OT1/cmr/m/n/10 = 0
+ []
+
+[9]
+Overfull \hbox (30.29323pt too wide) detected at line 1002
+\OMS/cmsy/m/n/10 r ^^A \OT1/cmr/bx/n/10 i[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 
+r ^^A [] \OT1/cmr/m/n/10 = 0
+ []
+
+
+Overfull \hbox (50.74608pt too wide) detected at line 1113
+[]\U/rsfs/m/n/10 E[] \OT1/cmr/m/n/10 = [] [] []\U/rsfs/m/n/10 E[] \OT1/cmr/m/n/
+10 = [] [] []
+ []
+
+
+Underfull \hbox (badness 2181) in paragraph at lines 1126--1127
 []\OT1/ptm/m/n/10 The pre-vi-ous sys-tem of gov-ern-ing par-tial dif-fer-en-tia
 l
  []
 
 
-Underfull \hbox (badness 1968) in paragraph at lines 821--822
+Underfull \hbox (badness 1968) in paragraph at lines 1126--1127
 \OT1/ptm/m/n/10 in-for-ma-tive about the how these sorts of high fi-delity
  []
 
 
-Underfull \hbox (badness 2980) in paragraph at lines 821--822
+Underfull \hbox (badness 2980) in paragraph at lines 1126--1127
 \OT1/ptm/m/n/10 com-pu-ta-tion-ally in-fea-si-ble, even for mod-ern com-put-ers
 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 821--822
+Underfull \hbox (badness 10000) in paragraph at lines 1126--1127
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 823--824
+Underfull \hbox (badness 10000) in paragraph at lines 1128--1129
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 1136--1137
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 831--832
-
- []
-
-[8]
-Underfull \hbox (badness 4832) in paragraph at lines 851--856
+Underfull \hbox (badness 4832) in paragraph at lines 1156--1161
 []\OT1/ptm/m/n/10 You can use a bib-li-og-ra-phy gen-er-ated by Bib-TeX
  []
 
 
-Underfull \hbox (badness 4608) in paragraph at lines 851--856
+Underfull \hbox (badness 4608) in paragraph at lines 1156--1161
 \OT1/ptm/m/n/10 as a .bbl file. Bib-TeX doc-u-men-ta-tion can be eas-ily
  []
 
 
-Underfull \hbox (badness 6380) in paragraph at lines 851--856
+Underfull \hbox (badness 6380) in paragraph at lines 1156--1161
 \OT1/ptm/m/n/10 ob-tained at: http://mirror.ctan.org/biblio/bibtex/contrib/doc/
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 851--856
+Underfull \hbox (badness 10000) in paragraph at lines 1156--1161
 \OT1/ptm/m/n/10 The IEEE-tran Bib-TeX style sup-port page is:
  []
 
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 8
-61.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
+166.
 (c:/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [9]
+) [11] [12
+
+]
 (./MAE_298_PDEs_Report.aux) ) 
 Here is how much of TeX's memory you used:
- 4322 strings out of 480994
- 67075 string characters out of 5916033
- 320945 words of memory out of 5000000
- 19752 multiletter control sequences out of 15000+600000
+ 4325 strings out of 480994
+ 67135 string characters out of 5916033
+ 329974 words of memory out of 5000000
+ 19755 multiletter control sequences out of 15000+600000
  575434 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,42p,1577b,217s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,15n,42p,1577b,217s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8
 r.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:
-/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/
-2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2019/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr5.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:
-/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2
-019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2019/texmf-
-dist/fonts/type1/public/rsfs/rsfs10.pfb><c:/texlive/2019/texmf-dist/fonts/type1
-/public/rsfs/rsfs7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/courier/ucrr
-8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive
-/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2019/texmf-dist/f
-onts/type1/urw/times/utmri8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public
-/wasy-type1/wasy10.pfb>
-Output written on MAE_298_PDEs_Report.pdf (9 pages, 333048 bytes).
+/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2
+019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2019/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r5.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/
+texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2
+019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2019/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2019/texmf-dist/fonts
+/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2019/texmf-dist/fonts/typ
+e1/public/rsfs/rsfs10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/rsfs/r
+sfs7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/tex
+live/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2019/texmf-di
+st/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw
+/times/utmri8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/wasy-type1/wa
+sy10.pfb>
+Output written on MAE_298_PDEs_Report.pdf (12 pages, 365442 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 126 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -583,7 +583,7 @@ The presence of ions in the electrolyte and the physical chemistry associated wi
 
 Previously, we developed expressions for the electrochemical potentials for each species; however, for this analysis we would like to define a chemical potential for the electrolyte as a whole, instead of its constituite components, individually. This is a accomplished by defining the eletrolyte chemical potential as the stoichiometry weighted sum of the positive and negative electrochemical potentials, as follows.
 
-\begin{equation}
+\begin{equation}\label{electro_chem_potential}
 \mu_{e}=v_{+} \bar{\mu}_{+}+v_{-} \bar{\mu}_{-}
 \end{equation}
 
@@ -805,13 +805,318 @@ Now that we have a full expression for the flux-density written fully in terms w
 
 
 
-Which results in the following partial differential equation that enforces mass conservation inside of the electrolyte. 
+Which results in the following partial differential equation that enforces mass conservation inside of the electrolyte.
 
 
 
 \begin{equation}
   \frac{\partial c}{\partial t}=\nabla \cdot\left[D\left(1-\frac{\mathrm{d} \ln c_{0}}{\mathrm{~d} \ln c}\right) \nabla c\right]-\frac{\mathbf{i} \cdot \nabla t_{+}^{0}}{z_{+} v_{+} F}-\nabla \cdot\left(c \mathbf{v}_{0}\right)
 \end{equation}
+
+\subsection{Concentrated Solution Theory: Electrolyte Conservation}
+
+This section focuses on the conservation of charge inside of the binary electrolyte of the battery. This analysis will result in the derivation of the following equation.
+
+\begin{equation}
+\mathbf{i}=-\kappa \nabla \phi-\frac{\kappa}{F}\left(\frac{s_{+}}{n \nu_{+}}+\frac{t_{+}^{0}}{z_{+} \nu_{+}}-\frac{s_{0} c}{n c_{0}}\right) \nabla \mu_{e}
+\end{equation}
+
+
+First, it is neccessary to understand the chemical equation at play, and which must be balanced.
+
+\begin{equation}
+\mathrm{M}+\mathrm{Li}^{+}+e^{-} \rightleftharpoons \mathrm{LiM}
+\end{equation}
+
+This can be written in an equivalent but more useful form as...
+
+\begin{equation}\label{lithium_ion_reaction_balanced}
+\mathrm{LiM}-\mathrm{M}-\mathrm{Li}^{+} \rightleftharpoons e^{-}
+\end{equation}
+
+This equation represented interaction of lithium and some metal oxide which forms the active electrode material, as well as producing excess electrons. From physics it is known that the energy of this reaction must be conserved. Therefore, we can state that the Gibbs free energy of the reactants in the LHS of equation \ref{lithium_ion_reaction_balanced}, must be equal to the electical energy of the electons produced on the RHS of the same equation.
+
+
+\begin{equation}
+  \sum{G} = \sum{E(e)}
+\end{equation}
+
+From previous sections we already know that we can write the Gibbs free energy and the energy due to the local electrostatic potential as follows.
+
+\begin{equation}
+\sum_{i} s_{i} \bar{\mu}_{i}=-n F \phi
+\end{equation}
+
+By taking the gradient of this expressions we can derive the following relationship between the gradients of the electrochemical potential and the electrostatic potential.
+
+\begin{equation}\label{COE}
+\sum_{i} s_{i} \nabla \bar{\mu}_{i}=-n F \nabla \phi
+\end{equation}
+
+By application of the Gibbs-Duhem equation \ref{gibbs_duhem_eqn}, and accounting for the change from moles to concentration, we write the following expression for the electrolyte.
+
+\begin{equation}
+c_{+} \nabla \bar{\mu}_{+}+c_{-} \nabla \bar{\mu}_{-}+c_{0} \nabla \bar{\mu}_{0}=0
+\end{equation}
+
+This expression encapsulates the positive, negative, and neutral components of the electrolyte solution, such that $i = +, -, 0$. Thus far, we have only encountered expressions for positive and negative electrochemical potentials but nothing for the neutral case. Thankfully, by leveraging the Gibbs-Duhem equation, \ref{gibbs_duhem_eqn} from previous sections, we can solve for the gradient of the $0th$ electrochemical potential. It can be shown that the expression can be written in terms of the electrolytes potential gradient, by subsituting equation \ref{eletrolyte_chem_pot_grad}.
+
+\begin{equation}
+\begin{aligned}
+\nabla \bar{\mu}_{0} &=-\frac{1}{c_{0}}\left(c_{+} \nabla \bar{\mu}_{+}+c_{-} \nabla \bar{\mu}_{-}\right) \\
+&=-\frac{c}{c_{0}}\left(\nu_{+} \nabla \bar{\mu}_{+}+\nu_{-} \nabla \bar{\mu}_{-}\right) \\
+&=-\frac{c}{c_{0}} \nabla \mu_{e}
+\end{aligned}
+\end{equation}
+
+\noindent Via direct substitution, it is obvious that we can rewrite equation \ref{COE}, in expanded form as follows.
+
+\begin{equation}
+s_{+} \nabla \bar{\mu}_{+}+s_{-} \nabla \bar{\mu}_{-}-s_{0} \frac{c}{c_{0}} \nabla \mu_{e}=-n F \nabla \phi
+\end{equation}
+
+From the balanced chemical equation, we can write.
+
+\begin{equation}
+\begin{aligned}
+s_{+} z_{+}+s_{-} z_{-} &=-n \\
+s_{-} &=-\left(\frac{z_{+}}{z_{-}} s_{+}+\frac{n}{z_{-}}\right)
+\end{aligned}
+\end{equation}
+
+Which will simplify to ...
+
+
+\begin{equation}
+\begin{aligned}
+s_{+} \nabla \bar{\mu}_{+}+s_{-} \nabla \bar{\mu}_{-} &=s_{+} \nabla \bar{\mu}_{+}-\frac{z_{+}}{z_{-}} s_{+} \nabla \bar{\mu}_{-}-\frac{n}{z_{-}} \nabla \bar{\mu}_{-} \\
+&=\frac{s_{+}}{\nu_{+}}\left(\nu_{+} \nabla \bar{\mu}_{+}-\frac{z_{+} \nu_{+}}{z_{-}} \nabla \bar{\mu}_{-}\right)-\frac{n}{z_{-}} \nabla \bar{\mu}_{-} \\
+&=\frac{s_{+}}{v_{+}}\left(\nu_{+} \nabla \bar{\mu}_{+}+\nu_{-} \nabla \bar{\mu}_{-}\right)-\frac{n}{z_{-}} \nabla \bar{\mu}_{-} \\
+&=\frac{s_{+}}{v_{+}} \nabla \mu_{e}-\frac{n}{z_{-}} \nabla \bar{\mu}_{-} .
+\end{aligned}
+\end{equation}
+
+After this simplications, the original conservation of energy equation can written as ...
+
+\begin{equation}
+\begin{array}{l}
+\frac{s_{+}}{v_{+}} \nabla \mu_{e}-\frac{n}{z_{-}} \nabla \bar{\mu}_{-}-s_{0} \frac{c}{c_{0}} \nabla \mu_{e}=-n F \nabla \phi \\
+\left(\frac{s_{+}}{n v_{+}}-\frac{s_{0} c}{n c_{0}}\right) \nabla \mu_{e}-\frac{1}{z_{-}} \nabla \bar{\mu}_{-}=-F \nabla \phi
+\end{array}
+\end{equation}
+
+\begin{equation}
+c_{-} \nabla \bar{\mu}_{-}=K_{0-}\left(\mathbf{v}_{0}-\mathbf{v}_{-}\right)+K_{+-}\left(\mathbf{v}_{+}-\mathbf{v}_{-}\right)
+\end{equation}
+
+\begin{equation}
+\begin{array}{l}
+c_{+}\left(\mathbf{v}_{+}-\mathbf{v}_{0}\right)=-\frac{v_{+} \mathscr{D}}{v R T} \frac{c_{T}}{c_{0}} c \nabla \mu_{e}+\frac{\mathbf{i} t_{+}^{0}}{z_{+} F} \\
+c_{-}\left(\mathbf{v}_{-}-\mathbf{v}_{0}\right)=-\frac{v_{-} \mathscr{D}}{v R T} \frac{c_{T}}{c_{0}} c \nabla \mu_{e}+\frac{\mathbf{i} t_{-}^{0}}{z_{-} F} .
+\end{array}
+\end{equation}
+
+\begin{equation}
+\mathscr{D}=\frac{v R T c_{0} c}{c_{T}\left(K_{0+}+K_{0-}\right)}
+\end{equation}
+
+\begin{equation}
+\begin{array}{l}
+\mathbf{v}_{+}-\mathbf{v}_{0}=-\frac{c}{K_{0+}+K_{0-}} \nabla \mu_{e}+\frac{\mathbf{i} t_{+}^{0}}{c_{+} z_{+} F} \\
+\mathbf{v}_{-}-\mathbf{v}_{0}=-\frac{c}{K_{0+}+K_{0-}} \nabla \mu_{e}+\frac{\mathbf{i} t_{-}^{0}}{c_{-} z_{-} F}
+\end{array}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+\mathbf{v}_{+}-\mathbf{v}_{-} &=\frac{\mathbf{i}}{F}\left(\frac{t_{+}^{0}}{c_{+} z_{+}}-\frac{t_{-}^{0}}{c_{-} z_{-}}\right) \\
+&=\frac{\mathbf{i}}{c_{+} z_{+} F}\left(t_{+}^{0}+\left(1-t_{+}^{0}\right)\right)=\frac{\mathbf{i}}{c_{+} z_{+} F}
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+\frac{1}{z_{-}} \nabla \bar{\mu}_{-} &=\frac{1}{c_{-} z_{-}}\left[K_{0-}\left(\mathbf{v}_{0}-\mathbf{v}_{-}\right)+K_{+-}\left(\mathbf{v}_{+}-\mathbf{v}_{-}\right)\right] \\
+&=\frac{1}{c_{-} z_{-}}\left[K_{0-}\left(\frac{c}{K_{0+}+K_{0-}} \nabla \mu_{e}+\frac{\mathbf{i} t_{-}^{0}}{c_{+} z_{+} F}\right)+K_{+-}\left(\frac{\mathbf{i}}{c_{+} z_{+} F}\right)\right] \\
+&=\frac{c}{c_{-} z_{-}} \frac{K_{0-}}{K_{0+}+K_{0-}} \nabla \mu_{e}+\mathbf{i}\left(\frac{K_{0_{-}} t_{-}^{0}}{c_{-} z_{-} c_{+} z_{+} F}+\frac{K_{+-}}{c_{-} z_{-} c_{+} z_{+} F}\right) \\
+&=-\frac{c_{+}}{v_{+} c_{+} z_{+}} t_{+}^{0} \nabla \mu_{e}-F \mathbf{i}\left(\frac{-K_{0_{-}} t_{-}^{0}-K_{+-}}{c_{-} z_{-} c_{+} z_{+} F^{2}}\right) \\
+&=-\frac{t_{+}^{0}}{v_{+} z_{+}} \nabla \mu_{e}-\frac{F \mathbf{i}}{\kappa}
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\frac{1}{\kappa}=\frac{-K_{0_{-}} t_{-}^{0}-K_{+-}}{c_{-} z_{-} c_{+} z_{+} F^{2}}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+-F \nabla \phi &=\left(\frac{s_{+}}{n v_{+}}-\frac{s_{0} c}{n c_{0}}\right) \nabla \mu_{e}-\frac{1}{z_{-}} \nabla \bar{\mu}_{-} \\
+-F \nabla \phi &=\left(\frac{s_{+}}{n v_{+}}-\frac{s_{0} c}{n c_{0}}+\frac{t_{+}^{0}}{v_{+} z_{+}}\right) \nabla \mu_{e}+\frac{F \mathbf{i}}{\kappa} \\
+\mathbf{i} &=-\kappa \nabla \phi-\frac{\kappa}{F}\left(\frac{s_{+}}{n v_{+}}-\frac{s_{0} c}{n c_{0}}+\frac{t_{+}^{0}}{v_{+} z_{+}}\right) \nabla \mu_{e} .
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\nabla \mu_{e}=\frac{\partial \mu_{e}}{\partial \ln c} \nabla \ln c
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+\mu_{+} &=R T \ln \left(c_{+} f_{+} a_{+}^{\ominus}\right)=R T \ln \left(\nu_{+} c f_{+} a_{+}^{\ominus}\right) \\
+&=R T \ln \left(\nu_{+}\right)+R T \ln (c)+R T \ln \left(f_{+}\right)+R T \ln \left(a_{+}^{\ominus}\right)
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\frac{\partial \bar{\mu}_{+}}{\partial \ln c}=R T+R T \frac{\partial \ln f_{+}}{\partial \ln c}+z_{+} F \frac{\partial \phi}{\partial \ln c}
+\end{equation}
+
+\begin{equation}
+\frac{\partial \bar{\mu}_{-}}{\partial \ln c}=R T+R T \frac{\partial \ln f_{-}}{\partial \ln c}+z_{-} F \frac{\partial \phi}{\partial \ln c}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+\frac{\partial \mu_{e}}{\partial \ln c} &=v_{+} \frac{\partial \bar{\mu}_{+}}{\partial \ln c}+v_{-} \frac{\partial \bar{\mu}_{-}}{\partial \ln c} \\
+&=\left(\nu_{+}+\nu_{-}\right) R T+R T \frac{\partial \ln \left(f_{+}^{v_{+}} f_{-}^{v_{-}}\right)}{\partial \ln c}+\underbrace{\left(\nu_{+} z_{+}+\nu_{-} z_{-}\right)}_{0} F \frac{\partial \phi}{\partial \ln c}
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+\frac{\partial \mu_{e}}{\partial \ln c} &=v R T+R T \frac{\partial \ln f_{\pm}^{\nu}}{\partial \ln c} \\
+&=v R T\left(1+\frac{\partial \ln f_{\pm}}{\partial \ln c}\right)
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\mathbf{i}=-\kappa \nabla \phi-\frac{\nu \kappa R T}{F}\left(\frac{S_{+}}{n v_{+}}-\frac{s_{0} c}{n c_{0}}+\frac{t_{+}^{0}}{v_{+} z_{+}}\right)\left(1+\frac{\partial \ln f_{\pm}}{\partial \ln c}\right) \nabla \ln c
+\end{equation}
+
+\begin{equation}
+\nabla \cdot\left(-\kappa \nabla \phi-\frac{v \kappa R T}{F}\left(\frac{s_{+}}{n v_{+}}-\frac{s_{0} c}{n c_{0}}+\frac{t_{+}^{0}}{v_{+} z_{+}}\right)\left(1+\frac{\partial \ln f_{\pm}}{\partial \ln c}\right) \nabla \ln c\right)=0
+\end{equation}
+
+\begin{equation}
+\nabla \cdot \mathbf{i}_{e}=\nabla \cdot\left(-\kappa \nabla \phi_{e}-\frac{2 \kappa R T}{F}\left(1+\frac{\partial \ln f_{\pm}}{\partial \ln c_{e}}\right)\left(t_{+}^{0}-1\right) \nabla \ln c_{e}\right)=0
+\end{equation}
+
+\begin{equation}
+\nabla \cdot\left(-\kappa \nabla \phi_{e}-\kappa_{D} \nabla \ln c_{e}\right)=0
+\end{equation}
+
+\begin{equation}
+r=\frac{\mathrm{d} \prod_{i} c_{\text {product }, i}}{\mathrm{~d} t}
+\end{equation}
+
+\begin{equation}
+r=k \prod_{i} c_{\text {reactant }, i}
+\end{equation}
+
+\begin{equation}
+r=\frac{\mathrm{d} c_{\text {product }}}{\mathrm{d} t}=k c_{\text {reactant }}
+\end{equation}
+
+\begin{equation}
+k=k_{f}^{0} \exp \left(-\frac{E_{a}}{R T}\right), \quad \text { or } \quad r=k_{f}^{0} c_{\text {reactant }} \exp \left(-\frac{E_{a}}{R T}\right)
+\end{equation}
+
+\begin{equation}
+\Delta G_{0}=-n F\left(\phi-\phi_{0}\right)
+\end{equation}
+
+\begin{equation}
+0<\left|\Delta G_{\text {complex }}^{\ddagger}\right|<\left|\Delta G_{0}\right|
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+\Delta E_{a, o} &=E_{a, r}-E_{a, r}^{0}-n F\left(\phi-\phi_{0}\right) \\
+&=\Delta E_{a, r}-n F\left(\phi-\phi_{0}\right)
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\alpha=\left|\frac{\Delta E_{a, r}}{\Delta G_{0}}\right|, \quad \text { and } \quad 1-\alpha=\left|\frac{\Delta E_{a, o}}{\Delta G_{0}}\right|
+\end{equation}
+
+\begin{equation}
+\Delta E_{a, o}-\Delta E_{a, r}=-n F\left(\phi-\phi_{0}\right)=\Delta G_{0}
+\end{equation}
+
+\begin{equation}
+\alpha=\left|\frac{\Delta E_{a, r}}{\Delta G_{0}}\right|, \quad \text { and } \quad 1-\alpha=\left|\frac{\Delta E_{a, o}}{\Delta G_{0}}\right|
+\end{equation}
+
+
+
+
+\begin{equation}
+i_{r}=-n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}+\alpha n F \phi}{R T}\right)
+\end{equation}
+
+\begin{equation}
+i_{o}=n F k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, 0}^{0}-(1-\alpha) n F \phi}{R T}\right)
+\end{equation}
+
+\begin{equation}
+i_{r}=-n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}+\alpha n F\left(\phi_{\text {rest }}+\eta\right)}{R T}\right)
+\end{equation}
+
+\begin{equation}
+i_{o}=n F k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, o}^{0}-(1-\alpha) n F\left(\phi_{\text {rest }}+\eta\right)}{R T}\right)
+\end{equation}
+
+\begin{equation}
+i_{r}=-n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}}{R T}\right) \exp \left(-\frac{\alpha n F \phi_{\mathrm{rest}}}{R T}\right)
+\end{equation}
+
+\begin{equation}
+i_{o}=n F k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, 0}^{0}}{R T}\right) \exp \left(\frac{(1-\alpha) n F \phi_{\mathrm{rest}}}{R T}\right)
+\end{equation}
+
+\begin{equation}
+i=i_{0}+i_{r}=0
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+i_{0} &=n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}}{R T}\right) \exp \left(-\frac{\alpha n F \phi_{\text {rest }}}{R T}\right) \\
+&=n F k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, 0}^{0}}{R T}\right) \exp \left(\frac{(1-\alpha) n F \phi_{\text {rest }}}{R T}\right)
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+i_{r} &=-i_{0} \exp \left(-\frac{\alpha n F \eta}{R T}\right) \\
+i_{o} &=i_{0} \exp \left(\frac{(1-\alpha) n F \eta}{R T}\right)
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+i=i_{o}+i_{r}=i_{0}\left\{\exp \left(\frac{(1-\alpha) n F \eta}{R T}\right)-\exp \left(-\frac{\alpha n F \eta}{R T}\right)\right\}
+\end{equation}
+
+
+\begin{equation}
+j=\frac{i_{0}}{F}\left\{\exp \left(\frac{(1-\alpha) n F \eta}{R T}\right)-\exp \left(-\frac{\alpha n F \eta}{R T}\right)\right\}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+i_{0} &=n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}}{R T}\right) \exp \left(-\frac{\alpha n F \phi_{\text {rest }}}{R T}\right) \\
+&=n F k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, o}^{0}}{R T}\right) \exp \left(\frac{(1-\alpha) n F \phi_{\text {rest }}}{R T}\right)
+\end{aligned}
+\end{equation}
+\begin{equation}
+\text { Setting } \mathscr{E}_{a, r}^{0}=\exp \left(-\frac{E_{a, r}^{0}}{R T}\right) \text { and } \mathscr{E}_{a, 0}^{0}=\exp \left(-\frac{E_{a, 0}^{0}}{R T}\right) \text { and equating }
+\end{equation}
+
+
+
+
+
+
 
 \subsection{Lithium Movement Between Solid \& Electrolyte Phases}
 
