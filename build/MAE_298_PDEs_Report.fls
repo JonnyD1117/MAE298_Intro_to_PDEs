@@ -1,4 +1,4 @@
-PWD C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/build
+PWD C:/Users/jonat/Documents/MAE298_Intro_to_PDEs/build
 INPUT c:/texlive/2019/texmf.cnf
 INPUT c:/texlive/2019/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt
@@ -115,10 +115,10 @@ INPUT c:/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT c:/texlive/2019/texmf-dist/fonts/tfm/adobe/times/ptmrc7t.tfm
 INPUT c:/texlive/2019/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
 INPUT c:/texlive/2019/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
-INPUT c:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/DFN.png
-INPUT c:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/DFN.png
+INPUT c:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/DFN.png
+INPUT c:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/DFN.png
 OUTPUT MAE_298_PDEs_Report.pdf
-INPUT c:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/DFN.png
+INPUT c:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/DFN.png
 INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd

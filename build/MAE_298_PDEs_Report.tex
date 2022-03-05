@@ -30,8 +30,8 @@
 % \usepackage{subfig}
 % \addbibresource{./citations.bib}
 %
-\graphicspath{ {C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/} }
-% \graphicspath{ {C:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/} }
+% \graphicspath{ {C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/} }
+\graphicspath{ {C:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/} }
 
 
 \newcommand{\volume}{{\ooalign{\hfil$V$\hfil\cr\kern0.08em--\hfil\cr}}}
@@ -1060,17 +1060,32 @@ The final equation in the derivation of the microscale model which layings the f
 r=\frac{\mathrm{d} \prod_{i} c_{\text {product }, i}}{\mathrm{~d} t}
 \end{equation}
 
+\noindent For linear dynamics, we can writing the reaction rate as ...
+
 \begin{equation}
 r=k \prod_{i} c_{\text {reactant }, i}
 \end{equation}
 
-\begin{equation}
-r=\frac{\mathrm{d} c_{\text {product }}}{\mathrm{d} t}=k c_{\text {reactant }}
-\end{equation}
+\noindent This constant is usually defined as a temperature dependent Arrhenius relationship such that we can write the reaction rate as follows.
 
 \begin{equation}
-k=k_{f}^{0} \exp \left(-\frac{E_{a}}{R T}\right), \quad \text { or } \quad r=k_{f}^{0} c_{\text {reactant }} \exp \left(-\frac{E_{a}}{R T}\right)
+ r=k_{f}^{0} c_{\text {reactant }} \exp \left(-\frac{E_{a}}{R T}\right)
 \end{equation}
+
+\noindent Where $E_a$ is the activation energy required to initiate the reaction.
+
+\subsubsection{Activated Complex Theory}
+
+\noindent In order for a chemical reaction to occur, there must be enough free energy to initiate and maintain the reaction. For the types of reactions seen in this paper, the process of going from reactants to produces is only favored if the reactant possess a higher energy state than the final product of reaction. This positive delta in energy states maintains the chemical reaction, once it has been begun. However, there is often a barrier energy required to initiate such a reaction. \\
+
+For the chemical reactions that occur in our lithium-ion battery, the reaction taking place is a reduction-oxidation (redox) reaction, which release/gains electrons. Unlike other redox reaction, the reaction in the battery is unique in that the objective of the reaction is to merely produce or consume electrons. However, in the presence of an electric field, the direction of the reaction can be preferentially detemined by the polarity of the given field across the cell. \\
+
+Both the oxidation and the reduction directions of the reaction possess respective activation energies, which are required to drive the reaction into oxidation or reduction.
+
+
+
+% 
+% this holds true. Therefore, there must be activation energy $E_a$, which supplies the reaction with enough initial eneregy that the delta between the Gibbs free energy of the reactants and products can maintain the reaction. In the case of batteries this energy is almost always supplied by an external electric potential across the cell. The difference in Gibbs free energy relative to the equilibrium potential is defined as follows.
 
 \begin{equation}
 \Delta G_{0}=-n F\left(\phi-\phi_{0}\right)
