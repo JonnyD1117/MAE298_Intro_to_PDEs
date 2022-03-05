@@ -30,8 +30,8 @@
 % \usepackage{subfig}
 % \addbibresource{./citations.bib}
 %
-% \graphicspath{ {C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/} }
-\graphicspath{ {C:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/} }
+\graphicspath{ {C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/} }
+% \graphicspath{ {C:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/} }
 
 
 \newcommand{\volume}{{\ooalign{\hfil$V$\hfil\cr\kern0.08em--\hfil\cr}}}
@@ -324,7 +324,7 @@ In this example, the coefficents in from of each ion on the right-hand-side of t
 
 \subsubsection{ Charge Number }
 
-Similar to the stoichiometric coefficents, the \textbf{charge number} is also displayed in the chemical equation, as the super-script for each compound on the right-hand-side of the the balanced chemical equation. The charge number tells us how many excess electrons or protons exist in each given ion compound. The charge numbers for the equation above are $z_{Na^{+} = 1}$ and $ z_{SO_{4}^{2-}} = -2 $. The sign of the charge number informs us whether each compound is a cation ($z>0$) or anion ($z < 0 $)
+Similar to the stoichiometric coefficents, the \textbf{charge number} is also displayed in the chemical equation, as the super-script for each compound on the right-hand-side of the the balanced chemical equation. The charge number tells us how many excess electrons or protons exist in each given ion compound. The charge numbers for the equation above are $z_{Na^{+} = 1}$ and $ z_{SO_{4}^{2-}} = -2 $. The sign of the charge number informs us whether each compound is a cation ($z>0$) or anion ($z < 0 $) \\
 
 \subsubsection{ Electroneutrality in Binary Electroytes }
 As mentioned previously electroneutrality is an important and frequently referenced concept in the developement of the equations. In particular, a binary electrolyte comprised of only species is of particular interest and has useful properties which are very relavent to lithium-ion battery models. Under the constraint of charge-neutrality, we can state that the net charge in the solution must be $q = 0$. This can be expressed via charge numbers and the stoichiometric coefficents described above as follows.
@@ -1084,7 +1084,7 @@ Both the oxidation and the reduction directions of the reaction possess respecti
 
 
 
-% 
+%
 % this holds true. Therefore, there must be activation energy $E_a$, which supplies the reaction with enough initial eneregy that the delta between the Gibbs free energy of the reactants and products can maintain the reaction. In the case of batteries this energy is almost always supplied by an external electric potential across the cell. The difference in Gibbs free energy relative to the equilibrium potential is defined as follows.
 
 \begin{equation}
@@ -1103,19 +1103,36 @@ Both the oxidation and the reduction directions of the reaction possess respecti
 \end{equation}
 
 \begin{equation}
-\alpha=\left|\frac{\Delta E_{a, r}}{\Delta G_{0}}\right|, \quad \text { and } \quad 1-\alpha=\left|\frac{\Delta E_{a, o}}{\Delta G_{0}}\right|
-\end{equation}
-
-\begin{equation}
 \Delta E_{a, o}-\Delta E_{a, r}=-n F\left(\phi-\phi_{0}\right)=\Delta G_{0}
 \end{equation}
 
+\noindent To neatly capture this behavior, we define the asymmetric cahrge-trans coefficient $0 < \alpha < 1$, such that...
+
 \begin{equation}
 \alpha=\left|\frac{\Delta E_{a, r}}{\Delta G_{0}}\right|, \quad \text { and } \quad 1-\alpha=\left|\frac{\Delta E_{a, o}}{\Delta G_{0}}\right|
 \end{equation}
 
 
+\noindent By substituting the appropriate expressions into the equation for current flux, we arrive at the following reaction rates for both oxidation and reduction.
 
+1. Rate of reduction:
+\begin{equation}
+  \begin{aligned}
+  r_{r} &=k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}}{R T}\right) \\
+  &=k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}+\alpha n F\left(\phi-\phi_{0}\right)}{R T}\right) .
+  \end{aligned}
+\end{equation}
+
+2. Rate of oxidization:
+\begin{equation}
+  \begin{aligned}
+  r_{o} &=k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, o}}{R T}\right) \\
+  &=k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, 0}^{0}-(1-\alpha) n F\left(\phi-\phi_{0}\right)}{R T}\right)
+  \end{aligned}
+\end{equation}
+
+
+\noindent Since the reaction which is occuring must be charge neutral as the electrolyte is charge neutral, it is possible to show that the current flux for the oxidation and the reduction can be defined as a function of the corresponding reaction rates as $i_r = -nFr_{r} $ and $i_o = -nFr_{o}$.
 
 \begin{equation}
 i_{r}=-n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}+\alpha n F \phi}{R T}\right)
@@ -1125,6 +1142,9 @@ i_{r}=-n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}+\alpha n F \phi}{R T}\
 i_{o}=n F k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, 0}^{0}-(1-\alpha) n F \phi}{R T}\right)
 \end{equation}
 
+
+\noindent It should be noted that when the system is in equilibrium, $\phi = \phi_{rest}$. In order to capture how changes from the equilibrium potential effects the current flux, we define the \textbf{over potential} as $\eta = \phi - \phi_{rest}$. When properly substituted the previous equations, written in terms of the over potential are written as follows.
+
 \begin{equation}
 i_{r}=-n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}+\alpha n F\left(\phi_{\text {rest }}+\eta\right)}{R T}\right)
 \end{equation}
@@ -1132,6 +1152,11 @@ i_{r}=-n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}+\alpha n F\left(\phi_{
 \begin{equation}
 i_{o}=n F k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, o}^{0}-(1-\alpha) n F\left(\phi_{\text {rest }}+\eta\right)}{R T}\right)
 \end{equation}
+
+
+\noindent Before we continue manipulating these equations, note that when expressed via the overpotential $\eta$, the system is at equilibrium when $\eta = 0$.  \\
+
+\noindent Thus when in equilibrium, by using properties of the exponential function we can further simplify these oxidation and reduction currents to isolate the terms for applied potential and the activation energy.
 
 \begin{equation}
 i_{r}=-n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}}{R T}\right) \exp \left(-\frac{\alpha n F \phi_{\mathrm{rest}}}{R T}\right)
@@ -1141,16 +1166,25 @@ i_{r}=-n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}}{R T}\right) \exp \lef
 i_{o}=n F k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, 0}^{0}}{R T}\right) \exp \left(\frac{(1-\alpha) n F \phi_{\mathrm{rest}}}{R T}\right)
 \end{equation}
 
+\noindent We know from the fact of charge neutrality of the system that sum total of the oxidation and reduction current fluxes must equate to zero.
+
 \begin{equation}
 i=i_{0}+i_{r}=0
 \end{equation}
 
-\begin{equation}
-\begin{aligned}
-i_{0} &=n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}}{R T}\right) \exp \left(-\frac{\alpha n F \phi_{\text {rest }}}{R T}\right) \\
-&=n F k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, 0}^{0}}{R T}\right) \exp \left(\frac{(1-\alpha) n F \phi_{\text {rest }}}{R T}\right)
-\end{aligned}
-\end{equation}
+
+
+
+
+
+% \begin{equation}
+% \begin{aligned}
+% i_{0} &=n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}}{R T}\right) \exp \left(-\frac{\alpha n F \phi_{\text {rest }}}{R T}\right) \\
+% &=n F k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, 0}^{0}}{R T}\right) \exp \left(\frac{(1-\alpha) n F \phi_{\text {rest }}}{R T}\right)
+% \end{aligned}
+% \end{equation}
+\noindent Under the condition of equilibrium we can define the exchange current $i_0$, such that...
+
 
 \begin{equation}
 \begin{aligned}
@@ -1159,14 +1193,22 @@ i_{o} &=i_{0} \exp \left(\frac{(1-\alpha) n F \eta}{R T}\right)
 \end{aligned}
 \end{equation}
 
+\noindent With this simplification, we can write express for the total ionic current $\left[ Am^{-2} \right]$ for both the oxidation and reduction directions of the reaction as...
+
 \begin{equation}
 i=i_{o}+i_{r}=i_{0}\left\{\exp \left(\frac{(1-\alpha) n F \eta}{R T}\right)-\exp \left(-\frac{\alpha n F \eta}{R T}\right)\right\}
 \end{equation}
+
+\noindent However, in battery literature, it is fairly uncommong to express the current flux in these units. Typically, we would express this quantity in molar form with unity $\left[ mol m^{-2} s^{-1} \right]$, by normalizing the current flux by Faraday's constant $F$.
 
 
 \begin{equation}
 j=\frac{i_{0}}{F}\left\{\exp \left(\frac{(1-\alpha) n F \eta}{R T}\right)-\exp \left(-\frac{\alpha n F \eta}{R T}\right)\right\}
 \end{equation}
+
+
+\subsubsection{Exchange Current Density}
+As defined in the previous section, the \textbf{exchange current density}  $i_0$ is defined under the condition of equilibrium. The physical interpretation of this term therefore, quantifies the amount of oxidation and reductions currents when the electrode is at rest. This term implies a type of dynamic equilibrium where in the electrons are being exchanged via the action of oxidation and reduction under no external simulation.
 
 \begin{equation}
 \begin{aligned}
@@ -1174,18 +1216,120 @@ i_{0} &=n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}}{R T}\right) \exp \le
 &=n F k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, o}^{0}}{R T}\right) \exp \left(\frac{(1-\alpha) n F \phi_{\text {rest }}}{R T}\right)
 \end{aligned}
 \end{equation}
+
+
+\noindent Given this expression for both oxidation and reduction, we can define the following terms $\mathscr{E}_{a, r}^{0}=\exp \left(-\frac{E_{a, r}^{0}}{R T}\right)$ and $ \mathscr{E}_{a, 0}^{0}=\exp \left(-\frac{E_{a, 0}^{0}}{R T}\right)$. By equation $i_0$ when defined using these symbols we get...
+
+
 \begin{equation}
-\text { Setting } \mathscr{E}_{a, r}^{0}=\exp \left(-\frac{E_{a, r}^{0}}{R T}\right) \text { and } \mathscr{E}_{a, 0}^{0}=\exp \left(-\frac{E_{a, 0}^{0}}{R T}\right) \text { and equating }
+  k_{r}^{0} C_{r} \mathscr{E}_{a, 0}^{0} \exp \left(\frac{(1-\alpha) n F \phi_{\text {rest}}}{R T}\right) =k_{o}^{0} \mathcal{C}_{o} \mathscr{E}_{a, r}^{0} \exp \left(-\frac{\alpha n F \phi_{\text {rest }}}{R T}\right)
 \end{equation}
 
 
+\begin{equation}
+  \frac{\exp \left(\frac{(1-\alpha) n F \phi_{\text {rest }}}{R T}\right)}{\exp \left(-\frac{\alpha n F \phi_{\text {rest }}}{R T}\right)} =\frac{k_{o}^{0} c_{o} \mathscr{E}_{a, r}^{0}}{k_{r}^{0} c_{r} \mathscr{E}_{a, o}^{0}}
+\end{equation}
 
 
+\begin{equation}
+  \frac{(1-\alpha) n F \phi_{\text {rest }}}{R T}+\frac{\alpha n F \phi_{\text {rest }}}{R T} =\ln \left(\frac{k_{o}^{0} \mathscr{E}_{a, r}}{k_{r}^{0} \mathscr{E}_{a, o}^{0}}\right)+\ln \frac{c_{0}}{c_{r}}
+\end{equation}
 
 
+\begin{equation}
+  \phi_{\text {rest }} =\frac{R T}{n F} \ln \left(\frac{k_{o}^{0} \mathscr{E}_{a, r}}{k_{r}^{0} \mathscr{E}_{a, 0}^{0}}\right){\phi_{\phi}+\frac{R T}{n F} \ln \frac{C_{0}}{c_{r}}}
+\end{equation}
 
-\subsection{Lithium Movement Between Solid \& Electrolyte Phases}
+\begin{equation}
+\phi_{\text {rest }} =\phi^{\ominus}+\frac{R T}{n F} \ln \frac{c_{o}}{c_{r}}
+\end{equation}
 
+\noindent Nerst Equation
+
+\begin{equation}
+\begin{aligned}
+i_{0} &=n F k_{o}^{0} c_{o} \mathscr{E}_{a, r}^{0} \exp \left(-\frac{\alpha n F}{R T}\left(\phi^{\ominus}+\frac{R T}{n F} \ln \frac{c_{o}}{c_{r}}\right)\right) \\
+&=n F k_{o}^{0} c_{o} \mathscr{E}_{a, r}^{0} \exp \left(-\frac{\alpha n F \phi^{\ominus}}{R T}\right) c_{r}^{\alpha} c_{o}^{-\alpha} \\
+&=n F k_{o}^{0} c_{o}^{1-\alpha} c_{r}^{\alpha} \mathscr{E}_{a, r}^{0} \exp \left(-\frac{\alpha n F \phi^{\ominus}}{R T}\right)
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+i_{0} &=n F k_{r}^{0} c_{r} \mathscr{E}_{a, 0}^{0} \exp \left(\frac{(1-\alpha) n F}{R T}\left(\phi^{\ominus}+\frac{R T}{n F} \ln \frac{c_{0}}{c_{r}}\right)\right) \\
+&=n F k_{r}^{0} c_{r} \mathscr{E}_{a, 0}^{0} \exp \left(\frac{(1-\alpha) n F \phi^{\ominus}}{R T}\right) c_{o}^{1-\alpha} c_{r}^{\alpha-1}
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+=n F k_{r}^{0} c_{o}^{1-\alpha} c_{r}^{\alpha} \mathscr{E}_{a, 0}^{0} \exp \left(\frac{(1-\alpha) n F \phi^{\ominus}}{R T}\right)
+\end{equation}
+
+\noindent Since these two equations are equation, we can define an effective reaction rate constant.
+
+\begin{equation}
+k_{0}=k_{o}^{0} \mathscr{E}_{a, r}^{0} \exp \left(-\frac{\alpha n F \phi^{\ominus}}{R T}\right)=k_{r}^{0} \mathscr{E}_{a, o}^{0} \exp \left(\frac{(1-\alpha) n F \phi^{\ominus}}{R T}\right)
+\end{equation}
+
+\noindent Such that we can write the exchange current of the battery as ...
+
+\begin{equation}
+i_{0}=n F k_{0} c_{o}^{1-\alpha} c_{r}^{\alpha}
+\end{equation}
+
+\noindent More nerst
+
+\begin{equation}
+\begin{aligned}
+k_{0} &=k_{o}^{0} \mathscr{E}_{a, r}^{0} \exp \left(-\frac{\alpha n F \phi^{\ominus}}{R T}\right) \\
+&=k_{o}^{0} \exp \left(\frac{-E_{a, r}^{0}}{R T}-\frac{\alpha n F \phi^{\ominus}}{R T}\right) \\
+&=k_{o}^{0} \exp \left(\frac{-E_{a, r}^{0}}{R T}-\frac{\alpha n F}{R T}\left(\frac{R T}{n F}\left(\ln \left(\frac{k_{o}^{0}}{k_{r}^{0}}\right)+\ln \mathscr{E}_{a, r}^{0}-\ln \mathscr{E}_{a, o}^{0}\right)\right)\right) \\
+&=k_{o}^{0} \exp \left(\frac{-E_{a, r}^{0}}{R T}-\alpha\left(\ln \left(\frac{k_{o}^{0}}{k_{r}^{0}}\right)-\frac{E_{a, r}^{0}}{R T}+\frac{E_{a, 0}^{0}}{R T}\right)\right) \\
+&=k_{o}^{0}\left(\frac{k_{o}^{0}}{k_{r}^{0}}\right)^{-\alpha} \exp \left(-\frac{1}{R T}\left((1-\alpha) E_{a, r}^{0}+\alpha E_{a, 0}^{0}\right)\right) \\
+&=\left(k_{o}^{0}\right)^{1-\alpha}\left(k_{r}^{0}\right)^{\alpha} \exp \left(-\frac{1}{R T}\left((1-\alpha) E_{a, r}^{0}+\alpha E_{a, 0}^{0}\right)\right) .
+\end{aligned}
+\end{equation}
+
+
+\begin{equation}
+i_{0}=n F k_{0}\left(\prod_{i} c_{o, i}\right)^{1-\alpha}\left(\prod_{i} c_{r, i}\right)^{\alpha}
+\end{equation}
+
+\begin{equation}
+\prod_{i} c_{o, i}=c_{e}\left(c_{s, \max }-c_{s, e}\right)
+\end{equation}
+
+\noindent Now that we have formulated this quanitity in terms that make sense intuitive sense for the system, we can now rewrite these equations in terms that make sense in the context of battery specific applications. Namely, we can rewrite the expression for overpotential $\eta$, in terms of the batteries open circuit potential, and the potentials applied to the solid and electrolyte phases, where $\mathscr(U)_ocp = \phi_{rest}$
+
+\begin{equation}
+\eta=\left(\phi_{s}-\phi_{e}\right)-U_{\mathrm{ocp}}
+\end{equation}
+
+Writen in both SI, and molar notion the final Bulter-Volmer equation is...
+
+
+\begin{equation}
+i=F k_{0} c_{e}^{1-\alpha}\left(c_{s, \max }-c_{s, e}\right)^{1-\alpha} c_{s, e}^{\alpha}\left\{\exp \left(\frac{(1-\alpha) F}{R T} \eta\right)-\exp \left(-\frac{\alpha F}{R T} \eta\right)\right\}
+\end{equation}
+
+\begin{equation}
+j=k_{0} c_{e}^{1-\alpha}\left(c_{s, \max }-c_{s, e}\right)^{1-\alpha} c_{s, e}^{\alpha}\left\{\exp \left(\frac{(1-\alpha) F}{R T} \eta\right)-\exp \left(-\frac{\alpha F}{R T} \eta\right)\right\}
+\end{equation}
+
+
+\begin{equation}
+\begin{aligned}
+i_{0} &=F k_{0} c_{e}^{1-\alpha}\left(c_{s, \max }-c_{s, e}\right)^{1-\alpha} c_{s, e}^{\alpha} \\
+&=F \underbrace{k_{0} c_{e, 0}^{1-\alpha} c_{s, \max }}_{k_{0}^{\text {norm }}}\left(\frac{c_{e}}{c_{e, 0}}\right)^{1-\alpha}\left(\frac{c_{s, \max }-c_{s, e}}{c_{s, \max }}\right)^{1-\alpha}\left(\frac{c_{s, e}}{c_{s, \max }}\right)^{\alpha},
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\begin{array}{c}
+j=k_{0}^{\text {norm }}\left(\left(\frac{c_{e}}{c_{e, 0}}\right)\left(\frac{c_{s, \max }-c_{s, e}}{c_{s, \max }}\right)\right)^{1-\alpha}\left(\frac{c_{s, e}}{c_{s, \max }}\right)^{\alpha} \\
+\times\left\{\exp \left(\frac{(1-\alpha) F}{R T} \eta\right)-\exp \left(-\frac{\alpha F}{R T} \eta\right)\right\}
+\end{array}
+\end{equation}
 
 \section{DFN Model Derivation}
 
