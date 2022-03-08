@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.3)  5 MAR 2022 12:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.3)  7 MAR 2022 22:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -373,84 +373,144 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Underfull \hbox (badness 7832) in paragraph at lines 67--68
+[]\OT1/ptm/m/n/10 ARTIAL dif-fer-en-tial equa-tions (PDEs) pro-vide a
+ []
+
+
+Underfull \hbox (badness 3271) in paragraph at lines 67--68
+\OT1/ptm/m/n/10 math-e-mat-i-cal ba-sis for de-scrib-ing many sig-nif-i-cant
+ []
+
+
+Underfull \hbox (badness 1571) in paragraph at lines 67--68
+\OT1/ptm/m/n/10 cou-pled equa-tions and/or non-lin-ear dy-nam-ics. For these
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
+
+ []
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 72--73
+\OT1/ptm/m/n/10 ho-mo-ge-neous solid phase, the con-ser-va-tion of mass in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
+
+ []
+
 <C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/DFN.png, id=1, 853
 .1875pt x 609.27625pt>
 File: C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/DFN.png Graph
 ic file (type png)
 <use C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/DFN.png>
 Package pdftex.def Info: C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/i
-mages/DFN.png  used on input line 74.
+mages/DFN.png  used on input line 80.
 (pdftex.def)             Requested size: 213.29636pt x 152.31868pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 79.
-
+LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
 
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 79.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
 
 
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 79
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 85
 .
 
 (c:/texlive/2019/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 79
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 85
 .
 
 (c:/texlive/2019/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Overfull \hbox (30.29323pt too wide) detected at line 93
-\OMS/cmsy/m/n/10 r ^^A \OT1/cmr/bx/n/10 i[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 
-r ^^A [] \OT1/cmr/m/n/10 = 0
- []
+Underfull \vbox (badness 1248) has occurred while \output is active []
 
-[1{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+ [1{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
  <c:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/DFN.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 190--191
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+
+Underfull \hbox (badness 1577) in paragraph at lines 109--110
+[]\OT1/ptm/m/n/10 At the mi-croscale, we are in-ter-ested in de-riv-ing the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
 
  []
 
 [2]
-Underfull \hbox (badness 1509) in paragraph at lines 201--202
+Underfull \hbox (badness 1472) in paragraph at lines 184--185
+[]\OT1/ptm/m/n/10 This is the in-te-gral form of the con-ti-nu-ity equa-tion,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+
+ []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 209--210
 \OT1/ptm/m/n/10 held con-stant. Ad-di-tion-ally, the sign of the Gibbs free
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--202
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
 
  []
 
 
-Underfull \hbox (badness 1436) in paragraph at lines 203--204
+Underfull \hbox (badness 1436) in paragraph at lines 211--212
 \OT1/ptm/m/n/10 the for-mu-la-tion of elec-tro-chem-i-cal po-ten-tials, which a
 re
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--204
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 306--307
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
 
  []
 
@@ -460,161 +520,161 @@ Underfull \hbox (badness 10000) in paragraph at lines 314--315
  []
 
 
-Underfull \hbox (badness 2503) in paragraph at lines 327--328
+Underfull \hbox (badness 10000) in paragraph at lines 322--323
+
+ []
+
+[4]
+Underfull \hbox (badness 2503) in paragraph at lines 335--336
  \OT1/ptm/m/it/10 7)  Charge Num-ber : [][] \OT1/ptm/m/n/10 Sim-i-lar to the st
 o-i-chio-met-ric
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--328
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
 
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 450--451
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 458--459
 
  []
 
 
-Underfull \hbox (badness 1472) in paragraph at lines 453--454
+Underfull \hbox (badness 1472) in paragraph at lines 461--462
  \OT1/ptm/m/it/10 1) Maxwell-Stefan Re-la-tion-ship: [][] \OT1/ptm/m/n/10 This 
 sec-tion lays the
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 541--542
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 576--577
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 580--581
+Underfull \hbox (badness 10000) in paragraph at lines 549--550
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 602--603
+Underfull \hbox (badness 10000) in paragraph at lines 584--585
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 656--657
+Underfull \hbox (badness 10000) in paragraph at lines 588--589
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 658--659
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 683--684
+Underfull \hbox (badness 10000) in paragraph at lines 610--611
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 705--706
+Underfull \hbox (badness 10000) in paragraph at lines 664--665
 
  []
 
 
-Overfull \hbox (26.9549pt too wide) detected at line 797
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 691--692
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 713--714
+
+ []
+
+
+Overfull \hbox (26.9549pt too wide) detected at line 805
 [][]
  []
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 987--989
+[8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 995--997
 
  []
 
-[9]
-Overfull \hbox (23.07285pt too wide) detected at line 1035
+
+Overfull \hbox (23.07285pt too wide) detected at line 1043
 \OT1/cmr/bx/n/10 i \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ^^T\O
 MS/cmsy/m/n/10 r\OML/cmm/m/it/10 ^^^ \OMS/cmsy/m/n/10 ^^@ [] [] [] r [] \OML/cm
 m/m/it/10 c
  []
 
-
-Overfull \hbox (30.29323pt too wide) detected at line 1047
+[10]
+Overfull \hbox (30.29323pt too wide) detected at line 1055
 \OMS/cmsy/m/n/10 r ^^A \OT1/cmr/bx/n/10 i[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 
 r ^^A [] \OT1/cmr/m/n/10 = 0
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1079--1080
+Underfull \hbox (badness 10000) in paragraph at lines 1087--1088
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1081--1082
-
- []
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 1157--1158
+Underfull \hbox (badness 10000) in paragraph at lines 1089--1090
 
  []
 
 [11]
-Overfull \hbox (16.54564pt too wide) detected at line 1226
+Underfull \hbox (badness 10000) in paragraph at lines 1165--1166
+
+ []
+
+
+Overfull \hbox (16.54564pt too wide) detected at line 1234
 \OML/cmm/m/it/10 k[]C[]\U/rsfs/m/n/10 E[] [] [] \OT1/cmr/m/n/10 = \OML/cmm/m/it
 /10 k[]\OMS/cmsy/m/n/10 C[]\U/rsfs/m/n/10 E[] [] []
  []
 
 
-Overfull \hbox (8.07858pt too wide) detected at line 1272
+Overfull \hbox (8.07858pt too wide) detected at line 1280
 \OML/cmm/m/it/10 k[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 k[]\U/rsfs/m/n/10 E[] [
 ] [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 k[]\U/rsfs/m/n/10 E[] [] []
  []
 
-
-Overfull \hbox (44.24269pt too wide) detected at line 1291
+[12]
+Overfull \hbox (44.24269pt too wide) detected at line 1299
 [][]
  []
 
 
-Overfull \hbox (66.7009pt too wide) detected at line 1313
+Overfull \hbox (66.7009pt too wide) detected at line 1321
 \OML/cmm/m/it/10 i \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 Fk[]c[] [][] c[] []
  []
 
 
-Overfull \hbox (60.1268pt too wide) detected at line 1317
+Overfull \hbox (60.1268pt too wide) detected at line 1325
 \OML/cmm/m/it/10 j \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 k[]c[] [][] c[] []
  []
 
 
-Overfull \hbox (26.26256pt too wide) detected at line 1325
+Overfull \hbox (26.26256pt too wide) detected at line 1333
 [][]
  []
 
-[12]
-Underfull \hbox (badness 2181) in paragraph at lines 1336--1337
+
+Underfull \hbox (badness 2181) in paragraph at lines 1344--1345
 []\OT1/ptm/m/n/10 The pre-vi-ous sys-tem of gov-ern-ing par-tial dif-fer-en-tia
 l
  []
 
 
-Underfull \hbox (badness 1968) in paragraph at lines 1336--1337
+Underfull \hbox (badness 1968) in paragraph at lines 1344--1345
 \OT1/ptm/m/n/10 in-for-ma-tive about the how these sorts of high fi-delity
  []
 
 
-Underfull \hbox (badness 2980) in paragraph at lines 1336--1337
+Underfull \hbox (badness 2980) in paragraph at lines 1344--1345
 \OT1/ptm/m/n/10 com-pu-ta-tion-ally in-fea-si-ble, even for mod-ern com-put-ers
 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1336--1337
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1338--1339
+Underfull \hbox (badness 10000) in paragraph at lines 1344--1345
 
  []
 
@@ -624,33 +684,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 1346--1347
  []
 
 
-Underfull \hbox (badness 4832) in paragraph at lines 1366--1371
+Underfull \hbox (badness 10000) in paragraph at lines 1354--1355
+
+ []
+
+[13]
+Underfull \hbox (badness 4832) in paragraph at lines 1374--1379
 []\OT1/ptm/m/n/10 You can use a bib-li-og-ra-phy gen-er-ated by Bib-TeX
  []
 
 
-Underfull \hbox (badness 4608) in paragraph at lines 1366--1371
+Underfull \hbox (badness 4608) in paragraph at lines 1374--1379
 \OT1/ptm/m/n/10 as a .bbl file. Bib-TeX doc-u-men-ta-tion can be eas-ily
  []
 
 
-Underfull \hbox (badness 6380) in paragraph at lines 1366--1371
+Underfull \hbox (badness 6380) in paragraph at lines 1374--1379
 \OT1/ptm/m/n/10 ob-tained at: http://mirror.ctan.org/biblio/bibtex/contrib/doc/
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1366--1371
+Underfull \hbox (badness 10000) in paragraph at lines 1374--1379
 \OT1/ptm/m/n/10 The IEEE-tran Bib-TeX style sup-port page is:
  []
 
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-376.
+384.
 (c:/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [13] [14
-
-]
+) [14]
 (./MAE_298_PDEs_Report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
@@ -659,11 +722,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  4334 strings out of 480994
  67314 string characters out of 5916048
- 326100 words of memory out of 5000000
+ 324103 words of memory out of 5000000
  19763 multiletter control sequences out of 15000+600000
  576512 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,15n,42p,1577b,217s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,15n,42p,1270b,217s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2019/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2019/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/
@@ -682,7 +745,7 @@ exmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2019/texmf-dist/fonts/
 type1/urw/times/utmb8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/ut
 mr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb><c:/texl
 ive/2019/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
-Output written on MAE_298_PDEs_Report.pdf (14 pages, 383784 bytes).
+Output written on MAE_298_PDEs_Report.pdf (14 pages, 386081 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  94 compressed objects within 1 object stream
