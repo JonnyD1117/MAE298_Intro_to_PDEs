@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.3)  7 MAR 2022 22:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.3)  7 MAR 2022 22:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -657,60 +657,60 @@ Overfull \hbox (26.26256pt too wide) detected at line 1333
  []
 
 
-Underfull \hbox (badness 2181) in paragraph at lines 1344--1345
-[]\OT1/ptm/m/n/10 The pre-vi-ous sys-tem of gov-ern-ing par-tial dif-fer-en-tia
-l
- []
-
-
-Underfull \hbox (badness 1968) in paragraph at lines 1344--1345
-\OT1/ptm/m/n/10 in-for-ma-tive about the how these sorts of high fi-delity
- []
-
-
-Underfull \hbox (badness 2980) in paragraph at lines 1344--1345
-\OT1/ptm/m/n/10 com-pu-ta-tion-ally in-fea-si-ble, even for mod-ern com-put-ers
-.
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1344--1345
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1346--1347
-
+Underfull \hbox (badness 2181) in paragraph at lines 1351--1352
+[]\OT1/ptm/m/n/10 The pre-vi-ous sys-tem of gov-ern-ing par-tial dif-fer-en-tia
+l
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1354--1355
+Underfull \hbox (badness 1968) in paragraph at lines 1351--1352
+\OT1/ptm/m/n/10 in-for-ma-tive about the how these sorts of high fi-delity
+ []
+
+
+Underfull \hbox (badness 2980) in paragraph at lines 1351--1352
+\OT1/ptm/m/n/10 com-pu-ta-tion-ally in-fea-si-ble, even for mod-ern com-put-ers
+.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1351--1352
 
  []
 
 [13]
-Underfull \hbox (badness 4832) in paragraph at lines 1374--1379
+Underfull \hbox (badness 10000) in paragraph at lines 1353--1354
+
+ []
+
+
+Underfull \hbox (badness 4832) in paragraph at lines 1371--1376
 []\OT1/ptm/m/n/10 You can use a bib-li-og-ra-phy gen-er-ated by Bib-TeX
  []
 
 
-Underfull \hbox (badness 4608) in paragraph at lines 1374--1379
+Underfull \hbox (badness 4608) in paragraph at lines 1371--1376
 \OT1/ptm/m/n/10 as a .bbl file. Bib-TeX doc-u-men-ta-tion can be eas-ily
  []
 
 
-Underfull \hbox (badness 6380) in paragraph at lines 1374--1379
+Underfull \hbox (badness 6380) in paragraph at lines 1371--1376
 \OT1/ptm/m/n/10 ob-tained at: http://mirror.ctan.org/biblio/bibtex/contrib/doc/
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1374--1379
+Underfull \hbox (badness 10000) in paragraph at lines 1371--1376
 \OT1/ptm/m/n/10 The IEEE-tran Bib-TeX style sup-port page is:
  []
 
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-384.
+381.
 (c:/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [14]
@@ -745,7 +745,7 @@ exmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2019/texmf-dist/fonts/
 type1/urw/times/utmb8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/ut
 mr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb><c:/texl
 ive/2019/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
-Output written on MAE_298_PDEs_Report.pdf (14 pages, 386081 bytes).
+Output written on MAE_298_PDEs_Report.pdf (14 pages, 386107 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  94 compressed objects within 1 object stream

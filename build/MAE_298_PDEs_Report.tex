@@ -1339,16 +1339,6 @@ j=k_{0}^{\text {norm }}\left(\left(\frac{c_{e}}{c_{e, 0}}\right)\left(\frac{c_{s
 \end{array}
 \end{equation}
 
-\section{DFN Model Derivation}
-
-The previous system of governing partial differential equations, was derived using the microscale interactions and mechanisms. While this approach to analysis is particularly informative about the how these sorts of high fidelity models are derived, solving them for an entire cell (using a system of thousands or millions of coupled PDEs) is computationally infeasible, even for modern computers. There are many different approaches to creating macroscale models that capture the first principle mechanisms of action, but are far more computationally viable. This simplification comes with a penalty on the accuracy of model; however, these models are still far and away some of the most high fidelity battery models which are routinely used today to check  \\
-
-In particular, the Doyle-Fuller-Newman (DFN) model uses a technique of volume averaging to be able to same governing equations which were derived above, over larger domains, approximating (on average) the behaviors of each electrode and the electrolyte. \\
-
-\subsection{Volume Averaging Methods}
-
-blah blah blah
-
 \section{Single Particle Model (SPM \& SPMe)}
 
 As mentioned previously the microscale and macroscale models described above are computationally very expensive to compute numerical solutions for. Due to this property, these models are often not used as a practical work-horse models for the daily needs of systems that incorporate battery models, and that model like the DFN formulation, are generally used as benchmarks of accuracy and performance for a reduced-order or BLANK battery models. These simplified models usually sacrifice a great deal of the accuracy which the DFN model worked so hard to preserve from first principles. As a consequence, model such as a simple lookup-table or equivalent circuit model (ECM) are dominately purposed around the use of real-time systems that need a roughly accurcate computation about the state of charge of a cell. However, there are use-cases where these simplified models are too low resolution, and require higher fidelity models, that are slightly more expensive to compute, but provide much better tracking to the DFN base-line model. \\
@@ -1356,10 +1346,17 @@ As mentioned previously the microscale and macroscale models described above are
 Two such model variations are the Single Particle Model (SPM) and the Single Particle Model with Electrolyte Dyanmics (SPMe). These models are far an away the work-horse of many battery control and estimation tasks. The guiding principle of these models is to focus on the dominate dynamics of the battery. It is a well known fact presented in undergraduate control theory that the slowest pole/zero will dominate the transient dynamics for a given linear system. For lithium ion batteries, it can be shown that the diffusion of lithium into the solid-phase (electode) evolves ths slowest, and therefore dominates the dynamic behavior of the battery for the time-scales which we are mostly interested in. The SPM model takes this fact and reduces each electrode, of the battery, to an individual sphere of active material that is presumed to be representative of the average dynamics of the electrodes. It should be notes that in this model, another simplification is made whereby the electolyte concentration and dynamics are discarded. The SPMe elevates the SPM model by including these electrolyte dynamics back into the model, allowing this model to capture the nonlinearities which are present due to transport behavior of the electrolyte.
 
 
+\section{SPM Model Derivation}
+
+The previous system of governing partial differential equations, was derived using the microscale interactions and mechanisms. While this approach to analysis is particularly informative about the how these sorts of high fidelity models are derived, solving them for an entire cell (using a system of thousands or millions of coupled PDEs) is computationally infeasible, even for modern computers. There are many different approaches to creating macroscale models that capture the first principle mechanisms of action, but are far more computationally viable. This simplification comes with a penalty on the accuracy of model; however, these models are still far and away some of the most high fidelity battery models which are routinely used today to check  \\
+
+In particular, the Doyle-Fuller-Newman (DFN) model uses a technique of volume averaging to be able to same governing equations which were derived above, over larger domains, approximating (on average) the behaviors of each electrode and the electrolyte. \\
+
+
 
 \section{Analysis of Governing Equations}
 
-\section{Numerical Solution}
+\section{Numerical Simulation}
 
 \section{Results}
 
