@@ -649,38 +649,35 @@ In fact, for a binary electrolyte, we know that the total transference must be e
 t_{+}^{0}=\frac{K_{0-}}{K_{0-}+K_{0+}} \quad \text { and } \quad t_{-}^{0}=\frac{K_{0+}}{K_{0-}+K_{0+}} \\
 \end{equation}
 
-
-In order to drastically simplify the derivation of this section, instead of deriving expression for flux-density in the electrolyte phase directly, we will work backwards (given the correct expression for flux-density) and show that by substituting terms we've already developed, that charge is conserved in the electrolyte. We first begin with a more general definition of flux-density
-
+In order to drastically simplify the derivation of this section, instead of deriving expression for flux-density in the electrolyte phase directly, we direclty jump to the intermediate form of flux-density and proceed to massage it into its final form. We first begin with a more general definition of flux-density as a function of species concentrations and average species velocities.
 
 \begin{equation}
   \textbf{N}_i = c_{i} \textbf{v}_i \quad \text{    where } i = \pm
 \end{equation}
 
-The intuition behind this expression is that the flux-density will change propotionally to the average velocity of a species and as a function of the concentration of the species, both of which make intuitive sense. \\
+The intuition behind this expression is that the flux-density will change propotionally to the average velocity of a species and as a function of the concentration of the species, traversing into the boundary of our domain. \\
 
-As it turns out, we can write complete flux-density equation as follows, where $i = \pm$.
+As it turns out, we can write expand this general definition into terms which we have already developed. As shown below for $i = \pm$.
 
 \begin{equation}\label{flux_density}
-\mathbf{N}_{i}=c_{+} \mathbf{v}_{i}=\underbrace{-\frac{v_{i} \mathscr{D}}{v R T} \frac{c_{T}}{c_{0}}}_{A} \underbrace{\nabla \mu_{e}}_{B}+\underbrace{\frac{\mathbf{i} t_{i}^{0}}{z_{i} F}}_{C}+\underbrace{c_{i} \mathbf{v}_{0}}_{D}
+    \mathbf{N}_{i} ={-\frac{v_{i} \mathscr{D}}{v R T} \frac{c_{T}}{c_{0}}} {\nabla \mu_{e}}+{\frac{\mathbf{i} t_{i}^{0}}{z_{i} F}}+{c_{i} \mathbf{v}_{0}}
 \end{equation}
 
-However, we still need an expression for the gradient of the chemical potential of the electrolyte. Note that we can expand $\nabla \mu_e$ via the chain rule of calculus, such that.
+However, even in this form, for this equation to be of use, we still need to translate the term for the gradient of the chemical potential into macroscopic quantities such as concentrations...etc. \\
 
+Note that we can expand $\nabla \mu_e$ via the chain rule of calculus, such that it is written in terms of concentration gradients. And furthermore, we can apply the chain rule again for the partial term to express it in terms of the molality of the electrolyte. These operations are written as follows.
 
 \begin{equation}
   \nabla \mu_e = \frac{\partial{\mu_e}}{\partial{c}} \nabla c
 \end{equation}
 
-And furthermore, we can take this expansion via concentration and use the chain rule again to write $\nabla \mu_e$ in terms of the molality of the electrolyte, such that.
-
-\begin{equation}
-\frac{\partial \mu_{e}}{\partial c}=\frac{\partial \mu_{e}}{\partial \ln m} \frac{\partial \ln m}{\partial c}
+\begin{equation}\label{change_of_variable}
+\frac{\partial \mu_{e}}{\partial c}=\frac{\partial \mu_{e}}{\partial \ln m} \frac{\partial \ln m}{\partial c} \\
 \end{equation}
 
-It should be briefly noted that the inclusion of the natural-log, in the previous expression, is merely a build-in substitution which will have the effect of making future derivation a bit cleaner. \\
+The inclusion of the natural-log, in the previous expression, is merely a build-in substitution which will have the effect of simplifying the notion of future steps. \\
 
-By using the definition for absolute activity, defined below, we can show that...
+However, even with these expansions and change of variables, we have not been able to eliminate ${\mu_e}$ from equation (\ref{change_of_variable}). To accomplish this, we need to derive an alternate expression for the electrochemical potential $\mu$, in terms of absolute activity $\lambda$ and the modal activity coefficent $\gamma$. By definition these are given as...
 
 \begin{equation}
 \mu_{i}=R T \ln \left(\lambda_{i}\right)
@@ -690,7 +687,7 @@ By using the definition for absolute activity, defined below, we can show that..
 \end{equation}
 
 
-By substituting these terms into the expression for chemical potential of the electrolyte ($\mu_{e}=v_{+} \mu_{+}+v_{-} \mu_{-} $), and simplifying the resulting expression we get.
+We can substitute these definitions into the expression for chemical potential of the electrolyte ($\mu_{e}=v_{+} \mu_{+}+v_{-} \mu_{-} $), and simplify to get the following expression.
 
 \begin{equation}
 \begin{aligned}
@@ -700,15 +697,14 @@ v_{-} R T \ln \left(v_{-} \lambda_{-}^{\ominus}\right)
 \end{aligned}
 \end{equation}
 
-Such that we can define ...
 
-\begin{equation}
+Now that we have an expression for $\mu_e$ in terms of meaningful macroscopic quantities, we can take its derivative with respect to natural-log of the molality, resulting in the following expression.
+\begin{equation}\label{chemical_pot_substitute}
 \frac{\partial \mu_{e}}{\partial \ln m}=v R T\left(1+\frac{\partial \ln \gamma_{\pm}}{\partial \ln m}\right)
 \end{equation}
 
 
-We can also define, the second term of of $\nabla \mu_e$ as
-
+As we did with the first term of equation (\ref{change_of_variable}), we now wish to solve for the second term of that equation and find a valid substitution which will rewrite this term as a function of concentration. The substitutions and simplifications necessary to complete these are shown below.
 
 \begin{equation}
 m=\frac{m_{+}}{v_{+}}=\frac{c_{+}}{v_{+} c_{0} M_{0}}=\frac{c}{c_{0} M_{0}}
@@ -723,57 +719,35 @@ m=\frac{m_{+}}{v_{+}}=\frac{c_{+}}{v_{+} c_{0} M_{0}}=\frac{c}{c_{0} M_{0}}
 \frac{\partial \ln m}{\partial \ln c}=1-\frac{\partial \ln c_{0}}{\partial \ln c}
 \end{equation}
 
-\begin{equation}
+\begin{equation}\label{concentation_subsitute}
 \frac{\partial \ln m}{\partial c}=\frac{1}{c}\left(1-\frac{\partial \ln c_{0}}{\partial \ln c}\right)
 \end{equation}
+
+By substituting equations (\ref{chemical_pot_substitute}) and (\ref{concentation_subsitute}) into equation (\ref{change_of_variable}), we can rewrite $\nabla \mu_e$ in its final form as ...
 
 \begin{equation}
 \nabla \mu_{e}=\frac{v R T}{c}\left(1+\frac{\mathrm{d} \ln \gamma_{\pm}}{\mathrm{d} \ln m}\right)\left(1-\frac{\mathrm{d} \ln c_{0}}{\mathrm{~d} \ln c}\right) \nabla c
 \end{equation}
 
-This value can then be substituted back into the expression we derived for the flux-density.
+
+Now that we have an expression for the $\nabla \mu_e$ we can apply it to our equation for the flux-density which is shown below.
 
 \begin{equation}
 \mathbf{N}_{+}=-\frac{v_{+} \mathscr{D}}{v R T} \frac{c_{T}}{c_{0}} c \nabla \mu_{e}+\frac{\mathbf{i} t_{+}^{0}}{z_{+} F}+c_{+} \mathbf{v}_{0}
 \end{equation}
 
-
+But before we do, we can clean up the notion of the flux-density by applying the following substitution.
 \begin{equation}
 D=\mathscr{D} \frac{c_{T}}{c_{0}}\left(1+\frac{\mathrm{d} \ln \gamma_{\pm}}{\mathrm{d} \ln m}\right)
 \end{equation}
+
+This resultings in the final form of the flux-density.
 
 \begin{equation}
 \mathbf{N}_{+}=-v_{+} D\left(1-\frac{\mathrm{d} \ln c_{0}}{\mathrm{~d} \ln c}\right) \nabla c+\frac{\mathbf{i} t_{+}^{0}}{z_{+} F}+c_{+} \mathbf{v}_{0}
 \end{equation}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{equation}
-\begin{aligned}
-\mathbf{N}_{+} =-v_{+} \frac{\mathscr{D} c_{T}}{c_{0}}\left(1+\frac{\mathrm{d} \ln \gamma_{\pm}}{\mathrm{d} \ln m}\right)\left(1-\frac{\mathrm{d} \ln c_{0}}{\mathrm{~d} \ln c}\right) \nabla c+\frac{\mathbf{i} t_{+}^{0}}{z_{+} F}+c_{+} \mathbf{v}_{0}
-\end{aligned}
-\end{equation}
-
-
-Now that we have a full expression for the flux-density written fully in terms which are meaningful for us and our analysis, we can apply the Continuity equation as shown below, and then substitute in our flux-density equation.
+With this sorted, we can plug it into the diffusion equation
 
 \begin{equation}
 \frac{\partial c_{+}}{\partial t}=-\nabla \cdot \mathbf{N}_{+}
