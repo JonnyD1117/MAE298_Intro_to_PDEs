@@ -646,13 +646,11 @@ t_{+}^{0} \propto K_{0-} \quad \text { and } \quad t_{-}^{0} \propto K_{0+}
 In fact, for a binary electrolyte, we know that the total transference must be equal to unity, since either the positive or negative ionic current flow must be responsible for the net current. Given the previous proportionality, and the constraint of a binary electrolyte medium, we can determine the constant of proportionality directly, which yields the following result.
 
 \begin{equation}\label{transference_num_def}
-t_{+}^{0}=\frac{K_{0-}}{K_{0-}+K_{0+}} \quad \text { and } \quad t_{-}^{0}=\frac{K_{0+}}{K_{0-}+K_{0+}}
+t_{+}^{0}=\frac{K_{0-}}{K_{0-}+K_{0+}} \quad \text { and } \quad t_{-}^{0}=\frac{K_{0+}}{K_{0-}+K_{0+}} \\
 \end{equation}
 
 
-PROVING THE ION-FLUX EQUATION:
-
-Given this groundwork we can now begin to assemble the equation for flux-density. We first begin with the definition of flux-density
+In order to drastically simplify the derivation of this section, instead of deriving expression for flux-density in the electrolyte phase directly, we will work backwards (given the correct expression for flux-density) and show that by substituting terms we've already developed, that charge is conserved in the electrolyte. We first begin with a more general definition of flux-density
 
 
 \begin{equation}
@@ -661,14 +659,13 @@ Given this groundwork we can now begin to assemble the equation for flux-density
 
 The intuition behind this expression is that the flux-density will change propotionally to the average velocity of a species and as a function of the concentration of the species, both of which make intuitive sense. \\
 
+As it turns out, we can write complete flux-density equation as follows, where $i = \pm$.
+
 \begin{equation}\label{flux_density}
-\mathbf{N}_{+}=c_{+} \mathbf{v}_{+}=\underbrace{-\frac{v_{+} \mathscr{D}}{v R T} \frac{c_{T}}{c_{0}}}_{A} \underbrace{\nabla \mu_{e}}_{B}+\underbrace{\frac{\mathbf{i} t_{+}^{0}}{z_{+} F}}_{C}+\underbrace{c_{+} \mathbf{v}_{0}}_{D}
+\mathbf{N}_{i}=c_{+} \mathbf{v}_{i}=\underbrace{-\frac{v_{i} \mathscr{D}}{v R T} \frac{c_{T}}{c_{0}}}_{A} \underbrace{\nabla \mu_{e}}_{B}+\underbrace{\frac{\mathbf{i} t_{i}^{0}}{z_{i} F}}_{C}+\underbrace{c_{i} \mathbf{v}_{0}}_{D}
 \end{equation}
 
-
-However, we still need an expression for the gradient of the chemical potential of the electrolyte.
-
-Note that we can expand $\nabla \mu_e$ via the chain rule of calculus, such that.
+However, we still need an expression for the gradient of the chemical potential of the electrolyte. Note that we can expand $\nabla \mu_e$ via the chain rule of calculus, such that.
 
 
 \begin{equation}
@@ -681,9 +678,9 @@ And furthermore, we can take this expansion via concentration and use the chain 
 \frac{\partial \mu_{e}}{\partial c}=\frac{\partial \mu_{e}}{\partial \ln m} \frac{\partial \ln m}{\partial c}
 \end{equation}
 
-Note that the natural-log is merely a build-in substitution that will enable a clear derivation in subsequent steps. \\
+It should be briefly noted that the inclusion of the natural-log, in the previous expression, is merely a build-in substitution which will have the effect of making future derivation a bit cleaner. \\
 
-By using absolutely activity, we can show that...
+By using the definition for absolute activity, defined below, we can show that...
 
 \begin{equation}
 \mu_{i}=R T \ln \left(\lambda_{i}\right)
@@ -1039,7 +1036,7 @@ The final equation in the derivation of the microscale model which layings the f
 r=\frac{\mathrm{d} \prod_{i} c_{\text {product }, i}}{\mathrm{~d} t}
 \end{equation}
 
-\noindent For linear dynamics, we can writing the reaction rate as ...
+\noindent By assuming linear dynamics, we can write the reaction rate as ...
 
 \begin{equation}
 r=k \prod_{i} c_{\text {reactant }, i}
@@ -1051,7 +1048,7 @@ r=k \prod_{i} c_{\text {reactant }, i}
  r=k_{f}^{0} c_{\text {reactant }} \exp \left(-\frac{E_{a}}{R T}\right)
 \end{equation}
 
-\noindent Where $E_a$ is the activation energy required to initiate the reaction.
+\noindent Where $E_a$ is the activation energy required to initiate the reaction.\\
 
 \subsubsection{Activated Complex Theory}
 
@@ -1244,14 +1241,13 @@ i_{0} &=n F k_{r}^{0} c_{r} \mathscr{E}_{a, 0}^{0} \exp \left(\frac{(1-\alpha) n
 =n F k_{r}^{0} c_{o}^{1-\alpha} c_{r}^{\alpha} \mathscr{E}_{a, 0}^{0} \exp \left(\frac{(1-\alpha) n F \phi^{\ominus}}{R T}\right)
 \end{equation}
 
-\noindent Since these two equations are equation, we can define an effective reaction rate constant.
+\noindent Since these two equations are equal and opposite, we can define an effective reaction rate constant $k_0$ as.
 
 \begin{equation}
 k_{0}=k_{o}^{0} \mathscr{E}_{a, r}^{0} \exp \left(-\frac{\alpha n F \phi^{\ominus}}{R T}\right)=k_{r}^{0} \mathscr{E}_{a, o}^{0} \exp \left(\frac{(1-\alpha) n F \phi^{\ominus}}{R T}\right)
 \end{equation}
 
-\noindent Such that we can write the exchange current of the battery as ...
-
+\noindent By applying this simplification, we can rewrite the exchange current of the battery as.
 \begin{equation}
 i_{0}=n F k_{0} c_{o}^{1-\alpha} c_{r}^{\alpha}
 \end{equation}
