@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.3)  7 MAR 2022 22:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.1)  12 MAR 2022 18:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -373,13 +373,18 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Underfull \hbox (badness 7832) in paragraph at lines 67--68
-[]\OT1/ptm/m/n/10 ARTIAL dif-fer-en-tial equa-tions (PDEs) pro-vide a
+Underfull \hbox (badness 3407) in paragraph at lines 67--68
+[]\OT1/ptm/m/n/10 ARTIAL dif-fer-en-tial equa-tions (PDEs) pro-vide the
  []
 
 
 Underfull \hbox (badness 3271) in paragraph at lines 67--68
 \OT1/ptm/m/n/10 math-e-mat-i-cal ba-sis for de-scrib-ing many sig-nif-i-cant
+ []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 67--68
+\OT1/ptm/m/n/10 be-hind PDEs. The in-her-ent com-plex-ity of de-riv-ing and
  []
 
 
@@ -393,11 +398,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--68
  []
 
 
-Underfull \hbox (badness 1902) in paragraph at lines 72--73
-\OT1/ptm/m/n/10 ho-mo-ge-neous solid phase, the con-ser-va-tion of mass in
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
@@ -407,13 +407,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
-<C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/DFN.png, id=1, 853
-.1875pt x 609.27625pt>
-File: C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/DFN.png Graph
-ic file (type png)
-<use C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/DFN.png>
-Package pdftex.def Info: C:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/i
-mages/DFN.png  used on input line 80.
+<C:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/DFN.png, id=1, 853.1875pt
+ x 609.27625pt>
+File: C:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/DFN.png Graphic file
+ (type png)
+<use C:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/DFN.png>
+Package pdftex.def Info: C:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/D
+FN.png  used on input line 80.
 (pdftex.def)             Requested size: 213.29636pt x 152.31868pt.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
 
@@ -438,17 +438,14 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 85
 (c:/texlive/2019/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Underfull \vbox (badness 1248) has occurred while \output is active []
-
- [1{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
- <c:/Users/Indy-Windows/Documents/MAE298_Intro_to_PDEs/images/DFN.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
+[1{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
+
+]
 Underfull \hbox (badness 1577) in paragraph at lines 109--110
 []\OT1/ptm/m/n/10 At the mi-croscale, we are in-ter-ested in de-riv-ing the
  []
@@ -463,7 +460,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--117
 
  []
 
-[2]
+[2 <c:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/DFN.png>]
 Underfull \hbox (badness 1472) in paragraph at lines 184--185
 []\OT1/ptm/m/n/10 This is the in-te-gral form of the con-ti-nu-ity equa-tion,
  []
@@ -480,6 +477,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 198--199
+
+ []
+
+
+Underfull \hbox (badness 2671) in paragraph at lines 200--201
+\OT1/ptm/m/n/10 are re-quired to for-mu-late the ba-sic tenents of charge
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
 
  []
 
@@ -510,7 +517,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 237--238
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 261--262
+Underfull \hbox (badness 10000) in paragraph at lines 260--261
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
  []
 
@@ -525,192 +537,208 @@ Underfull \hbox (badness 10000) in paragraph at lines 322--323
  []
 
 [4]
-Underfull \hbox (badness 2503) in paragraph at lines 335--336
- \OT1/ptm/m/it/10 7)  Charge Num-ber : [][] \OT1/ptm/m/n/10 Sim-i-lar to the st
-o-i-chio-met-ric
+Underfull \hbox (badness 10000) in paragraph at lines 330--331
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+Underfull \hbox (badness 5504) in paragraph at lines 334--335
+ \OT1/ptm/m/it/10 7)  Charge Num-ber: [][] \OT1/ptm/m/n/10 Sim-i-lar to the sto
+-i-chio-met-ric
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--335
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 458--459
+Underfull \hbox (badness 10000) in paragraph at lines 435--436
 
  []
 
 
-Underfull \hbox (badness 1472) in paragraph at lines 461--462
+Underfull \hbox (badness 1472) in paragraph at lines 438--439
  \OT1/ptm/m/it/10 1) Maxwell-Stefan Re-la-tion-ship: [][] \OT1/ptm/m/n/10 This 
 sec-tion lays the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 549--550
+Underfull \hbox (badness 10000) in paragraph at lines 502--503
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 584--585
+Underfull \hbox (badness 10000) in paragraph at lines 528--529
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 588--589
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 610--611
+Underfull \hbox (badness 1675) in paragraph at lines 565--566
+\OT1/ptm/m/n/10 dif-fu-siv-ity, and the trans-fer-ence num-ber as-so-ci-ated wi
+th
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 565--566
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 617--618
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 664--665
+Underfull \hbox (badness 10000) in paragraph at lines 637--638
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 666--667
+Underfull \hbox (badness 10000) in paragraph at lines 662--663
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 691--692
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 713--714
-
- []
-
-
-Overfull \hbox (26.9549pt too wide) detected at line 805
+[8]
+Overfull \hbox (26.9549pt too wide) detected at line 776
 [][]
  []
 
-[8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 995--997
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 966--968
 
  []
 
-
-Overfull \hbox (23.07285pt too wide) detected at line 1043
+[10]
+Overfull \hbox (23.07285pt too wide) detected at line 1014
 \OT1/cmr/bx/n/10 i \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ^^T\O
 MS/cmsy/m/n/10 r\OML/cmm/m/it/10 ^^^ \OMS/cmsy/m/n/10 ^^@ [] [] [] r [] \OML/cm
 m/m/it/10 c
  []
 
-[10]
-Overfull \hbox (30.29323pt too wide) detected at line 1055
+
+Overfull \hbox (30.29323pt too wide) detected at line 1026
 \OMS/cmsy/m/n/10 r ^^A \OT1/cmr/bx/n/10 i[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 
 r ^^A [] \OT1/cmr/m/n/10 = 0
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1087--1088
+Underfull \hbox (badness 10000) in paragraph at lines 1058--1059
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1089--1090
+Underfull \hbox (badness 10000) in paragraph at lines 1060--1061
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 1165--1166
+Underfull \hbox (badness 10000) in paragraph at lines 1136--1137
 
  []
 
 
-Overfull \hbox (16.54564pt too wide) detected at line 1234
+Overfull \hbox (16.54564pt too wide) detected at line 1205
 \OML/cmm/m/it/10 k[]C[]\U/rsfs/m/n/10 E[] [] [] \OT1/cmr/m/n/10 = \OML/cmm/m/it
 /10 k[]\OMS/cmsy/m/n/10 C[]\U/rsfs/m/n/10 E[] [] []
  []
 
-
-Overfull \hbox (8.07858pt too wide) detected at line 1280
+[12]
+Overfull \hbox (8.07858pt too wide) detected at line 1251
 \OML/cmm/m/it/10 k[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 k[]\U/rsfs/m/n/10 E[] [
 ] [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 k[]\U/rsfs/m/n/10 E[] [] []
  []
 
-[12]
-Overfull \hbox (44.24269pt too wide) detected at line 1299
+
+Overfull \hbox (44.24269pt too wide) detected at line 1270
 [][]
  []
 
 
-Overfull \hbox (66.7009pt too wide) detected at line 1321
+Overfull \hbox (66.7009pt too wide) detected at line 1292
 \OML/cmm/m/it/10 i \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 Fk[]c[] [][] c[] []
  []
 
 
-Overfull \hbox (60.1268pt too wide) detected at line 1325
+Overfull \hbox (60.1268pt too wide) detected at line 1296
 \OML/cmm/m/it/10 j \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 k[]c[] [][] c[] []
  []
 
 
-Overfull \hbox (26.26256pt too wide) detected at line 1333
+Overfull \hbox (26.26256pt too wide) detected at line 1304
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1344--1345
+Underfull \hbox (badness 10000) in paragraph at lines 1315--1316
 
  []
 
-
-Underfull \hbox (badness 2181) in paragraph at lines 1351--1352
+[13]
+Underfull \hbox (badness 2181) in paragraph at lines 1322--1323
 []\OT1/ptm/m/n/10 The pre-vi-ous sys-tem of gov-ern-ing par-tial dif-fer-en-tia
 l
  []
 
 
-Underfull \hbox (badness 1968) in paragraph at lines 1351--1352
+Underfull \hbox (badness 1968) in paragraph at lines 1322--1323
 \OT1/ptm/m/n/10 in-for-ma-tive about the how these sorts of high fi-delity
  []
 
 
-Underfull \hbox (badness 2980) in paragraph at lines 1351--1352
+Underfull \hbox (badness 2980) in paragraph at lines 1322--1323
 \OT1/ptm/m/n/10 com-pu-ta-tion-ally in-fea-si-ble, even for mod-ern com-put-ers
 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1351--1352
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 1353--1354
+Underfull \hbox (badness 10000) in paragraph at lines 1322--1323
 
  []
 
 
-Underfull \hbox (badness 4832) in paragraph at lines 1371--1376
+Underfull \hbox (badness 10000) in paragraph at lines 1324--1325
+
+ []
+
+
+Underfull \hbox (badness 4832) in paragraph at lines 1342--1347
 []\OT1/ptm/m/n/10 You can use a bib-li-og-ra-phy gen-er-ated by Bib-TeX
  []
 
 
-Underfull \hbox (badness 4608) in paragraph at lines 1371--1376
+Underfull \hbox (badness 4608) in paragraph at lines 1342--1347
 \OT1/ptm/m/n/10 as a .bbl file. Bib-TeX doc-u-men-ta-tion can be eas-ily
  []
 
 
-Underfull \hbox (badness 6380) in paragraph at lines 1371--1376
+Underfull \hbox (badness 6380) in paragraph at lines 1342--1347
 \OT1/ptm/m/n/10 ob-tained at: http://mirror.ctan.org/biblio/bibtex/contrib/doc/
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1371--1376
+Underfull \hbox (badness 10000) in paragraph at lines 1342--1347
 \OT1/ptm/m/n/10 The IEEE-tran Bib-TeX style sup-port page is:
  []
 
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-381.
+352.
 (c:/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [14]
@@ -721,8 +749,8 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  4334 strings out of 480994
- 67314 string characters out of 5916048
- 324103 words of memory out of 5000000
+ 67279 string characters out of 5916033
+ 322098 words of memory out of 5000000
  19763 multiletter control sequences out of 15000+600000
  576512 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -745,7 +773,7 @@ exmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2019/texmf-dist/fonts/
 type1/urw/times/utmb8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/ut
 mr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb><c:/texl
 ive/2019/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
-Output written on MAE_298_PDEs_Report.pdf (14 pages, 386107 bytes).
+Output written on MAE_298_PDEs_Report.pdf (14 pages, 386908 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  94 compressed objects within 1 object stream
