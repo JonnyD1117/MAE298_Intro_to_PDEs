@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.1)  13 MAR 2022 16:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.1)  13 MAR 2022 21:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -329,6 +329,24 @@ LaTeX Warning: Unused global option(s):
 
 LaTeX Warning: Label `flux_density' multiply defined.
 
+
+LaTeX Warning: Label `COC_s' multiply defined.
+
+
+LaTeX Warning: Label `COM_s' multiply defined.
+
+
+LaTeX Warning: Label `COM_e' multiply defined.
+
+
+LaTeX Warning: Label `COC_e' multiply defined.
+
+
+LaTeX Warning: Label `lithium_movment' multiply defined.
+
+
+LaTeX Warning: Label `COC_e' multiply defined.
+
 )
 \openout1 = `MAE_298_PDEs_Report.aux'.
 
@@ -625,133 +643,138 @@ Underfull \hbox (badness 10000) in paragraph at lines 678--679
  []
 
 [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 937--939
+Underfull \hbox (badness 10000) in paragraph at lines 924--926
 
  []
 
 [10]
-Overfull \hbox (23.07285pt too wide) detected at line 985
+Overfull \hbox (23.07285pt too wide) detected at line 972
 \OT1/cmr/bx/n/10 i \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ^^T\O
 MS/cmsy/m/n/10 r\OML/cmm/m/it/10 ^^^ \OMS/cmsy/m/n/10 ^^@ [] [] [] r [] \OML/cm
 m/m/it/10 c
  []
 
 
-Overfull \hbox (30.29323pt too wide) detected at line 997
+Overfull \hbox (30.29323pt too wide) detected at line 984
 \OMS/cmsy/m/n/10 r ^^A \OT1/cmr/bx/n/10 i[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 
 r ^^A [] \OT1/cmr/m/n/10 = 0
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1025--1026
+Underfull \hbox (badness 10000) in paragraph at lines 1012--1013
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1029--1030
+Underfull \hbox (badness 10000) in paragraph at lines 1016--1017
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1031--1032
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1019
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 1107--1108
+Underfull \hbox (badness 10000) in paragraph at lines 1094--1095
 
  []
 
-[12]
-Overfull \hbox (16.54564pt too wide) detected at line 1176
+
+Overfull \hbox (16.54564pt too wide) detected at line 1163
 \OML/cmm/m/it/10 k[]C[]\U/rsfs/m/n/10 E[] [] [] \OT1/cmr/m/n/10 = \OML/cmm/m/it
 /10 k[]\OMS/cmsy/m/n/10 C[]\U/rsfs/m/n/10 E[] [] []
  []
 
-
-Overfull \hbox (8.07858pt too wide) detected at line 1222
+[12]
+Overfull \hbox (8.07858pt too wide) detected at line 1209
 \OML/cmm/m/it/10 k[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 k[]\U/rsfs/m/n/10 E[] [
 ] [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 k[]\U/rsfs/m/n/10 E[] [] []
  []
 
 
-Overfull \hbox (44.24269pt too wide) detected at line 1240
+Overfull \hbox (44.24269pt too wide) detected at line 1227
 [][]
  []
 
 
-Overfull \hbox (66.7009pt too wide) detected at line 1262
+Overfull \hbox (66.7009pt too wide) detected at line 1249
 \OML/cmm/m/it/10 i \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 Fk[]c[] [][] c[] []
  []
 
 
-Overfull \hbox (60.1268pt too wide) detected at line 1266
+Overfull \hbox (60.1268pt too wide) detected at line 1253
 \OML/cmm/m/it/10 j \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 k[]c[] [][] c[] []
  []
 
 
-Overfull \hbox (26.26256pt too wide) detected at line 1274
+Overfull \hbox (26.26256pt too wide) detected at line 1261
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1285--1286
+Underfull \hbox (badness 10000) in paragraph at lines 1272--1273
 
  []
 
 [13]
-Underfull \hbox (badness 2181) in paragraph at lines 1292--1293
+Underfull \hbox (badness 2181) in paragraph at lines 1279--1280
 []\OT1/ptm/m/n/10 The pre-vi-ous sys-tem of gov-ern-ing par-tial dif-fer-en-tia
 l
  []
 
 
-Underfull \hbox (badness 1968) in paragraph at lines 1292--1293
+Underfull \hbox (badness 1968) in paragraph at lines 1279--1280
 \OT1/ptm/m/n/10 in-for-ma-tive about the how these sorts of high fi-delity
  []
 
 
-Underfull \hbox (badness 2980) in paragraph at lines 1292--1293
+Underfull \hbox (badness 2980) in paragraph at lines 1279--1280
 \OT1/ptm/m/n/10 com-pu-ta-tion-ally in-fea-si-ble, even for mod-ern com-put-ers
 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1292--1293
+Underfull \hbox (badness 10000) in paragraph at lines 1279--1280
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1294--1295
+Underfull \hbox (badness 10000) in paragraph at lines 1281--1282
 
  []
 
 
-Underfull \hbox (badness 4832) in paragraph at lines 1312--1317
+Underfull \hbox (badness 10000) in paragraph at lines 1307--1308
+
+ []
+
+[14]
+Underfull \hbox (badness 4832) in paragraph at lines 1406--1411
 []\OT1/ptm/m/n/10 You can use a bib-li-og-ra-phy gen-er-ated by Bib-TeX
  []
 
 
-Underfull \hbox (badness 4608) in paragraph at lines 1312--1317
+Underfull \hbox (badness 4608) in paragraph at lines 1406--1411
 \OT1/ptm/m/n/10 as a .bbl file. Bib-TeX doc-u-men-ta-tion can be eas-ily
  []
 
 
-Underfull \hbox (badness 6380) in paragraph at lines 1312--1317
+Underfull \hbox (badness 6380) in paragraph at lines 1406--1411
 \OT1/ptm/m/n/10 ob-tained at: http://mirror.ctan.org/biblio/bibtex/contrib/doc/
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1312--1317
+Underfull \hbox (badness 10000) in paragraph at lines 1406--1411
 \OT1/ptm/m/n/10 The IEEE-tran Bib-TeX style sup-port page is:
  []
 
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-322.
+416.
 (c:/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [14] [15
+) [15] [16
 
 ]
 (./MAE_298_PDEs_Report.aux)
@@ -762,7 +785,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  4337 strings out of 480994
  67348 string characters out of 5916033
- 328126 words of memory out of 5000000
+ 326141 words of memory out of 5000000
  19766 multiletter control sequences out of 15000+600000
  576512 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -785,10 +808,10 @@ exmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2019/texmf-dist/fonts/
 type1/urw/times/utmb8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/ut
 mr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb><c:/texl
 ive/2019/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
-Output written on MAE_298_PDEs_Report.pdf (15 pages, 386625 bytes).
+Output written on MAE_298_PDEs_Report.pdf (16 pages, 392669 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 139 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

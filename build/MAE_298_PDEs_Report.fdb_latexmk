@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1647212525 "MAE_298_PDEs_Report.tex" "MAE_298_PDEs_Report.pdf" "MAE_298_PDEs_Report" 1647212527
-  "MAE_298_PDEs_Report.aux" 1647212527 6128 35d2501050c11187d6b0d29779bd8bfa "pdflatex"
-  "MAE_298_PDEs_Report.tex" 1647212524 81965 34847ec10e84bb37f8810854b61e8dff ""
+["pdflatex"] 1647233366 "MAE_298_PDEs_Report.tex" "MAE_298_PDEs_Report.pdf" "MAE_298_PDEs_Report" 1647233368
+  "MAE_298_PDEs_Report.aux" 1647233367 7134 2dbb576e62f2f023c87f35c73750cf04 "pdflatex"
+  "MAE_298_PDEs_Report.tex" 1647233364 87080 b31a9419ad648d4b77c6de41e2355823 ""
   "c:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/DFN.png" 1645781277 128603 8f6c6de6cc8388bec6dc84c085e03492 ""
   "c:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc" 1583119417 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "c:/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1583120804 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -110,5 +110,5 @@
   "c:/texlive/2019/texmf.cnf" 1583133943 673 4ae7b2f49cee444c5343a45b5d0f169c ""
   (generated)
   "MAE_298_PDEs_Report.aux"
-  "MAE_298_PDEs_Report.pdf"
   "MAE_298_PDEs_Report.log"
+  "MAE_298_PDEs_Report.pdf"

@@ -772,44 +772,41 @@ This section focuses on the conservation of charge inside of the binary electrol
 \end{equation}
 
 
-First, it is neccessary to understand the chemical equation at play, and which must be balanced.
-
+However, before starting, now is the perfect time to cover the chemical equation at play and define notion which will be helpful in future steps. Recall that a balanced chemical equation must not only balance, quantity of each molecule/element, but it must also balance the total amount of electrical charge on each side of the reaction. For our usecase of lithium-ion batteries a typical equation would follow the same general structure as the following equation.
 \begin{equation}
 \mathrm{M}+\mathrm{Li}^{+}+e^{-} \rightleftharpoons \mathrm{LiM}
 \end{equation}
 
 This can be written in an equivalent but more useful form as...
-
 \begin{equation}\label{lithium_ion_reaction_balanced}
 \mathrm{LiM}-\mathrm{M}-\mathrm{Li}^{+} \rightleftharpoons e^{-}
 \end{equation}
 
-This equation represented interaction of lithium and some metal oxide which forms the active electrode material, as well as producing excess electrons. From physics it is known that the energy of this reaction must be conserved. Therefore, we can state that the Gibbs free energy of the reactants in the LHS of equation \ref{lithium_ion_reaction_balanced}, must be equal to the electical energy of the electons produced on the RHS of the same equation.
-
+This equation represents the interaction of lithium and some arbitrary metal oxide that which forms the active electrode material, as well as producing excess electrons. From basic principles of physics, we assume that the energy of this reaction must be conserved. Because of this fact, the Gibbs free energy of the LHS of equation (\ref{lithium_ion_reaction_balanced}), must be equal to the electical energy of the electons produced on the RHS of the equation. Symbolically, we can use summation notion to express this as follows.
 
 \begin{equation}
   \sum{G} = \sum{E(e)}
 \end{equation}
 
-From previous sections we already know that we can write the Gibbs free energy and the energy due to the local electrostatic potential as follows.
+From previous work, we can write the Gibbs free energy and the energy due to the local electrostatic potential as follows.
 
 \begin{equation}
 \sum_{i} s_{i} \bar{\mu}_{i}=-n F \phi
 \end{equation}
 
-By taking the gradient of this expressions we can derive the following relationship between the gradients of the electrochemical potential and the electrostatic potential.
+Where the term $s_i$ represent the number of moles of each component of our chemical equation when written in the form of equation (\ref{lithium_ion_reaction_balanced}). This equation can easily be utilized to compute the relationship between the electrochemical and electrostatic potential gradients.
 
 \begin{equation}\label{COE}
 \sum_{i} s_{i} \nabla \bar{\mu}_{i}=-n F \nabla \phi
 \end{equation}
 
-By application of the Gibbs-Duhem equation \ref{gibbs_duhem_eqn}, and accounting for the change from moles to concentration, we write the following expression for the electrolyte.
+By application of the Gibbs-Duhem relationship from equation (\ref{gibbs_duhem_eqn}), and accounting for the change from moles to concentration, we write the following expression for the electrolyte.
 
 \begin{equation}
 c_{+} \nabla \bar{\mu}_{+}+c_{-} \nabla \bar{\mu}_{-}+c_{0} \nabla \bar{\mu}_{0}=0
 \end{equation}
 
-This expression encapsulates the positive, negative, and neutral components of the electrolyte solution, such that $i = +, -, 0$. Thus far, we have only encountered expressions for positive and negative electrochemical potentials but nothing for the neutral case. Thankfully, by leveraging the Gibbs-Duhem equation, \ref{gibbs_duhem_eqn} from previous sections, we can solve for the gradient of the $0th$ electrochemical potential. It can be shown that the expression can be written in terms of the electrolytes potential gradient, by subsituting equation \ref{eletrolyte_chem_pot_grad}.
+This expression encapsulates the positive, negative, and neutral components of the electrolyte solution, such that $i = +, -, 0$. Thus far, we have only encountered expressions for positive and negative electrochemical potentials but nothing for the neutral case. Thankfully, by leveraging the Gibbs-Duhem equation, we can solve for the gradient of the $0th$ electrochemical potential.
 
 \begin{equation}
 \begin{aligned}
@@ -819,7 +816,7 @@ This expression encapsulates the positive, negative, and neutral components of t
 \end{aligned}
 \end{equation}
 
-\noindent Via direct substitution, it is obvious that we can rewrite equation \ref{COE}, in expanded form as follows.
+\noindent Via direct substitution of this result into equation (\ref{COE}), it becomes.
 
 \begin{equation}
 s_{+} \nabla \bar{\mu}_{+}+s_{-} \nabla \bar{\mu}_{-}-s_{0} \frac{c}{c_{0}} \nabla \mu_{e}=-n F \nabla \phi
@@ -832,37 +829,27 @@ s_{+} z_{+}+s_{-} z_{-} =-n
 \end{equation}
 
 \noindent From this expression we can solve for $s_{-} $ to arrive at the following equation.
-
 \begin{equation}\label{signed_stoich_coef}
     s_{-} =-\left(\frac{z_{+}}{z_{-}} s_{+}+\frac{n}{z_{-}}\right)
 \end{equation}
 
-\noindent With this expression for $s_{-} $ we can substitute it into component $D$ conservation of energy equation, rewritten below.
-
+\noindent This expression for $s_{-} $ can be substitute it into the LHS of the conservation of energy equation which we have developed earlier, to yield.
 
 \begin{equation}
-\underbrace{s_{+} \nabla \bar{\mu}_{+}+s_{-} \nabla \bar{\mu}_{-}}_{D}-s_{0} \frac{c}{c_{0}} \nabla \mu_{e}=-n F \nabla \phi
+{s_{+} \nabla \bar{\mu}_{+}-\left(\frac{z_{+}}{z_{-}} s_{+}+\frac{n}{z_{-}}\right) \nabla \bar{\mu}_{-}}-s_{0} \frac{c}{c_{0}} \nabla \mu_{e}=-n F \nabla \phi
 \end{equation}
 
-\noindent After applying this substitution, significant alregbraic simplifications can be made to reduce the expression for term $D$ to...
-\begin{equation}
-\underbrace{s_{+} \nabla \bar{\mu}_{+}+s_{-} \nabla \bar{\mu}_{-}}_{D} =\frac{s_{+}}{v_{+}} \nabla \mu_{e}-\frac{n}{z_{-}} \nabla \bar{\mu}_{-} .
-\end{equation}
-
-\noindent This step has accomplished the task of rewriting the electrochemical gradients without the need to reference the positive eletrode electrochemical potential gradient, and has reduced our original conservation of energy equation to ...
+\noindent After a significant amount of algrebraic rework, we can rewrite the previous equation without the need to reference the positive eletrode electrochemical potential gradient as.
 \begin{equation}\label{grad_mu_e_n_grad_mu_n}
-\begin{array}{l}
-\frac{s_{+}}{v_{+}} \nabla \mu_{e}-\frac{n}{z_{-}} \nabla \bar{\mu}_{-}-s_{0} \frac{c}{c_{0}} \nabla \mu_{e}=-n F \nabla \phi \\
 \left(\frac{s_{+}}{n v_{+}}-\frac{s_{0} c}{n c_{0}}\right) \nabla \mu_{e}-\frac{1}{z_{-}} \nabla \bar{\mu}_{-}=-F \nabla \phi
-\end{array}
 \end{equation}
 
-\noindent However, we would still like express this term solely using $\nabla \mu_{e}$. Recall from the Maxell-Stefan, equation, that we can write...
+\noindent However, we would still like to express this equation solely in terms of $\nabla \mu_{e}$. To accomplish this, recall via the Maxell-Stefan equation, that we can write the gradient in electrochemical potential as a function of Maxwel-Stefan friction coefficients.
 \begin{equation}\label{max_n_stefy}
 c_{-} \nabla \bar{\mu}_{-}=K_{0-}\left(\mathbf{v}_{0}-\mathbf{v}_{-}\right)+K_{+-}\left(\mathbf{v}_{+}-\mathbf{v}_{-}\right)
 \end{equation}
 
-We can furthermore, use the equation for flux-density Eqn(\ref{flux_density}) and rearrange it such that...
+We can furthermore, use the equation for flux-density equation (\ref{flux_density}) and rearrange it such that...
 
 \begin{equation}\label{flux_density}
 c_{i}\left(\mathbf{v}_{i}-\mathbf{v}_{0}\right) =-\frac{v_{i} \mathscr{D}}{v R T} \frac{c_{T}}{c_{0}} \nabla \mu_{e}+\frac{\mathbf{i} t_{i}^{0}}{z_{i} F} \quad \text{for i} = \pm
@@ -896,7 +883,7 @@ c_{i}\left(\mathbf{v}_{i}-\mathbf{v}_{0}\right) =-\frac{v_{i} \mathscr{D}}{v R T
   t_{+}^{0} + t_{-}^{0} = 1
 \end{equation}
 
-\noindent By using this relationship and the definition of the transference number in Eqn(\ref{transference_num_def}), it is trivial to reduce the expression to the following equation.
+\noindent By using this relationship and the definition of the transference number in equation (\ref{transference_num_def}), it is trivial to reduce the expression to the following form.
 
 
 
@@ -910,7 +897,7 @@ c_{i}\left(\mathbf{v}_{i}-\mathbf{v}_{0}\right) =-\frac{v_{i} \mathscr{D}}{v R T
 \frac{1}{z_{-}} \nabla \bar{\mu}_{-} =\frac{1}{c_{-} z_{-}}\left[K_{0-}\left(\mathbf{v}_{0}-\mathbf{v}_{-}\right)+K_{+-}\left(\mathbf{v}_{+}-\mathbf{v}_{-}\right)\right]
 \end{equation}
 
-\noindent We can apply Eqns(\ref{rel_v_pos_n_neg} \& \ref{rel_V}) and derive the following equation of $\nabla \bar{\mu}_{-}$ in terms of $\nabla \mu_e$.
+\noindent We can apply equations (\ref{rel_v_pos_n_neg}) \& (\ref{rel_V}) and derive the following equation of $\nabla \bar{\mu}_{-}$ in terms of $\nabla \mu_e$.
 
 \begin{equation}
 \frac{1}{z_{-}} \nabla \bar{\mu}_{-} =-\frac{t_{+}^{0}}{v_{+} z_{+}} \nabla \mu_{e}-\frac{F \mathbf{i}}{\kappa}
@@ -922,7 +909,7 @@ c_{i}\left(\mathbf{v}_{i}-\mathbf{v}_{0}\right) =-\frac{v_{i} \mathscr{D}}{v R T
 \frac{1}{\kappa}=\frac{-K_{0_{-}} t_{-}^{0}-K_{+-}}{c_{-} z_{-} c_{+} z_{+} F^{2}}
 \end{equation}
 
-\noindent By applying this expression for $\nabla \bar{\mu}_{-}$ to Eqn(\ref{grad_mu_e_n_grad_mu_n}) we derive the following expression.
+\noindent By applying this expression for $\nabla \bar{\mu}_{-}$ to equation (\ref{grad_mu_e_n_grad_mu_n}) we derive the following expression.
 
 
 \begin{equation}
@@ -962,7 +949,7 @@ Unlike other Equivalent Circuit Models of batteries (ECM), PDE based battery mod
 \end{equation}
 
 
-\noindent By using Eqn(\ref{electro_chem_potential}), it is obvious that we can find the partial derivatives with respect to the $ln(c)$, into which we can substitute the partial derivatives determined above.
+\noindent By using equation (\ref{electro_chem_potential}), it is obvious that we can find the partial derivatives with respect to the $ln(c)$, into which we can substitute the partial derivatives determined above.
 
 \begin{equation}
 \frac{\partial \mu_{e}}{\partial \ln c} =v_{+} \frac{\partial \bar{\mu}_{+}}{\partial \ln c}+v_{-} \frac{\partial \bar{\mu}_{-}}{\partial \ln c}
@@ -978,7 +965,7 @@ Unlike other Equivalent Circuit Models of batteries (ECM), PDE based battery mod
 \end{equation}
 
 
-\noindent This expression for $\nabla \mu_e$, can then be substituted into the Eqn(\ref{current_density_mu_e}), for current density.
+\noindent This expression for $\nabla \mu_e$, can then be substituted into the equation (\ref{current_density_mu_e}), for current density.
 
 \begin{equation}
 \mathbf{i}=-\kappa \nabla \phi-\frac{\nu \kappa R T}{F}\left(\frac{S_{+}}{n v_{+}}-\frac{s_{0} c}{n c_{0}}+\frac{t_{+}^{0}}{v_{+} z_{+}}\right)\left(1+\frac{\partial \ln f_{\pm}}{\partial \ln c}\right) \nabla \ln c
@@ -1004,7 +991,7 @@ Unlike other Equivalent Circuit Models of batteries (ECM), PDE based battery mod
 
 
 \subsection{Bulter-Volmer Equation}
-The final equation in the derivation of the microscale model which layings the foundation for the DFN model, is called the Bulter-Volmer equation. This equations deals with the reaction kinetics of the battery and couples the four previous equations into a system of five equations. In principle, this equation defines rate at which lithium is transfered between the solid and electrolyte phases.
+The final equation in the derivation of the microscale electrochemical battery model, is called the Bulter-Volmer equation. This equations deals with the reaction kinetics of the battery and couples the four previous equations into a system of five equations. In principle, this equation defines rate at which lithium is transfered between the solid and electrolyte phases.
 
 \begin{equation}
 r=\frac{\mathrm{d} \prod_{i} c_{\text {product }, i}}{\mathrm{~d} t}
@@ -1294,8 +1281,107 @@ The previous system of governing partial differential equations, was derived usi
 In particular, the Doyle-Fuller-Newman (DFN) model uses a technique of volume averaging to be able to same governing equations which were derived above, over larger domains, approximating (on average) the behaviors of each electrode and the electrolyte. \\
 
 
+\begin{equation} \label{COC_s}
+\nabla \cdot \mathbf{i}_{s}=\nabla \cdot\left(-\sigma \nabla \phi_{s}\right)=0
+\end{equation}
+
+\begin{equation} \label{COM_s}
+\frac{\partial c_{s}}{\partial t}=\nabla \cdot\left(D_{s} \nabla c_{s}\right)
+\end{equation}
+
+\begin{equation} \label{COM_e}
+\frac{\partial c_{e}}{\partial t}=\nabla \cdot\left(D_{e} \nabla c_{e}\right)-\frac{\mathbf{i}_{e} \cdot \nabla t_{+}^{0}}{F}-\nabla \cdot\left(c_{e} \mathbf{v}_{0}\right)
+\end{equation}
+
+\begin{equation}\label{COC_e}
+\nabla \cdot\left(-\kappa \nabla \phi_{e}-\frac{2 \kappa R T}{F}\left(1+\frac{\partial \ln f_{\pm}}{\partial \ln c_{e}}\right)\left(t_{+}^{0}-1\right) \nabla \ln c_{e}\right)=0
+\end{equation}
+
+\begin{equation} \label{lithium_movment}
+j=\frac{i_{0}}{F}\left\{\exp \left(\frac{(1-\alpha) F}{R T} \eta\right)-\exp \left(-\frac{\alpha F}{R T} \eta\right)\right\}
+\end{equation}
+
+
+\subsection{One Dimensional SPM Model}
+
+In the previous derivations, the derived equations have retained the general gradient form. However, the single particle model reduces the dimension of the problem to a single spatial dimension, for ease of computation. This means that for SPM we can write the governing equation as follows... \\
+
+\subsubsection{Conservation of Charge in Solid Phase}
+
+The general form of the conservation of charge in the solid material is given by the following equation.
+
+\begin{equation}
+\nabla \cdot \mathbf{i}_{s}=\nabla \cdot\left(-\sigma \nabla \phi_{s}\right)=0
+\end{equation}
+
+Unfortunately, this form is not helpful as the divergence of the current serves only to prove the solid phase current is conserved. However, we can put this in a more useful form by recognizing the equality that exists such that.
+
+\begin{equation}
+\mathbf{i}_{s}=\left(-\sigma \nabla \phi_{s}\right)
+\end{equation}
+
+
+Then, by applying Kirchhoff's current law, we can state that net current is equal to the sum of the contributions from both the electrolyte and the solid phases.
+
+\begin{equation}
+  I = i_e + i_s
+\end{equation}
+
+After simplifying the gradient into a single dimension along the X axis, the expression for the conservation of charge in the solid phase can be written.
+
+\begin{equation}
+\frac{\partial{\phi_{s}}}{\partial{x}} = \frac{i_e - I}{\sigma}
+\end{equation}
+
+
+\subsubsection{Conservation of Charge in Electrolyte Phase}
+
+\begin{equation}\label{COC_e}
+\nabla \cdot\left(-\kappa \nabla \phi_{e}-\frac{2 \kappa R T}{F}\left(1+\frac{\partial \ln f_{\pm}}{\partial \ln c_{e}}\right)\left(t_{+}^{0}-1\right) \nabla \ln c_{e}\right)=0
+\end{equation}
+
+By applying a similar reduction and simplification process as the conservation of charge in the solid phase above, we can show that full equation can be simplified to the following form.
+
+\begin{equation}
+i_e = -\kappa \frac{\partial{\phi_{e}}}{\partial{x}} -\frac{2 \kappa R T}{F}\left(1+\frac{\partial \ln f_{\pm}}{\partial \ln c_{e}}\right)\left(t_{+}^{0}-1\right) \frac{\partial{\ln c_{e}}}{\partial{x}}
+\end{equation}
+
+\subsubsection{Conservation of Mass Solid Phase}
+
+\begin{equation}
+\frac{\partial c_{s}}{\partial t}=\nabla \cdot\left(D_{s} \nabla c_{s}\right)
+\end{equation}
+
+Similarly, by applying reducing the gradient into a single partial derivative we can write the conservation of mass in the solid phase as
+
+\begin{equation}
+\frac{\partial c_{s}}{\partial t}=  \frac{\partial}{\partial{x}} \left( D_s \frac{\partial{c_s}}{\partial{x}} \right)
+\end{equation}
+
+However, since SPM models the diffusion of lithium into a single particle of the ``electrode active material'', we are not interested in the X axis, but rather the radial axis of the electrode particle. To accomplish this all that is required is to transform the coordinate system from Cartesian to Polar by applying the Jacobian transformation of change of coordinates. After this is accomplished the final equation for the conservation of mass in the solid phase is written as
+
+\begin{equation}
+\frac{\partial c_{s}}{\partial t}= \frac{1}{r^2} \frac{\partial}{\partial{r}} \left( D_s \frac{\partial{c_s}}{\partial{r}} \right)
+\end{equation}
+
+\subsubsection{Conservation of Mass in Electolyte Phase}
+
+
+\begin{equation}
+\frac{\partial c_{e}}{\partial t}=\nabla \cdot\left(D_{e} \nabla c_{e}\right)-\frac{\mathbf{i}_{e} \cdot \nabla t_{+}^{0}}{F}-\nabla \cdot\left(c_{e} \mathbf{v}_{0}\right)
+\end{equation}
+
+As will all previous SPM equations, this equation can be simplified by reducing the gradient to a single dimension such that...
+
+\begin{equation}
+\frac{\partial c_{e}}{\partial t}= \frac{\partial}{\partial{x}} \left( D_e \frac{\partial{c_e}}{\partial{x}} \right) - \frac{\partial}{\partial{x}}\left( \frac{i_e \cdot t_{+}^{0}}{F\varepsilon_e} \right)
+\end{equation}
 
 \section{Analysis of Governing Equations}
+
+So far this paper has covered in enourmous detail, how all of the governing equation for the microscale electrochemical battery model have been derived from first principles. For review these are equations are...
+
+
 
 \section{Numerical Simulation}
 
