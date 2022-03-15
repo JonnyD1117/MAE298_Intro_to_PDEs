@@ -64,14 +64,14 @@
 % \end{abstract}
 
 \section{Introduction}
-\IEEEPARstart{P}{artial} differential equations (PDEs) provide the mathematical basis for describing many significant scientific phenomena; however, while an important domain of study in its own right, the application and derviation of PDE based models is often more challenging to understand and develop, than merely studying the mathematical formalism behind PDEs. The inherent complexity of deriving and analyzing PDE models when compared to more approachable ODE models can be further exacerbated by systems of coupled equations and/or nonlinear dynamics. For these systems, the derivation and interpretation of the model are often obfuscated by modeling assumptions, domain specific knowledge, and an understanding of how these mechanisms are translated into a PDE formation. In effect, these PDE models compromise higher accuracy and predictability, at the expense of ease of modeling, computational overhead, intuition, and interpreability. \\
+\IEEEPARstart{P}{artial} differential equations (PDEs) provide the mathematical basis for describing many significant scientific phenomena; however, while an important domain of study in its own right, the application and derviation of PDE based models is just as challenging to understand and develop. The inherent complexity of deriving and analyzing PDE models when compared to more approachable ODE models can be further exacerbated by systems containing coupled equations or nonlinear dynamics. For these systems, the derivation and interpretation of the model are often obfuscated by modeling assumptions, domain specific knowledge, and an understanding of how these mechanisms are translated into a PDE formation. In effect, these PDE models compromise higher accuracy and predictability, at the expense of ease of modeling, computational overhead, intuition, and interpreability. \\
 
-An important modern day example can be found in the study of electrochemical battery models, where even simplified electrochemical model consist of a system of partial differential equations, each describing physical laws and constraints which the dynamics of the battery must obey. The objective of this paper is to derive the salient PDEs that define the microscale first principles electrochemical battery model from which we can distill the well known Doyle-Fuller-Newman (DFN) model and a more simplified Single Particle Model (SPM). The intent of this paper is to provide the reader with enough contex that the reader will be able to understand the development of state of the art electrochemical battery modeling from fundamental assumptions to the principle mechanisms at work with this model, to inform how these concepts are translated into the mathematical language of partial differential equations.
+An important modern day example can be found in the study of electrochemical battery models, where even simplified electrochemical model consist of a system of partial differential equations, each describing physical laws and constraints which the dynamics of the battery must obey. The objective of this paper is to derive the salient PDEs that define the microscale first principles electrochemical battery model from which we can distill the well known Doyle-Fuller-Newman (DFN) model and the more simplified Single Particle Model (SPM). The intent of this paper is to provide the reader with enough context as to understand the development of state of the art electrochemical battery modeling from fundamental modeling assumptions to the first principle mechanisms at work, and to inform how these concepts are translated into the mathematical language of partial differential equations.
 
 \section{Single Particle Model Overview}
-For years, the Doyle-Fuller-Newman model has long been held as the gold standard electrochemical battery model and has been used as a benchmark for modeling and the predictive ability of new battery models and techniques. The DFN model describes the first principles dynamics of a battery cell [Fig. \ref{DFN_schematic}], and encapsulates the dynamics of a lithium-ion battery at the continuum-scale. This is accomplished by derving the microscale governing equations and applying volume averages over the models' domain. The primary elements of this model consist of five governing equations for the conservation of mass in homogeneous solid phase, the conservation of charge in homogeneous solid phase, the conservation of mass in homogeneous electrolyte phase, the conservation of charge in the homogeneous electrolyte phase, and finally the transport effects of lithium movement between the solid and electrlye phases, known as the Bulter-Volmer kinetics equation. \\
+For years, the Doyle-Fuller-Newman (DFN) model has long been held as the gold standard electrochemical battery model and has been used as a benchmark in battery modeling and as the standard against the predictive ability of new battery models and techniques. The DFN model describes the first principles dynamics of a battery cell [Fig. \ref{DFN_schematic}], and encapsulates the dynamics of a lithium-ion battery at the continuum-scale. This is accomplished by derving the microscale governing equations and applying volume averages over the models' domain. The primary elements of this model consist of five governing equations for the conservation of mass in homogeneous solid phase, the conservation of charge in homogeneous solid phase, the conservation of mass in homogeneous electrolyte phase, the conservation of charge in the homogeneous electrolyte phase, and finally the transport effects of lithium movement between the solid and electrlye phases, known as the Bulter-Volmer kinetics equation. \\
 
-Unfortunately, derivation of the full DFN model would require investigation into the process of volume averaging which, in and of itself, is an involved procedure. To this end, this paper will endeavour to derive the underlying microscale model, used to develope both SPM and DFN models, with the end goal of translating the microscale model into the SPM formulation which utilizes a reduction of order to simplify the battery model into the two dimensional problem of 1D space and time. SPM along with its' more accurate cousin (the Single Particle Model with Electrolyte Dynamics {SPMe}), take the approach that simplifying the domain which the PDE defines, is an acceptable tradeoff of accuracy for a measurable boost in computational efficiency. As such these models have found growing acceptance in the domain of real-time or near real-time applications such as battery state of charge estimation, which has been dominated by lumped parameter ODE equivalent circuit models (ECM). \\
+Unfortunately, derivation of the full DFN model would require investigation into the process of volume averaging which, in and of itself, is an involved procedure. To this end, this paper will endeavour to derive the underlying microscale model, used to develope both SPM and DFN models, with the end goal of translating the microscale model into the SPM formulation which utilizes a reduction of order to simplify the battery model into the two dimensional problem of 1D space and time. SPM along with its' more accurate cousin (the Single Particle Model with Electrolyte Dynamics {SPMe}), take the approach that simplifying the domain which the PDE defines and focusing primarily on the dominate transient dyanmics of the system (instead of all system dynamics) is an acceptable tradeoff of accuracy for a measurable boost in computational efficiency, and interpreability. As such these models have found growing acceptance in the domain of real-time or near real-time applications such as battery state of charge estimation, which has been dominated by lumped parameter ODE equivalent circuit models (ECM). \\
 
  The majority of this paper will investigate the process of deriving the microscale governing partial differential equations, from which we can derive the Single Particle battery model. For reference the desired microscale model equations are listed below. Throughout this paper, the reader will see how individual components of physics, chemistry, and thermodynamics are brought together to to derive the following set of partial differential equations.
 
@@ -113,7 +113,7 @@ j=\frac{i_{0}}{F}\left\{\exp \left(\frac{(1-\alpha) F}{R T} \eta\right)-\exp \le
    \item Conservation of Charge in homogeneous solid phase
    \item Conservation of Mass in homogeneous electrolyte
    \item Conservation of Charge in homogeneous electrolyte
-   \item Lithium Reaction Kinetics \\
+   \item Lithium Reaction Kinetics \& transport effects\\
   \end{enumerate}
 
 The two domains that we are interested in solving these equations for are the homogeneous solid which is represented by the battery electrodes, as well as the homogeneous electrolyte which represents the electrically conductive liquid medium inbetween the anode and the cathode. When coupled with the dynamics of lithium transport into the active material of the electrode, these equations will define all of the salient dynamics which a lithium-ion battery will incorporate. We will begin with the conservation of charge in the solid phase.
@@ -148,7 +148,7 @@ While this statement is an accurate formulation of \textbf{conservation of charg
   \nabla \cdot (-\sigma \nabla \phi_s) = 0
 \end{equation}
 
-When stated directly, equation (\ref{final_COC_s}) states that the divergence of the conductivity ($\sigma$) weighted gradient of the electrical potential must equal zero for charge to be conserved in the volume of system which we have defined (aka the battery). This expression must hold true for both electrodes of the battery.
+Equation (\ref{final_COC_s}) states that the divergence of the conductivity ($\sigma$) weighted gradient of the electrical potential must equal zero for charge to be conserved in the volume of system which we have defined (aka the battery). This expression must hold true for both electrodes of the battery.
 
 \subsection{Mass Conservation in Homogeneous Solid}
 
@@ -167,7 +167,7 @@ This provides us with the net molar flux \textbf{j} $ [mol s^{-1}]$, which can r
     j = \frac{dn}{dt}
 \end{equation}
 
-Recalling that the definition of molar concentration is the number of moles of a material divided by the total volume it occupies $\left( c = n / \volume \right)$, we can define an infinitesimal mole $dn$ to be computed by integrating each contribution of concentration within a differential volume over the entire volume of the domain and then taking the derivate with respect to time.
+Recalling that the definition of molar concentration is the number of moles of a material divided by the total volume the solution occupies $\left( c = n / \volume \right)$, we can define an infinitesimal mole $dn$ to be computed by integrating each contribution of concentration within a differential volume over the entire volume of the domain and then taking the derivate with respect to time.
 \begin{equation}
     n = \iiint_{\volume} cd{\volume}
 \end{equation}
@@ -185,9 +185,9 @@ This is the integral form of the continuity equation, which relates the molar fl
 
 \noindent This is an important formulation because it provides the link to express the molar flux density in terms of lithium concentration. While initially a rather opaque connection, in the study of electrochemical battery models, the ability to express find desired dynamics as a function of concentration is desirable since many of the quantities we are interested in understanding with this model are defined as a function of concentration. The best example of this being a batteries state of charge (SOC). \\
 
- As an equation of continuity, equation (\ref{COM_s_int_form}), states that no mass has been created or destroyed inside the domain. This statement can further be used to imply that all mass transfer happens only at the boundaries of the domain. Equation (\ref{COM_s_int_form}) can be further simplified into the more familiar point form of Fick's second law, as shown below.
+ As an equation of continuity, equation (\ref{COM_s_int_form}), states that no mass has been created or destroyed inside the domain. This statement can further be used to imply that all mass transfer happens only at the boundaries of the domain. Equation (\ref{COM_s_int_form}) can be simplified into the more familiar point form of Fick's second law, as shown below.
 \begin{equation}
-    \frac{\partial c_{S}}{\partial t} = \nabla \cdot \left( D_{S} \nabla c_{s} \right)
+    \frac{\partial c_{s}}{\partial t} = \nabla \cdot \left( D_{S} \nabla c_{s} \right)
 \end{equation}
 
 This law states that the total lithium flux density (in a given volume) must be equal to the rate of change of concentration within that volume.
@@ -228,7 +228,7 @@ The first construct to be elaborated is that of Gibbs free energy. Simply put, G
 
  \subsubsection{Electrochemical Potential}
 
- Understanding the previous sections is important because it leads to a discussion of electrochemical potentials. Especially in multispecies solutions, the conversion from extensive properties to intensive properties is subtle. In order to properly define these intensive properties, it is neccessary to define partial molar quantities. This can be written using partial derivatives and describes how much the Gibbs free energy (extensive) changes with the addition of only species to the solution. This can be written...
+ Understanding the previous sections is important because it leads to a discussion of electrochemical potentials. Especially in multispecies solutions, the conversion from extensive properties to intensive properties is subtle. In order to properly define these intensive properties, it is neccessary to define partial molar quantities. This can be written using partial derivatives and describes how much the Gibbs free energy (extensive) changes with the addition of only species to the solution.
 
  \begin{equation}\label{electrochemical_potential}
      \bar{\mu} = \left( \frac{\partial G}{\partial n_{i}} \right)_{T,p,n_{j} (j \neq i)}
@@ -236,7 +236,7 @@ The first construct to be elaborated is that of Gibbs free energy. Simply put, G
 
  \noindent where $n_i$ is the number of moles of species $i$, while keeping the temperature, pressure, and moles of other species constant.  Given this definition, note that electrochemical potential is an intensive property which has been normalized via the species mass (in moles).\\
 
- By evaluating the composition of equation (\ref{gibbs_free_energy}), we can see that Gibbs free energy can be written in terms of internal and external energy components. Therefore it follows that equation (\ref{electrochemical_potential}), which defines the total potential, can be written in terms of internal and external potentials, which is written as.
+ By evaluating the composition of equation (\ref{gibbs_free_energy}), we can see that Gibbs free energy can be written in terms of internal and external energy components. Therefore it follows that equation (\ref{electrochemical_potential}), which defines the total potential, can be written in terms of internal and external potentials.
 
 \begin{equation}
   \bar{\mu_{i}} = \bar{\mu}_{i, internal} + \bar{\mu}_{i, external}
@@ -274,15 +274,15 @@ The \textbf{Gibbs-Duhem} equation provides an important relationship between ele
   = dq + dw + pdV + VdP -TdS - SdT
 \end{equation}
 
-\noindent Note that so far, all that has been accomplished has been applying the derivative operator, expanding the expression via the product rule of differentiation, and expanding the interal energy into the equivalent energy of heat and work.  \\
+\noindent Note that so far, all that has been accomplished has been applying the derivative operator, expanding the expression via the product rule of differentiation, and expanding the internal energy into the equivalent energy of heat and work.  \\
 
-\noindent From thermodynamics of our battery system, we know $dw = -pdV$ and that under the assumption of reversibility $dq = TdS$. After applying these substitutions, we arrive at the simplifed expressions below.
+\noindent From thermodynamics of our battery system, we know $dw = -pdV$ and that under the assumption of reversibility $dq = TdS$. By applying these definitions, we arrive at the simplifed expression below.
 
 \begin{equation}
   dG = Vdp - SdT
 \end{equation}
 
-We can use equations \ref{electrochemical_potential} and \ref{gibbs_summation} to write the previous equation in terms of the total potential.
+We can use equations (\ref{electrochemical_potential}) and (\ref{gibbs_summation}) to write the derivate of Gibbs free energy in terms of the total potential.
 \begin{equation}
   \sum_{r}^{i=1} n_id\bar{\mu}_i = Vdp - SdT
 \end{equation}
@@ -313,7 +313,7 @@ This is an important equation because it directly governs the relationship betwe
 
 Unlike non-ionic solutions, ionic solutions do not distribute their ions randomly, this is because the electrical charge for either a cation or anion are preferentially oriented and attracted to ions of the opposite charge. A consequence of this behavior is that movement of ions in solution are artificially slow, due to the movement of a specific ion also attempting to drag the other ions which are in its immediate neighborhood in the solution. \\
 
-Because of this phenomenon, we define the \textbf{activity} of a species as an effective concentration, which accounts for this descrepency.
+Because of this phenomenon, we define the \textbf{activity} of a species as an effective concentration, which accounts for this descrepency where $0< f <1$.
 
 \begin{equation}\label{activity}
   a_i = c_i f_i
@@ -989,7 +989,7 @@ c_{i}\left(\mathbf{v}_{i}-\mathbf{v}_{0}\right) =-\frac{v_{i} \mathscr{D}}{v R T
 
 
 \subsection{Bulter-Volmer Equation}
-The final equation in the derivation of the microscale electrochemical battery model, is called the Bulter-Volmer equation. This equations deals with the reaction kinetics of the battery and couples the four previous equations into a system of five equations. In principle, this equation defines rate at which lithium is transfered between the solid and electrolyte phases. By assuming linear dynamics, we can write the reaction rate of a multispecies system as
+The final equation in the derivation of the microscale electrochemical battery model, is called the Bulter-Volmer equation. This equation deals with the reaction kinetics of the battery and couples the four previous equations into a system of five equations. In principle, this equation defines rate at which lithium is transfered between the solid and electrolyte phases. By assuming linear dynamics, we can write the reaction rate of a multispecies system as
 
 \begin{equation}
 r=k \prod_{i} c_{\text {reactant }, i}
@@ -1001,27 +1001,27 @@ r=k \prod_{i} c_{\text {reactant }, i}
  r=k_{f}^{0} c_{\text {reactant }} \exp \left(-\frac{E_{a}}{R T}\right)
 \end{equation}
 
-\noindent Where $E_a$ is the activation energy required to initiate the reaction, R is molar gas constant, and T is the temperature. This brings us to the subject of activated complex theory, which is required to define the exchange current in the Bulter-Volmer euquation.\\
+\noindent Where $E_a$ is the activation energy required to initiate the reaction, R is molar gas constant, and T is the temperature. This brings us to the subject of activated complex theory, which is required to define the exchange current in the Bulter-Volmer equation.\\
 
 \subsubsection{Activated Complex Theory}
 
 \noindent In order for a chemical reaction to occur, there must be enough free energy to initiate and maintain the reaction. For the types of reactions seen in this paper, the process of going from reactants to produces is only favored if the reactants possess a higher energy state than the final product of reaction. While this excess of energy is required to maintain the reaction, there is often an additional amount of barrier energy required to initiate in the first place. \\
 
-For reactions involved with the battery chemistry of a lithium-ion battery, the reaction taking place is a reduction-oxidation (redox) reaction, which releases/gains electrons. However, unlike other redox reaction, the reaction in our battery is unique in that the objective of the reaction is to merely produce or consume electrons, and does not produce any byproducts or reaction. Additionally, the direction of the reaction, occuring in the battery, can be preferentially determined by the polarity of the given field applied across the cell. \\
+For reactions involved with the battery chemistry of a lithium-ion battery, the reaction taking place is a reduction-oxidation (redox) reaction, which releases/gains electrons. However, unlike other redox reaction, the reaction in our battery is unique in that the objective of the reaction is to merely produce or consume electrons, and does not produce any byproducts. Additionally, the direction of the reaction, occuring in the battery, can be preferentially determined by the polarity of the given electric field applied across the cell. \\
 
-\begin{figure}[H]
+\begin{figure}[h!]
   \centering
   \includegraphics[scale=.35]{ACT}
   \caption{Activation Energy of Reduction and Oxidation}
   \label{ACT_schematic}
 \end{figure}
 
-As shown in Figure \ref{ACT_schematic} the oxidation and the reduction directions of demand different activation energies to drive the reaction into sustained oxidation or reduction. Moreover, under the presence of an electric field, we can impact the direction of reaction depending on the current energy state of the system.
+As shown in Figure \ref{ACT_schematic} the oxidation and the reduction directions demand different activation energies to drive the reaction into sustained oxidation or reduction. Moreover, under the presence of an electric field, we can impact the direction of reaction depending on the current energy state of the system, by increasing or decreasing the change in Gibbs free energy.
 \begin{equation}
 \Delta G_{0}=-n F\left(\phi-\phi_{0}\right)
 \end{equation}
 
-\noindent To account for this delta in the energy states of oxidation and reduction, we define the asymmetric charge-transfer coefficent $0 < a < 1$, which is used to weight the ratio of the change in activation energy over the change in Gibbs free energy, due to the applied electric potential.
+\noindent To account for different energy deltas required to acheive oxidation or reduction, we define the asymmetric charge-transfer coefficent $0 < \alpha < 1$, which is used to weight the ratio of the change in activation energy over the change in Gibbs free energy, due to the applied electric potential.
 
 \begin{equation}
 \Delta E_{a, o}-\Delta E_{a, r}=-n F\left(\phi-\phi_{0}\right)=\Delta G_{0}
@@ -1098,13 +1098,13 @@ i_{o} &=i_{0} \exp \left(\frac{(1-\alpha) n F \eta}{R T}\right)
 i=i_{0}+i_{r}=0
 \end{equation}
 
-\noindent By substituting our equations for $i_o$ and $i_r$, into this expressions, we find that the relationship for the total ionic current $i$  $\left[ Am^{-2} \right]$ is
+\noindent By substituting our equations for $i_o$ and $i_r$, into this expression, we find that the relationship for the total ionic current $i$  $\left[ Am^{-2} \right]$ is
 
 \begin{equation}
 i=i_{0}\left\{\exp \left(\frac{(1-\alpha) n F \eta}{R T}\right)-\exp \left(-\frac{\alpha n F \eta}{R T}\right)\right\}
 \end{equation}
 
-\noindent However, in battery literature, it is uncommon to express the current density in these units. Typically, we would express this quantity in molar form with unity $\left[ mol m^{-2} s^{-1} \right]$, by normalizing the current density by Faraday's constant $F$.
+\noindent However, in battery literature, it is uncommon to express the current density in these units. Typically, we would express this quantity in molar form with units $\left[ mol m^{-2} s^{-1} \right]$, by normalizing the current density by Faraday's constant $F$.
 
 
 \begin{equation}
@@ -1113,7 +1113,7 @@ j=\frac{i_{0}}{F}\left\{\exp \left(\frac{(1-\alpha) n F \eta}{R T}\right)-\exp \
 
 
 \subsubsection{Exchange Current Density}
-As defined in the previous section, the \textbf{exchange current density}  $i_0$ is defined under the condition of equilibrium. The physical interpretation of this term therefore, quantifies the amount of oxidation and reductions currents when the electrode is at rest. This term implies a type of dynamic equilibrium where in the electrons are being exchanged via the action of oxidation and reduction under no external simulation.
+As defined in the previous section, the \textbf{exchange current density}  $i_0$ is defined under the condition of equilibrium. The physical interpretation of this term therefore, quantifies the amount of oxidation and reduction current when the electrode is at rest. This term implies a type of dynamic equilibrium where in the electrons are being exchanged via the action of oxidation and reduction under no external simulation.
 
 \begin{equation}
 \begin{aligned}
@@ -1123,7 +1123,7 @@ i_{0} &=n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}}{R T}\right) \exp \le
 \end{equation}
 
 
-\noindent Given this expression for both oxidation and reduction, we can define the following terms  and . By equation $i_0$ when defined using these symbols we get...
+\noindent Given this expression for both oxidation and reduction, we can simplify our expression for the exchange current by defining the following substitutions.
 
 \begin{equation}
   \mathscr{E}_{a, r}^{0}=\exp \left(-\frac{E_{a, r}^{0}}{R T}\right)
@@ -1178,7 +1178,7 @@ i_{0}=n F k_{0} c_{o}^{1-\alpha} c_{r}^{\alpha}
 i_{0}=n F k_{0}\left(\prod_{i} c_{o, i}\right)^{1-\alpha}\left(\prod_{i} c_{r, i}\right)^{\alpha}
 \end{equation}
 
-\noindent In fact, it turns out that we can write the produce of all species concentrations as 
+\noindent In fact, it turns out that we can write the produce of all species concentrations as
 
 \begin{equation}
 \prod_{i} c_{o, i}=c_{e}\left(c_{s, \max }-c_{s, e}\right)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.1)  14 MAR 2022 22:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.1)  14 MAR 2022 23:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -401,13 +401,8 @@ Underfull \hbox (badness 3271) in paragraph at lines 67--68
  []
 
 
-Underfull \hbox (badness 1509) in paragraph at lines 67--68
-\OT1/ptm/m/n/10 be-hind PDEs. The in-her-ent com-plex-ity of de-riv-ing and
- []
-
-
-Underfull \hbox (badness 1571) in paragraph at lines 67--68
-\OT1/ptm/m/n/10 cou-pled equa-tions and/or non-lin-ear dy-nam-ics. For these
+Underfull \hbox (badness 6978) in paragraph at lines 67--68
+\OT1/ptm/m/n/10 ob-fus-cated by mod-el-ing as-sump-tions, do-main spe-cific
  []
 
 
@@ -455,15 +450,15 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 85
 
 (c:/texlive/2019/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
+) [1{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
-[1{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-
-]
 Underfull \hbox (badness 1577) in paragraph at lines 109--110
 []\OT1/ptm/m/n/10 At the mi-croscale, we are in-ter-ested in de-riv-ing the
  []
@@ -529,12 +524,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 211--212
 
  []
 
-
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
 
-[3]
+
 Underfull \hbox (badness 10000) in paragraph at lines 260--261
 
  []
@@ -672,15 +667,12 @@ File: C:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/ACT.jpg Graphic file
 Package pdftex.def Info: C:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/A
 CT.jpg  used on input line 1014.
 (pdftex.def)             Requested size: 218.80069pt x 125.42044pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11]
+[11 <c:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/ACT.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 1035--1036
 
  []
 
-[12 <c:/Users/jonat/Documents/MAE298_Intro_to_PDEs/images/ACT.jpg>]
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 1226--1227
 
  []
@@ -749,10 +741,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4349 strings out of 480994
- 67706 string characters out of 5916033
+ 4348 strings out of 480994
+ 67696 string characters out of 5916033
  321172 words of memory out of 5000000
- 19778 multiletter control sequences out of 15000+600000
+ 19777 multiletter control sequences out of 15000+600000
  575434 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,42p,1270b,217s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -774,7 +766,7 @@ exmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2019/texmf-dist/fonts/
 type1/urw/times/utmb8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/ut
 mr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb><c:/texl
 ive/2019/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
-Output written on MAE_298_PDEs_Report.pdf (15 pages, 475625 bytes).
+Output written on MAE_298_PDEs_Report.pdf (15 pages, 475702 bytes).
 PDF statistics:
  137 PDF objects out of 1000 (max. 8388607)
  96 compressed objects within 1 object stream
