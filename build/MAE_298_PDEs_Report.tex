@@ -1123,87 +1123,68 @@ i_{0} &=n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}}{R T}\right) \exp \le
 \end{equation}
 
 
-\noindent Given this expression for both oxidation and reduction, we can define the following terms $\mathscr{E}_{a, r}^{0}=\exp \left(-\frac{E_{a, r}^{0}}{R T}\right)$ and $ \mathscr{E}_{a, 0}^{0}=\exp \left(-\frac{E_{a, 0}^{0}}{R T}\right)$. By equation $i_0$ when defined using these symbols we get...
-
-
-\begin{equation}
-  k_{r}^{0} C_{r} \mathscr{E}_{a, 0}^{0} \exp \left(\frac{(1-\alpha) n F \phi_{\text {rest}}}{R T}\right) =k_{o}^{0} \mathcal{C}_{o} \mathscr{E}_{a, r}^{0} \exp \left(-\frac{\alpha n F \phi_{\text {rest }}}{R T}\right)
-\end{equation}
-
+\noindent Given this expression for both oxidation and reduction, we can define the following terms  and . By equation $i_0$ when defined using these symbols we get...
 
 \begin{equation}
-  \frac{\exp \left(\frac{(1-\alpha) n F \phi_{\text {rest }}}{R T}\right)}{\exp \left(-\frac{\alpha n F \phi_{\text {rest }}}{R T}\right)} =\frac{k_{o}^{0} c_{o} \mathscr{E}_{a, r}^{0}}{k_{r}^{0} c_{r} \mathscr{E}_{a, o}^{0}}
+  \mathscr{E}_{a, r}^{0}=\exp \left(-\frac{E_{a, r}^{0}}{R T}\right)
 \end{equation}
-
 
 \begin{equation}
-  \frac{(1-\alpha) n F \phi_{\text {rest }}}{R T}+\frac{\alpha n F \phi_{\text {rest }}}{R T} =\ln \left(\frac{k_{o}^{0} \mathscr{E}_{a, r}}{k_{r}^{0} \mathscr{E}_{a, o}^{0}}\right)+\ln \frac{c_{0}}{c_{r}}
+   \mathscr{E}_{a, 0}^{0}=\exp \left(-\frac{E_{a, 0}^{0}}{R T}\right)
 \end{equation}
 
-
-\begin{equation}
-  \phi_{\text {rest }} =\frac{R T}{n F} \ln \left(\frac{k_{o}^{0} \mathscr{E}_{a, r}}{k_{r}^{0} \mathscr{E}_{a, 0}^{0}}\right){\phi_{\phi}+\frac{R T}{n F} \ln \frac{C_{0}}{c_{r}}}
-\end{equation}
+%
+% \begin{equation}
+%   k_{r}^{0} C_{r} \mathscr{E}_{a, 0}^{0} \exp \left(\frac{(1-\alpha) n F \phi_{\text {rest}}}{R T}\right) =k_{o}^{0} \mathcal{C}_{o} \mathscr{E}_{a, r}^{0} \exp \left(-\frac{\alpha n F \phi_{\text {rest }}}{R T}\right)
+% \end{equation}
+%
+%
+% \begin{equation}
+%   \frac{\exp \left(\frac{(1-\alpha) n F \phi_{\text {rest }}}{R T}\right)}{\exp \left(-\frac{\alpha n F \phi_{\text {rest }}}{R T}\right)} =\frac{k_{o}^{0} c_{o} \mathscr{E}_{a, r}^{0}}{k_{r}^{0} c_{r} \mathscr{E}_{a, o}^{0}}
+% \end{equation}
+%
+%
+% \begin{equation}
+%   \frac{(1-\alpha) n F \phi_{\text {rest }}}{R T}+\frac{\alpha n F \phi_{\text {rest }}}{R T} =\ln \left(\frac{k_{o}^{0} \mathscr{E}_{a, r}}{k_{r}^{0} \mathscr{E}_{a, o}^{0}}\right)+\ln \frac{c_{0}}{c_{r}}
+% \end{equation}
+%
+%
+% \begin{equation}
+%   \phi_{\text {rest }} =\frac{R T}{n F} \ln \left(\frac{k_{o}^{0} \mathscr{E}_{a, r}}{k_{r}^{0} \mathscr{E}_{a, 0}^{0}}\right){\phi_{\phi}+\frac{R T}{n F} \ln \frac{C_{0}}{c_{r}}}
+% \end{equation}
 
 \begin{equation}
 \phi_{\text {rest }} =\phi^{\ominus}+\frac{R T}{n F} \ln \frac{c_{o}}{c_{r}}
 \end{equation}
 
-\noindent Nerst Equation
+
 
 \begin{equation}
-\begin{aligned}
-i_{0} &=n F k_{o}^{0} c_{o} \mathscr{E}_{a, r}^{0} \exp \left(-\frac{\alpha n F}{R T}\left(\phi^{\ominus}+\frac{R T}{n F} \ln \frac{c_{o}}{c_{r}}\right)\right) \\
-&=n F k_{o}^{0} c_{o} \mathscr{E}_{a, r}^{0} \exp \left(-\frac{\alpha n F \phi^{\ominus}}{R T}\right) c_{r}^{\alpha} c_{o}^{-\alpha} \\
-&=n F k_{o}^{0} c_{o}^{1-\alpha} c_{r}^{\alpha} \mathscr{E}_{a, r}^{0} \exp \left(-\frac{\alpha n F \phi^{\ominus}}{R T}\right)
-\end{aligned}
+k_{0}=k_{o}^{0} \mathscr{E}_{a, r}^{0} \exp \left(-\frac{\alpha n F \phi^{\ominus}}{R T}\right)
 \end{equation}
 
 \begin{equation}
-\begin{aligned}
-i_{0} &=n F k_{r}^{0} c_{r} \mathscr{E}_{a, 0}^{0} \exp \left(\frac{(1-\alpha) n F}{R T}\left(\phi^{\ominus}+\frac{R T}{n F} \ln \frac{c_{0}}{c_{r}}\right)\right) \\
-&=n F k_{r}^{0} c_{r} \mathscr{E}_{a, 0}^{0} \exp \left(\frac{(1-\alpha) n F \phi^{\ominus}}{R T}\right) c_{o}^{1-\alpha} c_{r}^{\alpha-1}
-\end{aligned}
+  k_{0} =k_{r}^{0} \mathscr{E}_{a, o}^{0} \exp \left(\frac{(1-\alpha) n F \phi^{\ominus}}{R T}\right)
 \end{equation}
 
-\begin{equation}
-=n F k_{r}^{0} c_{o}^{1-\alpha} c_{r}^{\alpha} \mathscr{E}_{a, 0}^{0} \exp \left(\frac{(1-\alpha) n F \phi^{\ominus}}{R T}\right)
-\end{equation}
-
-\noindent Since these two equations are equal and opposite, we can define an effective reaction rate constant $k_0$ as.
-
-\begin{equation}
-k_{0}=k_{o}^{0} \mathscr{E}_{a, r}^{0} \exp \left(-\frac{\alpha n F \phi^{\ominus}}{R T}\right)=k_{r}^{0} \mathscr{E}_{a, o}^{0} \exp \left(\frac{(1-\alpha) n F \phi^{\ominus}}{R T}\right)
-\end{equation}
-
-\noindent By applying this simplification, we can rewrite the exchange current of the battery as.
+\noindent By applying this simplification, we can rewrite the exchange current for a single species concentration as.
 \begin{equation}
 i_{0}=n F k_{0} c_{o}^{1-\alpha} c_{r}^{\alpha}
 \end{equation}
 
-\noindent More nerst
-
-\begin{equation}
-\begin{aligned}
-k_{0} &=k_{o}^{0} \mathscr{E}_{a, r}^{0} \exp \left(-\frac{\alpha n F \phi^{\ominus}}{R T}\right) \\
-&=k_{o}^{0} \exp \left(\frac{-E_{a, r}^{0}}{R T}-\frac{\alpha n F \phi^{\ominus}}{R T}\right) \\
-&=k_{o}^{0} \exp \left(\frac{-E_{a, r}^{0}}{R T}-\frac{\alpha n F}{R T}\left(\frac{R T}{n F}\left(\ln \left(\frac{k_{o}^{0}}{k_{r}^{0}}\right)+\ln \mathscr{E}_{a, r}^{0}-\ln \mathscr{E}_{a, o}^{0}\right)\right)\right) \\
-&=k_{o}^{0} \exp \left(\frac{-E_{a, r}^{0}}{R T}-\alpha\left(\ln \left(\frac{k_{o}^{0}}{k_{r}^{0}}\right)-\frac{E_{a, r}^{0}}{R T}+\frac{E_{a, 0}^{0}}{R T}\right)\right) \\
-&=k_{o}^{0}\left(\frac{k_{o}^{0}}{k_{r}^{0}}\right)^{-\alpha} \exp \left(-\frac{1}{R T}\left((1-\alpha) E_{a, r}^{0}+\alpha E_{a, 0}^{0}\right)\right) \\
-&=\left(k_{o}^{0}\right)^{1-\alpha}\left(k_{r}^{0}\right)^{\alpha} \exp \left(-\frac{1}{R T}\left((1-\alpha) E_{a, r}^{0}+\alpha E_{a, 0}^{0}\right)\right) .
-\end{aligned}
-\end{equation}
-
+\noindent In the more general case of multispecies concentrations we take the produce of all the species such that.
 
 \begin{equation}
 i_{0}=n F k_{0}\left(\prod_{i} c_{o, i}\right)^{1-\alpha}\left(\prod_{i} c_{r, i}\right)^{\alpha}
 \end{equation}
 
+\noindent In fact, it turns out that we can write the produce of all species concentrations as 
+
 \begin{equation}
 \prod_{i} c_{o, i}=c_{e}\left(c_{s, \max }-c_{s, e}\right)
 \end{equation}
 
-\noindent Now that we have formulated this quanitity in terms that make sense intuitive sense for the system, we can now rewrite these equations in terms that make sense in the context of battery specific applications. Namely, we can rewrite the expression for overpotential $\eta$, in terms of the batteries open circuit potential, and the potentials applied to the solid and electrolyte phases, where $\mathscr(U)_ocp = \phi_{rest}$
+\noindent Now that we have formulated this quanitity in terms that make sense intuitive sense for the system, we can now rewrite these equations in terms that make sense in the context of battery specific applications. Namely, we can rewrite the expression for overpotential $\eta$, in terms of the batteries open circuit potential, and the potentials applied to the solid and electrolyte phases, where $U_{ocp} = \phi_{rest}$
 
 \begin{equation}
 \eta=\left(\phi_{s}-\phi_{e}\right)-U_{\mathrm{ocp}}
@@ -1213,19 +1194,24 @@ Writen in both SI, and molar notion the final Bulter-Volmer equation is...
 
 
 \begin{equation}
-i=F k_{0} c_{e}^{1-\alpha}\left(c_{s, \max }-c_{s, e}\right)^{1-\alpha} c_{s, e}^{\alpha}\left\{\exp \left(\frac{(1-\alpha) F}{R T} \eta\right)-\exp \left(-\frac{\alpha F}{R T} \eta\right)\right\}
+  \begin{array}{c}
+
+    i=F k_{0} c_{e}^{1-\alpha}\left(c_{s, \max }-c_{s, e}\right)^{1-\alpha} c_{s, e}^{\alpha} \\
+    \times\left\{\exp \left(\frac{(1-\alpha) F}{R T} \eta\right)-\exp \left(-\frac{\alpha F}{R T} \eta\right)\right\}
+
+  \end{array}
 \end{equation}
 
 \begin{equation}
-j=k_{0} c_{e}^{1-\alpha}\left(c_{s, \max }-c_{s, e}\right)^{1-\alpha} c_{s, e}^{\alpha}\left\{\exp \left(\frac{(1-\alpha) F}{R T} \eta\right)-\exp \left(-\frac{\alpha F}{R T} \eta\right)\right\}
+\begin{array}{c}
+  j=k_{0} c_{e}^{1-\alpha}\left(c_{s, \max }-c_{s, e}\right)^{1-\alpha} c_{s, e}^{\alpha} \\
+  \times\left\{\exp \left(\frac{(1-\alpha) F}{R T} \eta\right)-\exp \left(-\frac{\alpha F}{R T} \eta\right)\right\}
+\end{array}
 \end{equation}
 
 
 \begin{equation}
-\begin{aligned}
-i_{0} &=F k_{0} c_{e}^{1-\alpha}\left(c_{s, \max }-c_{s, e}\right)^{1-\alpha} c_{s, e}^{\alpha} \\
-&=F \underbrace{k_{0} c_{e, 0}^{1-\alpha} c_{s, \max }}_{k_{0}^{\text {norm }}}\left(\frac{c_{e}}{c_{e, 0}}\right)^{1-\alpha}\left(\frac{c_{s, \max }-c_{s, e}}{c_{s, \max }}\right)^{1-\alpha}\left(\frac{c_{s, e}}{c_{s, \max }}\right)^{\alpha},
-\end{aligned}
+  k_{0}^{\text {norm }} = {k_{0} c_{e, 0}^{1-\alpha} c_{s, \max }}
 \end{equation}
 
 \begin{equation}
