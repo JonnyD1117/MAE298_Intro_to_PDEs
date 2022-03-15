@@ -922,14 +922,12 @@ c_{i}\left(\mathbf{v}_{i}-\mathbf{v}_{0}\right) =-\frac{v_{i} \mathscr{D}}{v R T
 \begin{equation}\label{current_density_mu_e}
   \mathbf{i} =-\kappa \nabla \phi-\frac{\kappa}{F}\left(\frac{s_{+}}{n v_{+}}-\frac{s_{0} c}{n c_{0}}+\frac{t_{+}^{0}}{v_{+} z_{+}}\right) \nabla \mu_{e}
 \end{equation}
-\noindent As can be seen in the previous equation, we have been able to write an expression for the current density as a function of the gradient in the electrochemical potential. However, we would like to further reduce this expression such that it can be written explicitly in terms of concentrations. \\
-
-Unlike other Equivalent Circuit Models of batteries (ECM), PDE based battery models must use physically meaning states, such as concentrations, to define such quantities as the state of charge (SOC) of a battery. To accomplish this, we need to express $\nabla \mu_e$ as a function concentration. This begins by recognizing that we can express the electrolyte term as follows.
-\begin{equation}
+\noindent As can be seen in the previous equation, we have been able to write an expression for the current density as a function of the gradient in the electrochemical potential. However, we would like to further reduce this expression such that it can be written explicitly in terms of concentrations. This begins by recognizing that we can express the electrolyte potential gradient as follows.
+\begin{equation}\label{partial_concentration}
 \nabla \mu_{e}=\frac{\partial \mu_{e}}{\partial \ln c} \nabla \ln c
 \end{equation}
 
-\noindent Recall from $ \mu_{e}=\nu_{+} \bar{\mu}_{+}+\nu_{-} \bar{\mu}_{-}$ that electrochemical potential of the electrolyte can be written in terms of the positive and negative electrochemical potentials, each of which can be expressed via absolute activity, for $i = \pm$.
+\noindent Recall from $ \mu_{e}=\nu_{+} \bar{\mu}_{+}+\nu_{-} \bar{\mu}_{-}$ that electrochemical potential of the electrolyte can be written in terms of the positive and negative electrochemical potentials, each of which can be expressed via absolute activity, for $i = \pm$. We can express the chemical potentials in terms of the absolute activity
 
 \begin{equation}
 \begin{aligned}
@@ -980,7 +978,7 @@ Unlike other Equivalent Circuit Models of batteries (ECM), PDE based battery mod
 \noindent We can substitute out expression for the current density of the electrolyte, into the conservation of charge, to yield the following equation. NOTE the addition of subscript $e$ to denote that this expression pertains to the electrolyte.
 
 \begin{equation}
-\nabla \cdot \mathbf{i}_{e}=\nabla \cdot\left(-\kappa \nabla \phi_{e}-\frac{2 \kappa R T}{F}\left(1+\frac{\partial \ln f_{\pm}}{\partial \ln c_{e}}\right)\left(t_{+}^{0}-1\right) \nabla \ln c_{e}\right)=0
+\nabla \cdot\left(-\kappa \nabla \phi_{e}-\frac{2 \kappa R T}{F}\left(1+\frac{\partial \ln f_{\pm}}{\partial \ln c_{e}}\right)\left(t_{+}^{0}-1\right) \nabla \ln c_{e}\right)=0
 \end{equation}
 
 \noindent In actual practice however, we assume that $\partial{f_{\pm}}/\partial ln {c_e} = 0 $, and additionally that we can lump all of constants together to obain $\kappa_{D}=2 \kappa R T\left(t_{+}^{0}-1\right) / F$. Under these assumptions we derive the final equation which defines the conservation of charge in the electrolyte.
@@ -991,66 +989,50 @@ Unlike other Equivalent Circuit Models of batteries (ECM), PDE based battery mod
 
 
 \subsection{Bulter-Volmer Equation}
-The final equation in the derivation of the microscale electrochemical battery model, is called the Bulter-Volmer equation. This equations deals with the reaction kinetics of the battery and couples the four previous equations into a system of five equations. In principle, this equation defines rate at which lithium is transfered between the solid and electrolyte phases.
-
-\begin{equation}
-r=\frac{\mathrm{d} \prod_{i} c_{\text {product }, i}}{\mathrm{~d} t}
-\end{equation}
-
-\noindent By assuming linear dynamics, we can write the reaction rate as ...
+The final equation in the derivation of the microscale electrochemical battery model, is called the Bulter-Volmer equation. This equations deals with the reaction kinetics of the battery and couples the four previous equations into a system of five equations. In principle, this equation defines rate at which lithium is transfered between the solid and electrolyte phases. By assuming linear dynamics, we can write the reaction rate of a multispecies system as
 
 \begin{equation}
 r=k \prod_{i} c_{\text {reactant }, i}
 \end{equation}
 
-\noindent This constant is usually defined as a temperature dependent Arrhenius relationship such that we can write the reaction rate as follows.
+\noindent In order to capture the temperature dependent nature of the reaction rate, the Arrhenius equation is used. For a single species reaction, this would be written as
 
 \begin{equation}
  r=k_{f}^{0} c_{\text {reactant }} \exp \left(-\frac{E_{a}}{R T}\right)
 \end{equation}
 
-\noindent Where $E_a$ is the activation energy required to initiate the reaction.\\
+\noindent Where $E_a$ is the activation energy required to initiate the reaction, R is molar gas constant, and T is the temperature. This brings us to the subject of activated complex theory, which is required to define the exchange current in the Bulter-Volmer euquation.\\
 
 \subsubsection{Activated Complex Theory}
 
-\noindent In order for a chemical reaction to occur, there must be enough free energy to initiate and maintain the reaction. For the types of reactions seen in this paper, the process of going from reactants to produces is only favored if the reactant possess a higher energy state than the final product of reaction. This positive delta in energy states maintains the chemical reaction, once it has been begun. However, there is often a barrier energy required to initiate such a reaction. \\
+\noindent In order for a chemical reaction to occur, there must be enough free energy to initiate and maintain the reaction. For the types of reactions seen in this paper, the process of going from reactants to produces is only favored if the reactants possess a higher energy state than the final product of reaction. While this excess of energy is required to maintain the reaction, there is often an additional amount of barrier energy required to initiate in the first place. \\
 
-For the chemical reactions that occur in our lithium-ion battery, the reaction taking place is a reduction-oxidation (redox) reaction, which release/gains electrons. Unlike other redox reaction, the reaction in the battery is unique in that the objective of the reaction is to merely produce or consume electrons. However, in the presence of an electric field, the direction of the reaction can be preferentially detemined by the polarity of the given field across the cell. \\
+For reactions involved with the battery chemistry of a lithium-ion battery, the reaction taking place is a reduction-oxidation (redox) reaction, which releases/gains electrons. However, unlike other redox reaction, the reaction in our battery is unique in that the objective of the reaction is to merely produce or consume electrons, and does not produce any byproducts or reaction. Additionally, the direction of the reaction, occuring in the battery, can be preferentially determined by the polarity of the given field applied across the cell. \\
 
-Both the oxidation and the reduction directions of the reaction possess respective activation energies, which are required to drive the reaction into oxidation or reduction.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=.35]{ACT}
+  \caption{Activation Energy of Reduction and Oxidation}
+  \label{ACT_schematic}
+\end{figure}
 
-
-
-%
-% this holds true. Therefore, there must be activation energy $E_a$, which supplies the reaction with enough initial eneregy that the delta between the Gibbs free energy of the reactants and products can maintain the reaction. In the case of batteries this energy is almost always supplied by an external electric potential across the cell. The difference in Gibbs free energy relative to the equilibrium potential is defined as follows.
-
+As shown in Figure \ref{ACT_schematic} the oxidation and the reduction directions of demand different activation energies to drive the reaction into sustained oxidation or reduction. Moreover, under the presence of an electric field, we can impact the direction of reaction depending on the current energy state of the system.
 \begin{equation}
 \Delta G_{0}=-n F\left(\phi-\phi_{0}\right)
 \end{equation}
 
-\begin{equation}
-0<\left|\Delta G_{\text {complex }}^{\ddagger}\right|<\left|\Delta G_{0}\right|
-\end{equation}
-
-\begin{equation}
-\begin{aligned}
-\Delta E_{a, o} &=E_{a, r}-E_{a, r}^{0}-n F\left(\phi-\phi_{0}\right) \\
-&=\Delta E_{a, r}-n F\left(\phi-\phi_{0}\right)
-\end{aligned}
-\end{equation}
+\noindent To account for this delta in the energy states of oxidation and reduction, we define the asymmetric charge-transfer coefficent $0 < a < 1$, which is used to weight the ratio of the change in activation energy over the change in Gibbs free energy, due to the applied electric potential.
 
 \begin{equation}
 \Delta E_{a, o}-\Delta E_{a, r}=-n F\left(\phi-\phi_{0}\right)=\Delta G_{0}
 \end{equation}
 
-\noindent To neatly capture this behavior, we define the asymmetric cahrge-trans coefficient $0 < \alpha < 1$, such that...
-
-\begin{equation}
+\begin{equation}\label{assymetric_charge_trans}
 \alpha=\left|\frac{\Delta E_{a, r}}{\Delta G_{0}}\right|, \quad \text { and } \quad 1-\alpha=\left|\frac{\Delta E_{a, o}}{\Delta G_{0}}\right|
 \end{equation}
 
 
-\noindent By substituting the appropriate expressions into the equation for current flux, we arrive at the following reaction rates for both oxidation and reduction.
+\noindent By constructing the activation for oxidation or reduction, using energy deltas defined in Figure \ref{ACT_schematic} and substituting the appropriate expressions from equation (\ref{assymetric_charge_trans}) into the equations for reaction rates of oxidation and reduction we get. \\
 
 1. Rate of reduction:
 \begin{equation}
@@ -1069,7 +1051,7 @@ Both the oxidation and the reduction directions of the reaction possess respecti
 \end{equation}
 
 
-\noindent Since the reaction which is occuring must be charge neutral as the electrolyte is charge neutral, it is possible to show that the current flux for the oxidation and the reduction can be defined as a function of the corresponding reaction rates as $i_r = -nFr_{r} $ and $i_o = -nFr_{o}$.
+\noindent Since we have already determined that reaction in the battery must be charge-neutral, we know that the rate of production for positive charge must equal the rate of production for negative charge. Given this knowledge we can directly infer current density, from the reaction rates derived above by writing the current densities for oxidation and reduction in the following form $i_r = -nFr_{r} $ and $i_o = -nFr_{o}$. Which expands to
 
 \begin{equation}
 i_{r}=-n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}+\alpha n F \phi}{R T}\right)
@@ -1080,7 +1062,7 @@ i_{o}=n F k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, 0}^{0}-(1-\alpha) n F \phi}{R 
 \end{equation}
 
 
-\noindent It should be noted that when the system is in equilibrium, $\phi = \phi_{rest}$. In order to capture how changes from the equilibrium potential effects the current flux, we define the \textbf{over potential} as $\eta = \phi - \phi_{rest}$. When properly substituted the previous equations, written in terms of the over potential are written as follows.
+\noindent It should be noted that when the system is in equilibrium, $\phi = \phi_{rest}$. This means that the system will find a stable intern electric potential which it will maintain across the cell. This however does not provide any insight into the dynamics of the process when not in equilibrium. In order to capture how deviations from the equilibrium potential effect the current flux, it is desireable to define a term known as the \textbf{over potential} which is symbolically defined by $\eta = \phi - \phi_{rest}$. The overpotential captures how much change in the electric potential from equilibrium was required to initiate the reaction process. After making this substitution, the oxidation and reduction current density equations take the form
 
 \begin{equation}
 i_{r}=-n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}+\alpha n F\left(\phi_{\text {rest }}+\eta\right)}{R T}\right)
@@ -1091,37 +1073,17 @@ i_{o}=n F k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, o}^{0}-(1-\alpha) n F\left(\ph
 \end{equation}
 
 
-\noindent Before we continue manipulating these equations, note that when expressed via the overpotential $\eta$, the system is at equilibrium when $\eta = 0$.  \\
-
-\noindent Thus when in equilibrium, by using properties of the exponential function we can further simplify these oxidation and reduction currents to isolate the terms for applied potential and the activation energy.
+\noindent Before we continue manipulating these equations, note that when expressed via the overpotential $\eta$, the system is at equilibrium when $\eta = 0$. Thus under the condition of equilibrium, we can use properties of the exponential function to isolate the terms for applied potential and the activation energy, into seperate multiplicative exponential terms, allowing us to define the exchange current $i_0$, seperately from the electric potential of the battery.
 
 \begin{equation}
-i_{r}=-n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}}{R T}\right) \exp \left(-\frac{\alpha n F \phi_{\mathrm{rest}}}{R T}\right)
+i_{r}=-\underbrace{n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}}{R T}\right)}_{i_0} \exp \left(-\frac{\alpha n F \phi_{\mathrm{rest}}}{R T}\right)
 \end{equation}
 
 \begin{equation}
-i_{o}=n F k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, 0}^{0}}{R T}\right) \exp \left(\frac{(1-\alpha) n F \phi_{\mathrm{rest}}}{R T}\right)
+i_{o}=\underbrace{n F k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, 0}^{0}}{R T}\right)}_{i_0} \exp \left(\frac{(1-\alpha) n F \phi_{\mathrm{rest}}}{R T}\right)
 \end{equation}
 
-\noindent We know from the fact of charge neutrality of the system that sum total of the oxidation and reduction current fluxes must equate to zero.
-
-\begin{equation}
-i=i_{0}+i_{r}=0
-\end{equation}
-
-
-
-
-
-
-% \begin{equation}
-% \begin{aligned}
-% i_{0} &=n F k_{o}^{0} c_{o} \exp \left(-\frac{E_{a, r}^{0}}{R T}\right) \exp \left(-\frac{\alpha n F \phi_{\text {rest }}}{R T}\right) \\
-% &=n F k_{r}^{0} c_{r} \exp \left(-\frac{E_{a, 0}^{0}}{R T}\right) \exp \left(\frac{(1-\alpha) n F \phi_{\text {rest }}}{R T}\right)
-% \end{aligned}
-% \end{equation}
-\noindent Under the condition of equilibrium we can define the exchange current $i_0$, such that...
-
+\noindent Under the condition that the equilibrium potential $\phi_{rest} = 0$, we can compactly write the oxidation and reduction current densities as.
 
 \begin{equation}
 \begin{aligned}
@@ -1130,13 +1092,19 @@ i_{o} &=i_{0} \exp \left(\frac{(1-\alpha) n F \eta}{R T}\right)
 \end{aligned}
 \end{equation}
 
-\noindent With this simplification, we can write express for the total ionic current $\left[ Am^{-2} \right]$ for both the oxidation and reduction directions of the reaction as...
+\noindent Briefly note that the oxiation current density and the exchange current are not the same quantitiy (eg. $i_0 \ne i_o$). Finally, we can use the condition of charge neutrality to state that the sum total of the oxidation and reduction current densities must equate to zero.
 
 \begin{equation}
-i=i_{o}+i_{r}=i_{0}\left\{\exp \left(\frac{(1-\alpha) n F \eta}{R T}\right)-\exp \left(-\frac{\alpha n F \eta}{R T}\right)\right\}
+i=i_{0}+i_{r}=0
 \end{equation}
 
-\noindent However, in battery literature, it is fairly uncommong to express the current flux in these units. Typically, we would express this quantity in molar form with unity $\left[ mol m^{-2} s^{-1} \right]$, by normalizing the current flux by Faraday's constant $F$.
+\noindent By substituting our equations for $i_o$ and $i_r$, into this expressions, we find that the relationship for the total ionic current $i$  $\left[ Am^{-2} \right]$ is
+
+\begin{equation}
+i=i_{0}\left\{\exp \left(\frac{(1-\alpha) n F \eta}{R T}\right)-\exp \left(-\frac{\alpha n F \eta}{R T}\right)\right\}
+\end{equation}
+
+\noindent However, in battery literature, it is uncommon to express the current density in these units. Typically, we would express this quantity in molar form with unity $\left[ mol m^{-2} s^{-1} \right]$, by normalizing the current density by Faraday's constant $F$.
 
 
 \begin{equation}
