@@ -1181,7 +1181,7 @@ j=k_{0}^{\text {norm }}\left(\left(\frac{c_{e}}{c_{e, 0}}\right)\left(\frac{c_{s
 
 \section{Comments on Microscale Model}
 
-So far, the entirety of this paper has focused on the details and nuance of deriving and contextualizing the development of the governing partial differential equation for the standard elechochemical microscale model of a lithium-ion battery. We have seen how laws of conservation of mass and charge apply to the different domains that comprise a battery cell, as well as the process and reaction kinetics of lithium transfer between the solid and electrolyte phase. The primary reason for developing these equations are to define the dynamics which are occuring throughout the batteries operation at the molecular level. \\
+So far, the entirety of this paper has focused on the details and nuance of deriving and contextualizing the development of the governing partial differential equation for the standard elechochemical microscale model of a lithium-ion battery. We have seen how laws of conservation of mass and charge apply to the different domains that comprise a battery cell, as well as the transport effects and reaction kinetics of lithium transfer between the solid and electrolyte phase. The primary reason for developing these equations are to define the dynamics which are occuring throughout the batteries operation at the molecular level. \\
 
 However, while a very detailed model of the first principles driving the physics and chemistry of a battery, this model still makes fundamental assumptions which limit the scope over which it is reasonable to apply this model.
 \subsection{Fundamental Modeling Assumptions}
@@ -1199,7 +1199,7 @@ From a computation perspective the direct implementation and use of the microsca
 
  However for the use-case where we still want highly accurate and predictive models in more or less realtime, we must turn to the realm of model simplication and reduction.
 
-\section{Single Particle Model (SPM \& SPMe)}
+\section{Single Particle Models (SPM \& SPM{e})}
 One way of reducing the complexity of the microscale electrochemical model, developed in this paper, would be using a reduction of order strategy to obtain the Single Particle Model (SPM).
 
 \subsection{SPM Assumptions}
@@ -1207,148 +1207,101 @@ One way of reducing the complexity of the microscale electrochemical model, deve
  The SPM model takes the microscale equations derived above and reduces each battery electrode to an individual sphere of active material that is presumed to be representative of the average dynamics of the electrodes. It also discards the transport effects and dynamics within the electrolyte. The SPMe elevates the SPM model by including these electrolyte dynamics back into the model, allowing this model to capture the nonlinearities which are present due to\ transport behavior of the electrolyte. These simplifications work well for moderate to low charge/discharge rates as well as assuming that the conductivity of the eletrolyte is effectively negligablely large, since the process of lithium transport possess the slowest dynamics in the battery, we can significantly reduce the computational complexity by ignoring these effects.
 
 
-\subsection{SPM Derivation}
+\subsection{SPM Model}
 
-The previous system of governing partial differential equations, was derived using the microscale interactions and mechanisms. While this approach to analysis is particularly informative about the how these sorts of high fidelity models are derived, solving them for an entire cell (using a system of thousands or millions of coupled PDEs) is computationally infeasible, even for modern computers. There are many different approaches to creating macroscale models that capture the first principle mechanisms of action, but are far more computationally viable. This simplification comes with a penalty on the accuracy of model; however, these models are still far and away some of the most high fidelity battery models which are routinely used today to check  \\
-
-In particular, the Doyle-Fuller-Newman (DFN) model uses a technique of volume averaging to be able to same governing equations which were derived above, over larger domains, approximating (on average) the behaviors of each electrode and the electrolyte. \\
+The final formulation of the SPM model is shown below. Note that the equation related to electrolyte phase mass and charge conservation are eliminated. Now the molar flux density $j$ is defined directly in terms of the input current and the electrode geometry (area = $a$, and thickness = $L$), with Faraday's constant present to convert the current into molar form.
 
 
-% \begin{equation} \label{COC_s}
-% \nabla \cdot \mathbf{i}_{s}=\nabla \cdot\left(-\sigma \nabla \phi_{s}\right)=0
-% \end{equation}
-%
-% \begin{equation} \label{COM_s}
-% \frac{\partial c_{s}}{\partial t}=\nabla \cdot\left(D_{s} \nabla c_{s}\right)
-% \end{equation}
-%
-% \begin{equation} \label{COM_e}
-% \frac{\partial c_{e}}{\partial t}=\nabla \cdot\left(D_{e} \nabla c_{e}\right)-\frac{\mathbf{i}_{e} \cdot \nabla t_{+}^{0}}{F}-\nabla \cdot\left(c_{e} \mathbf{v}_{0}\right)
-% \end{equation}
-%
-% \begin{equation}\label{COC_e}
-% \nabla \cdot\left(-\kappa \nabla \phi_{e}-\frac{2 \kappa R T}{F}\left(1+\frac{\partial \ln f_{\pm}}{\partial \ln c_{e}}\right)\left(t_{+}^{0}-1\right) \nabla \ln c_{e}\right)=0
-% \end{equation}
-%
-% \begin{equation} \label{lithium_movment}
-% j=\frac{i_{0}}{F}\left\{\exp \left(\frac{(1-\alpha) F}{R T} \eta\right)-\exp \left(-\frac{\alpha F}{R T} \eta\right)\right\}
-% \end{equation}
-%
-%
-% \subsection{One Dimensional SPM Model}
-%
-% In the previous derivations, the derived equations have retained the general gradient form. However, the single particle model reduces the dimension of the problem to a single spatial dimension, for ease of computation. This means that for SPM we can write the governing equation as follows... \\
-%
-% \subsubsection{Conservation of Charge in Solid Phase}
-%
-% The general form of the conservation of charge in the solid material is given by the following equation.
-%
-% \begin{equation}
-% \nabla \cdot \mathbf{i}_{s}=\nabla \cdot\left(-\sigma \nabla \phi_{s}\right)=0
-% \end{equation}
-%
-% Unfortunately, this form is not helpful as the divergence of the current serves only to prove the solid phase current is conserved. However, we can put this in a more useful form by recognizing the equality that exists such that.
-%
-% \begin{equation}
-% \mathbf{i}_{s}=\left(-\sigma \nabla \phi_{s}\right)
-% \end{equation}
-%
-%
-% Then, by applying Kirchhoff's current law, we can state that net current is equal to the sum of the contributions from both the electrolyte and the solid phases.
-%
-% \begin{equation}
-%   I = i_e + i_s
-% \end{equation}
-%
-% After simplifying the gradient into a single dimension along the X axis, the expression for the conservation of charge in the solid phase can be written.
-%
-% \begin{equation}
-% \frac{\partial{\phi_{s}}}{\partial{x}} = \frac{i_e - I}{\sigma}
-% \end{equation}
-%
-%
-% \subsubsection{Conservation of Charge in Electrolyte Phase}
-%
-% \begin{equation}\label{COC_e}
-% \nabla \cdot\left(-\kappa \nabla \phi_{e}-\frac{2 \kappa R T}{F}\left(1+\frac{\partial \ln f_{\pm}}{\partial \ln c_{e}}\right)\left(t_{+}^{0}-1\right) \nabla \ln c_{e}\right)=0
-% \end{equation}
-%
-% By applying a similar reduction and simplification process as the conservation of charge in the solid phase above, we can show that full equation can be simplified to the following form.
-%
-% \begin{equation}
-% i_e = -\kappa \frac{\partial{\phi_{e}}}{\partial{x}} -\frac{2 \kappa R T}{F}\left(1+\frac{\partial \ln f_{\pm}}{\partial \ln c_{e}}\right)\left(t_{+}^{0}-1\right) \frac{\partial{\ln c_{e}}}{\partial{x}}
-% \end{equation}
-%
-% \subsubsection{Conservation of Mass Solid Phase}
-%
-% \begin{equation}
-% \frac{\partial c_{s}}{\partial t}=\nabla \cdot\left(D_{s} \nabla c_{s}\right)
-% \end{equation}
-%
-% Similarly, by applying reducing the gradient into a single partial derivative we can write the conservation of mass in the solid phase as
-%
-% \begin{equation}
-% \frac{\partial c_{s}}{\partial t}=  \frac{\partial}{\partial{x}} \left( D_s \frac{\partial{c_s}}{\partial{x}} \right)
-% \end{equation}
-%
-% However, since SPM models the diffusion of lithium into a single particle of the ``electrode active material'', we are not interested in the X axis, but rather the radial axis of the electrode particle. To accomplish this all that is required is to transform the coordinate system from Cartesian to Polar by applying the Jacobian transformation of change of coordinates. After this is accomplished the final equation for the conservation of mass in the solid phase is written as
-%
-% \begin{equation}
-% \frac{\partial c_{s}}{\partial t}= \frac{1}{r^2} \frac{\partial}{\partial{r}} \left( D_s \frac{\partial{c_s}}{\partial{r}} \right)
-% \end{equation}
-%
-% \subsubsection{Conservation of Mass in Electolyte Phase}
-%
-%
-% \begin{equation}
-% \frac{\partial c_{e}}{\partial t}=\nabla \cdot\left(D_{e} \nabla c_{e}\right)-\frac{\mathbf{i}_{e} \cdot \nabla t_{+}^{0}}{F}-\nabla \cdot\left(c_{e} \mathbf{v}_{0}\right)
-% \end{equation}
-%
-% As will all previous SPM equations, this equation can be simplified by reducing the gradient to a single dimension such that...
-%
-% \begin{equation}
-% \frac{\partial c_{e}}{\partial t}= \frac{\partial}{\partial{x}} \left( D_e \frac{\partial{c_e}}{\partial{x}} \right) - \frac{\partial}{\partial{x}}\left( \frac{i_e \cdot t_{+}^{0}}{F\varepsilon_e} \right)
-% \end{equation}
+\begin{equation}
+j^{\pm}(t)=\frac{\mp I(t)}{F a^{\pm} L^{\pm}}
+\end{equation}
+
+
+\noindent The final form of the equation defining the surface concentration of lithium is now expressed in polar coordinates, to accommodate the assumption that the electrodes are now each fully respresented by spherical particle, into which the lithium intercalates, along with its initial and boundary conditions.
+
+
+\begin{equation}
+\frac{\partial c_{s}^{\pm}(r, t)}{\partial t}=\frac{1}{r^{2}} \frac{\partial}{\partial r}\left(D_{s} r^{2} \frac{\partial c_{s}^{\pm}(r, t)}{\partial r}\right)
+\end{equation}
+
+\begin{equation}
+\mathcal{C}_{S}(r, 0)=\mathcal{C}_{S}^{0, \mp}(r)
+\end{equation}
+
+\begin{equation}
+\left.\frac{\partial c_{s}^{\pm}}{\partial t}\right|_{r=0}=0
+\end{equation}
+
+\begin{equation}
+\left.\frac{\partial c_{s}^{\pm}}{\partial t}\right|_{r=R_{P}}=-\frac{j_{n}^{\pm}}{D_{s}^{\pm}}=\pm \frac{I(t)}{D_{s}^{\pm} F a^{\pm} L^{\pm}}
+\end{equation}
+
+\noindent We can write the total voltage across the battery as the difference between the positive and negative electrode potentials.
+
+
+\begin{equation}
+V(t)=\theta_{s 0}^{+}(t)-\theta_{s 0}^{-}(t)
+\end{equation}
+
+\noindent The electrode potentials are functions of the surface concentration of lithium which can be written as
+
+\begin{equation}
+  \begin{array}{c}
+    \theta_{s 0}^{\pm}(t)=\frac{2 R T}{F} \sinh \mathrm{h}^{-1}\left(\frac{\mp I(t)}{2 a^{\pm} L^{\pm} r_{e f f} \sqrt{c_{e}^{0} c_{s S}^{\pm}(t)\left(c_{s, m a x}^{\pm}-c_{s S}^{\pm}(t)\right)}}\right) \\
+    +U^{\pm} \beta^{\pm} \mp \frac{R_{S E I}^{\pm} I(t)}{2 a^{\pm} L^{\pm}}
+  \end{array}
+\end{equation}
+
+
+
+\noindent And finally, the equations defining the open circuit voltage (OCV) are a function of the battery chemistry and are parameterized by the stoichiometric coefficients. For a common lithium-ion, given the following definitions for the stoichmetric coefficients $\beta^{\pm}=c_{S S}^{\pm}(t) / c_{s, \max }^{\pm}$, such that $ x = \beta^{-} \text{ and } y = \beta^{+}$, we can express the OCV for each electrode as
+
+
+\begin{equation}
+\begin{aligned}
+U^{-}(x)=8.00229+5.0647 x-12.578 x^{0.5}-8.6322 \times 10^{-4} x^{-1}+ \\
+2.1765 \times 10^{-5} x^{1.5} -0.46016 \exp [15(0.06-x)]-0.55364 \exp [-2.4326(x-0.92)]
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+U^{+}(x)=85.681 y^{6} -357.7 y^{5}+613.89 y^{4}-555.65 y^{3}+ \\
+281.06 y^{2}-76.648 y -0.30987 \exp \left(5.657 y^{115}\right)+13.1983
+\end{aligned}
+\end{equation}
 
 \section{Conclusion}
-While a complete derivation of the microscale model for electrochemical batteries is far involved and nuanced than the material presented in this paper. The hope has been that this paper
+While a complete derivation of the microscale model for electrochemical batteries is far involved and nuanced than the material presented in this paper. The hope has been that this paper helps to contextualize and explain the process behind the basics of the microscale model derivation. The result of this derivation is a system of partial differential equations that which couple together to form the basis for the industry standard Doyle-Fuller-Newman model.
 
 
 \section*{Acknowledgments}
-I would like to thank Dr. Lin  (and his entire research lab) for their combined mentorship in exploring the world of electrochemical battery models and estimation theory.
-
-\section{References Section}
-You can use a bibliography generated by BibTeX as a .bbl file.
- BibTeX documentation can be easily obtained at:
- http://mirror.ctan.org/biblio/bibtex/contrib/doc/
- The IEEEtran BibTeX style support page is:
- http://www.michaelshell.org/tex/ieeetran/bibtex/
-
- % argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
-%
-\section{Simple References}
-You can manually copy in the resultant .bbl file and set second argument of $\backslash${\tt{begin}} to the number of references
- (used to reserve space for the reference number labels box).
+\noindent I would like to thank Dr. Lin  (and his entire research lab) for their combined mentorship in exploring the world of electrochemical battery models and estimation theory.
 
 \begin{thebibliography}{1}
 \bibliographystyle{IEEEtran}
 
 \bibitem{ref1}
-{\it{Mathematics Into Type}}. American Mathematical Society. [Online]. Available: https://www.ams.org/arc/styleguide/mit-2.pdf
+G. L. Plett, Battery Management Systems: Battery Modeling Volume I. Norwood: Artech House Publishers, 2015.
 
 \bibitem{ref2}
-T. W. Chaundy, P. R. Barrett and C. Batey, {\it{The Printing of Mathematics}}. London, U.K., Oxford Univ. Press, 1954.
+M. Al-Gabalawy, N. S. Hosny, and S. A. Hussien, “Lithium-ion battery modeling including degradation based on single-particle approximations,” Batteries, vol. 6, no. 3, p. 37, 2020.
 
 \bibitem{ref3}
-F. Mittelbach and M. Goossens, {\it{The \LaTeX Companion}}, 2nd ed. Boston, MA, USA: Pearson, 2004.
+S. J. Moura, F. B. Argomedo, R. Klein, A. Mirtabatabaei, and M. Krstic, “Battery State Estimation for a single particle model with electrolyte dynamics,” IEEE Transactions on Control Systems Technology, vol. 25, no. 2, pp. 453–468, 2017.
+
+
+% \bibitem{ref1}
+% {\it{Mathematics Into Type}}. American Mathematical Society. [Online]. Available: https://www.ams.org/arc/styleguide/mit-2.pdf
+%
+% T. W. Chaundy, P. R. Barrett and C. Batey, {\it{The Printing of Mathematics}}. London, U.K., Oxford Univ. Press, 1954.
+%
+% F. Mittelbach and M. Goossens, {\it{The \LaTeX Companion}}, 2nd ed. Boston, MA, USA: Pearson, 2004.
 
 \end{thebibliography}
 
 
 \newpage
-
-\section{Biography Section}
 
 \vspace{11pt}
 

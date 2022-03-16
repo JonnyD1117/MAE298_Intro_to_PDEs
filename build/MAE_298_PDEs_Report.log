@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.1)  15 MAR 2022 17:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.1)  15 MAR 2022 20:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -690,92 +690,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 1198--1199
  []
 
 
-Underfull \hbox (badness 2181) in paragraph at lines 1212--1213
-[]\OT1/ptm/m/n/10 The pre-vi-ous sys-tem of gov-ern-ing par-tial dif-fer-en-tia
-l
+Overfull \hbox (8.05615pt too wide) detected at line 1253
+[]
  []
 
 
-Underfull \hbox (badness 1968) in paragraph at lines 1212--1213
-\OT1/ptm/m/n/10 in-for-ma-tive about the how these sorts of high fi-delity
+Overfull \hbox (92.84055pt too wide) detected at line 1265
+[][]
  []
 
+[14] [15
 
-Underfull \hbox (badness 2980) in paragraph at lines 1212--1213
-\OT1/ptm/m/n/10 com-pu-ta-tion-ally in-fea-si-ble, even for mod-ern com-put-ers
-.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1212--1213
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1214--1215
-
- []
-
-
-Underfull \hbox (badness 4832) in paragraph at lines 1321--1326
-[]\OT1/ptm/m/n/10 You can use a bib-li-og-ra-phy gen-er-ated by Bib-TeX
- []
-
-
-Underfull \hbox (badness 4608) in paragraph at lines 1321--1326
-\OT1/ptm/m/n/10 as a .bbl file. Bib-TeX doc-u-men-ta-tion can be eas-ily
- []
-
-
-Underfull \hbox (badness 6380) in paragraph at lines 1321--1326
-\OT1/ptm/m/n/10 ob-tained at: http://mirror.ctan.org/biblio/bibtex/contrib/doc/
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1321--1326
-\OT1/ptm/m/n/10 The IEEE-tran Bib-TeX style sup-port page is:
- []
-
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-331.
-(c:/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [14] [15
-
-]
-(./MAE_298_PDEs_Report.aux)
+] (./MAE_298_PDEs_Report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4348 strings out of 480994
- 67696 string characters out of 5916033
+ 4280 strings out of 480994
+ 66883 string characters out of 5916033
  321157 words of memory out of 5000000
- 19777 multiletter control sequences out of 15000+600000
- 575434 words of font info for 115 fonts, out of 8000000 for 9000
+ 19727 multiletter control sequences out of 15000+600000
+ 567611 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,42p,1138b,217s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2019/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2019/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi5.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
-><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texli
-ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2019/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2019/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy5.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symb
-ols/msam10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb><
-c:/texlive/2019/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb><c:/texlive/2019/t
-exmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2019/texmf-dist/fonts/
-type1/urw/times/utmb8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/ut
-mr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb><c:/texl
-ive/2019/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
-Output written on MAE_298_PDEs_Report.pdf (15 pages, 471371 bytes).
+sfonts/cmextra/cmex7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+5.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/
+texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/20
+19/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2019/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2019/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy5.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/m
+sam10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb><c:/te
+xlive/2019/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb><c:/texlive/2019/texmf-
+dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/u
+rw/times/utmr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.p
+fb><c:/texlive/2019/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
+Output written on MAE_298_PDEs_Report.pdf (15 pages, 480513 bytes).
 PDF statistics:
  137 PDF objects out of 1000 (max. 8388607)
  96 compressed objects within 1 object stream
