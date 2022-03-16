@@ -1260,7 +1260,7 @@ V(t)=\theta_{s 0}^{+}(t)-\theta_{s 0}^{-}(t)
 \begin{equation}
 \begin{aligned}
 U^{-}(x)=8.00229+5.0647 x-12.578 x^{0.5}-8.6322 \times 10^{-4} x^{-1}+ \\
-2.1765 \times 10^{-5} x^{1.5} -0.46016 \exp [15(0.06-x)]-0.55364 \exp [-2.4326(x-0.92)]
+2.1765 \times 10^{-5} x^{1.5} -0.46016 \exp [15(0.06-x)]- \\0.55364 \exp [-2.4326(x-0.92)]
 \end{aligned}
 \end{equation}
 
@@ -1271,12 +1271,13 @@ U^{+}(x)=85.681 y^{6} -357.7 y^{5}+613.89 y^{4}-555.65 y^{3}+ \\
 \end{aligned}
 \end{equation}
 
-\section{Conclusion}
-While a complete derivation of the microscale model for electrochemical batteries is far involved and nuanced than the material presented in this paper. The hope has been that this paper helps to contextualize and explain the process behind the basics of the microscale model derivation. The result of this derivation is a system of partial differential equations that which couple together to form the basis for the industry standard Doyle-Fuller-Newman model.
+\noindent These are all the equations we need to compute the SPM battery model. This model reduces our previous system of 5 PDEs and an algrebraic equation to two PDE (one for each electrode) and the same algrebraic equation.
 
+\section{Conclusion}
+In conclusion, while a complete derivation of the microscale model for electrochemical batteries is far more involved and nuanced than the material presented in this paper. The hope has been that this paper helps to contextualize and explain the process behind the basics of the microscale model. A study of high fidelity physics based battery models and the use and knowledge of partial differential equations are inseperable. From developing the model, to analyzing or interpreting the model, to actually applying numerical solution techniques to solve the model all depend on the underlying formalism of PDEs. The objective of this paper is to provide the reader with an appreciation for just how involved the process of developing useful PDE models can be.
 
 \section*{Acknowledgments}
-\noindent I would like to thank Dr. Lin  (and his entire research lab) for their combined mentorship in exploring the world of electrochemical battery models and estimation theory.
+\noindent I would like to thank Dr. Xinfan Lin  (and his entire research lab) for their combined mentorship in exploring the world of electrochemical battery models and estimation theory.
 
 \begin{thebibliography}{1}
 \bibliographystyle{IEEEtran}
